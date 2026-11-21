@@ -16,6 +16,8 @@ const blog = defineCollection({
     cover: z.string(),
     thumb: z.string().optional(),
     author: z.string().default('Marina Petrovich'),
+    /** Coautores do post (ex.: Francisco Oliveira, a partir de nov/2026). */
+    coauthors: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
   }),
 });

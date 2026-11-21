@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { fmtDate } from '../site';
+import { fmtDate, authorNames } from '../site';
 import Img from './Img.astro';
 interface Props { post: CollectionEntry<'blog'>; featured?: boolean; eager?: boolean; /** nível do título do card, conforme a página */ headingLevel?: 2 | 3 }
 const { post, featured = false, eager = false, headingLevel = 3 } = Astro.props;
@@ -17,7 +17,7 @@ const d = post.data;
     <p>{d.description}</p>
     <div class="meta">
       <Img src="/images/brand/marina-thumb.webp" alt={d.author} class="avatar" width="30" height="30" loading="lazy" />
-      <span>{d.author} · {fmtDate(d.date)}</span>
+      <span>{authorNames(d)} · {fmtDate(d.date)}</span>
     </div>
   </div>
 </a>

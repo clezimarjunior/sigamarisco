@@ -15,11 +15,10 @@ Quando revisar um post de verdade, atualize o conteúdo e adicione no frontmatte
 
 ## Página /sobre
 
-- [ ] Preencher os trechos marcados com `[PREENCHER]` em `src/pages/sobre.astro`.
-  Enquanto houver `[PREENCHER]`, esses blocos **não aparecem no site publicado** (só no `npm run dev`).
+- [ ] Confirmar o nome da praia do casamento (10/08/2025, em Natal) se quiserem citá-la.
+- [ ] Opcional: uma foto individual do Francisco para o bloco "Quem somos" (`src/pages/sobre.astro`, campo `photo`).
 
 ## Autoria
 
-- [ ] Hoje todos os posts estão assinados por Marina Petrovich. Se o Francisco escreveu algum
-  (ou parte), dá para colocá-lo como coautor nesse post. Isso exige transformar o campo
-  `author` em lista e ajustar o schema; não foi feito para não atribuir autoria sem confirmação.
+- Francisco Oliveira é coautor a partir do post da Praia do Céu (nov/2026). Em posts novos dele,
+  adicione no frontmatter: `coauthors: ["Francisco Oliveira"]`.

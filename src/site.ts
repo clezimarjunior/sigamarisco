@@ -39,7 +39,7 @@ export const RELATED: Record<string, string[]> = {
 export const CATEGORY_META: Record<string, { title: string; description: string }> = {
   "Argentina": { title: "Argentina: roteiros e dicas de viagem | Siga Marisco", description: "Dicas de viagem para a Argentina: review do restaurante Abrasado, em Mendoza, e ideias de roteiro romântico por Mendoza e Bariloche. Veja os posts." },
   "Bolívia": { title: "Bolívia: roteiros e dicas de viagem | Siga Marisco", description: "Guias da Bolívia por quem foi: tour de 3 dias no Salar do Uyuni, Hotel Palacio de Sal e o que fazer em Santa Cruz de la Sierra. Comece a planejar." },
-  "Brasil": { title: "Brasil: roteiros e dicas de viagem | Siga Marisco", description: "Roteiros pelo Rio de Janeiro e passeios perto de Natal, como a Trilha do Vale Encantado, a Lagoa da Juventude e as Ruínas de São João Lostau. Confira." },
+  "Brasil": { title: "Brasil: roteiros e dicas de viagem | Siga Marisco", description: "Passeios perto de Natal, como a Trilha do Vale Encantado e a Lagoa da Juventude, roteiros pelo Rio de Janeiro e a Praia do Céu, no Marajó. Confira." },
   "Colômbia": { title: "Colômbia: roteiros e dicas de viagem | Siga Marisco", description: "O que fazer em Medellín, na Colômbia: Comuna 13, Guatapé, onde ficar e onde comer, além de destinos colombianos para a lua de mel. Confira os posts." },
   "Informação": { title: "Dicas de viagem e planejamento | Siga Marisco", description: "Dicas práticas para planejar a viagem: tamanho de mala permitido no avião e os destinos mais românticos da América do Sul para a lua de mel. Confira." },
   "Peru": { title: "Peru: roteiros e dicas de viagem | Siga Marisco", description: "Como chegar em Machu Picchu pelo trem, pela Hidrelétrica ou pelo Trekking Salkantay, com dicas de ingresso e da visita. Tudo para sua viagem ao Peru." },
@@ -62,8 +62,8 @@ export const CATEGORY_INTRO: Record<string, string[]> = {
     "Também contamos como foi se hospedar no Hotel Palacio de Sal, o primeiro hotel construído com sal, com a estrutura de lazer e os preços da nossa estadia. Do outro lado do país, o guia de Santa Cruz de la Sierra reúne o centro histórico, passeios como Samaipata, Las Cuevas, Lomas de Arena e o Parque Amboró, além de onde ficar, onde comer e como chegar, inclusive pelo trem que sai da fronteira com Corumbá.",
   ],
   "Brasil": [
-    "Somos nordestinos, e boa parte dos posts sobre o Brasil nasce de passeios pelo Rio Grande do Norte, perto de Natal. Em Pium, a cerca de 20 km da capital, mostramos a Trilha do Vale Encantado, fácil e boa para iniciantes, e as Ruínas de São João Lostau, um lugar pouco conhecido cheio de história. Seguindo para Nísia Floresta, levamos o nosso carro 4x4 até a Lagoa da Juventude.",
-    "Fora do Nordeste, o Rio de Janeiro ganhou um roteiro completo de 4, 5 ou 7 dias, com pontos turísticos, trilhas e praias, além de indicações de onde comer e onde se hospedar na cidade.",
+    "Somos nordestinos e moramos em Pium, em Parnamirim, pertinho de Natal, então boa parte dos posts sobre o Brasil nasce de passeios pelo Rio Grande do Norte. Em Pium, a cerca de 20 km da capital, mostramos a Trilha do Vale Encantado, fácil e boa para iniciantes, e as Ruínas de São João Lostau, um lugar pouco conhecido cheio de história. Seguindo para Nísia Floresta, levamos o nosso carro 4x4 até a Lagoa da Juventude.",
+    "Fora do Nordeste, o Rio de Janeiro ganhou um roteiro completo de 4, 5 ou 7 dias, com pontos turísticos, trilhas e praias, além de onde comer e onde se hospedar. No Pará, mostramos a Praia do Céu, na Ilha do Marajó: como chegar, a vila de casas coloridas sobre palafitas e onde almoçar.",
   ],
   "Colômbia": [
     "Fomos a Medellín sem muitas expectativas, para reencontrar amigos do Francisco que moram lá, e saímos surpresos com tudo o que a cidade oferece. No guia de Medellín reunimos os passeios que fizemos e indicamos: o centro e a Plaza Botero, El Poblado, a Comuna 13, o Pueblito Paisa, o Jardim Botânico, o teleférico e o bate-volta para Guatapé e a Piedra del Peñol.",
@@ -97,6 +97,7 @@ export const organizationSchema = {
 /** Autores conhecidos. A âncora aponta para o bloco da pessoa em /sobre. */
 export const AUTHORS: Record<string, { id: string; url: string }> = {
   'Marina Petrovich': { id: `${SITE.url}/sobre#marina`, url: `${SITE.url}/sobre#marina` },
+  'Francisco Oliveira': { id: `${SITE.url}/sobre#francisco`, url: `${SITE.url}/sobre#francisco` },
 };
 
 export const personSchema = (name: string) => ({
@@ -106,3 +107,9 @@ export const personSchema = (name: string) => ({
   url: AUTHORS[name]?.url ?? `${SITE.url}/sobre`,
   sameAs: SOCIAL,
 });
+
+/** "Marina Petrovich" ou "Marina Petrovich e Francisco Oliveira" */
+export const authorNames = (d: { author: string; coauthors?: string[] }) => {
+  const all = [d.author, ...(d.coauthors ?? [])];
+  return all.length > 1 ? `${all.slice(0, -1).join(', ')} e ${all.at(-1)}` : all[0];
+};
