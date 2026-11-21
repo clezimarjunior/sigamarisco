@@ -1,5 +1,5 @@
 ---
-title: "Passeio Salar do Uyuni: 3 dias incríveis "
+title: "Passeio Salar do Uyuni: 3 dias incríveis"
 seoTitle: "Passeio Salar do Uyuni: 3 dias incríveis"
 description: "Durante três dias incríveis, desbravamos as maravilhas deste destino e agora compartilhamos com vocês a beleza e a aventura que permeou essa viagem extraordinária."
 category: "Bolívia"

@@ -1,5 +1,5 @@
 ---
-title: "Hotel Palacio de sal: Nossa experiência no primeiro hotel de sal do mundo "
+title: "Hotel Palacio de sal: Nossa experiência no primeiro hotel de sal do mundo"
 seoTitle: "Hotel Palacio de sal: Nossa experiência no primeiro hotel de sal do mundo"
 description: "Descubra conosco a fascinante jornada em um dos destinos mais únicos do mundo: o Hotel Palácio de Sal, o primeiro hotel inteiramente construído com sal."
 category: "Bolívia"
