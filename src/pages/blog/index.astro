@@ -14,7 +14,7 @@ const cats = [...new Set(posts.map((p) => p.data.category))].sort();
         <a class="chip" href="/blog" aria-current="page">Todos</a>
         {cats.map((c) => <a class="chip" href={`/categoria/${slugify(c)}`}>{c}</a>)}
       </nav>
-      <div class="grid">{posts.map((p, i) => <PostCard post={p} eager={i === 0} />)}</div>
+      <div class="grid">{posts.map((p, i) => <PostCard post={p} eager={i === 0} headingLevel={2} />)}</div>
     </div>
   </section>
 </Base>

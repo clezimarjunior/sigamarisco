@@ -2,8 +2,9 @@
 import type { CollectionEntry } from 'astro:content';
 import { fmtDate } from '../site';
 import Img from './Img.astro';
-interface Props { post: CollectionEntry<'blog'>; featured?: boolean; eager?: boolean }
-const { post, featured = false, eager = false } = Astro.props;
+interface Props { post: CollectionEntry<'blog'>; featured?: boolean; eager?: boolean; /** nível do título do card, conforme a página */ headingLevel?: 2 | 3 }
+const { post, featured = false, eager = false, headingLevel = 3 } = Astro.props;
+const Heading = headingLevel === 2 ? 'h2' : 'h3';
 const d = post.data;
 ---
 <a href={`/blog/${post.id}`} class={featured ? 'featured' : 'card'}>
@@ -12,7 +13,7 @@ const d = post.data;
   </div>
   <div class="card-body">
     <span class="cat">{d.category}</span>
-    <h3>{d.title}</h3>
+    <Heading class="card-title">{d.title}</Heading>
     <p>{d.description}</p>
     <div class="meta">
       <Img src="/images/brand/marina-thumb.webp" alt={d.author} class="avatar" width="30" height="30" loading="lazy" />

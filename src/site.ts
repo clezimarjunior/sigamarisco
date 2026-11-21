@@ -50,3 +50,31 @@ export const PAGE_META = {
   "contato": { title: "Contato | Siga Marisco", description: "Fale com o Siga Marisco por e-mail, Instagram ou YouTube: dúvidas sobre roteiros, sugestões de destinos e propostas de parceria. Vamos adorar conversar!" },
   "sobre": { title: "Sobre nós: Marina e Francisco | Siga Marisco", description: "Conheça a Marina e o Francisco, o casal nordestino por trás do Siga Marisco: quem somos, como viajamos e por que contamos tudo aqui no blog de viagem." },
 };
+
+// Introdução editorial de cada categoria (100 a 180 palavras), baseada no que os posts cobrem.
+export const CATEGORY_INTRO: Record<string, string[]> = {
+  "Argentina": [
+    "A Argentina entrou no nosso roteiro pelo vinho e pela comida. Em Mendoza, a capital vinícola do país, fomos conhecer o Abrasado, restaurante que fica na Bodega Los Toneles e é especializado em harmonizar vinhos com carnes. No review contamos, com sinceridade, como foram os pratos, os vinhos, a estrutura do espaço e quanto custou, para você decidir se vale reservar.",
+    "Se você está pensando em viajar a dois, Mendoza e Bariloche também aparecem na nossa lista de destinos românticos na América do Sul, com paisagens de montanha, lagos e vinícolas. Aos poucos vamos trazer mais roteiros pela Argentina por aqui.",
+  ],
+  "Bolívia": [
+    "A Bolívia é um dos países que mais nos marcaram. Foi no Salar do Uyuni que aconteceu o nosso pedido de casamento, e é por isso que o roteiro de 3 dias pelo salar está contado com tanto detalhe: o que vimos em cada dia, o que levar, a melhor época e quanto pagamos pelo tour.",
+    "Também contamos como foi se hospedar no Hotel Palacio de Sal, o primeiro hotel construído com sal, com a estrutura de lazer e os preços da nossa estadia. Do outro lado do país, o guia de Santa Cruz de la Sierra reúne o centro histórico, passeios como Samaipata, Las Cuevas, Lomas de Arena e o Parque Amboró, além de onde ficar, onde comer e como chegar, inclusive pelo trem que sai da fronteira com Corumbá.",
+  ],
+  "Brasil": [
+    "Somos nordestinos, e boa parte dos posts sobre o Brasil nasce de passeios pelo Rio Grande do Norte, perto de Natal. Em Pium, a cerca de 20 km da capital, mostramos a Trilha do Vale Encantado, fácil e boa para iniciantes, e as Ruínas de São João Lostau, um lugar pouco conhecido cheio de história. Seguindo para Nísia Floresta, levamos o nosso carro 4x4 até a Lagoa da Juventude.",
+    "Fora do Nordeste, o Rio de Janeiro ganhou um roteiro completo de 4, 5 ou 7 dias, com pontos turísticos, trilhas e praias, além de indicações de onde comer e onde se hospedar na cidade.",
+  ],
+  "Colômbia": [
+    "Fomos a Medellín sem muitas expectativas, para reencontrar amigos do Francisco que moram lá, e saímos surpresos com tudo o que a cidade oferece. No guia de Medellín reunimos os passeios que fizemos e indicamos: o centro e a Plaza Botero, El Poblado, a Comuna 13, o Pueblito Paisa, o Jardim Botânico, o teleférico e o bate-volta para Guatapé e a Piedra del Peñol.",
+    "Também deixamos sugestões de onde se hospedar com segurança e de restaurantes para provar a culinária paisa. Se a ideia é uma viagem romântica, Cartagena e San Andrés estão na nossa lista de destinos para lua de mel na América do Sul.",
+  ],
+  "Informação": [
+    "Nem todo post daqui é sobre um destino específico. Nesta seção ficam as dicas que ajudam a planejar qualquer viagem, reunidas a partir do que aprendemos na estrada e de pesquisa nas regras das companhias aéreas.",
+    "No guia de bagagem explicamos as medidas da mochila de item pessoal, da mala de mão e da bagagem despachada, o que pode e o que não pode ir em cada uma e quanto costuma custar despachar, sempre lembrando de conferir as regras da sua companhia aérea. Já a lista de destinos para lua de mel reúne nove lugares românticos na América do Sul, de Cartagena a Foz do Iguaçu, com links para os roteiros que já fizemos.",
+  ],
+  "Peru": [
+    "Machu Picchu é um daqueles lugares que todo mundo quer conhecer, mas chegar até lá exige planejamento. No nosso guia explicamos como funcionam os ingressos e os circuitos de visita, e comparamos as três formas mais conhecidas de chegar: o Trekking Salkantay, o caminho da Hidrelétrica, que é a opção mais barata, e o trem.",
+    "Também mostramos como subir de Aguas Calientes até a cidadela, de ônibus ou pela trilha, e reunimos cinco dicas para aproveitar melhor a visita, como comprar o ingresso com antecedência e dormir em Aguas Calientes. Se você vai combinar o Peru com a Bolívia, vale ver também os nossos roteiros bolivianos.",
+  ],
+};
