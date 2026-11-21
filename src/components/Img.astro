@@ -1,20 +1,39 @@
 ---
 // Imagem padrão do site. `alt` é obrigatório: use texto descritivo,
 // ou alt="" junto com decorative para imagens puramente decorativas.
+// Para /images/... aplica width/height reais e srcset das variantes geradas no build.
 import type { HTMLAttributes } from 'astro/types';
+import { responsiveAttrs, SIZES } from '../lib/images.mjs';
 
 type Props = Omit<HTMLAttributes<'img'>, 'alt'> & {
   src: string;
   alt: string;
   decorative?: boolean;
+  /** Layout para o atributo sizes. */
+  layout?: keyof typeof SIZES;
+  /** Imagem principal (LCP): sem lazy e com fetchpriority alta. */
+  priority?: boolean;
 };
 
-const { alt, decorative = false, ...rest } = Astro.props;
+const { alt, decorative = false, layout, priority = false, src, ...rest } = Astro.props;
 if (typeof alt !== 'string') {
-  throw new Error(`[Img] Imagem sem "alt": ${Astro.props.src} (em ${Astro.url.pathname})`);
+  throw new Error(`[Img] Imagem sem "alt": ${src} (em ${Astro.url.pathname})`);
 }
 if (alt.trim() === '' && !decorative) {
-  throw new Error(`[Img] alt vazio em ${Astro.props.src}. Descreva a imagem ou marque decorative.`);
+  throw new Error(`[Img] alt vazio em ${src}. Descreva a imagem ou marque decorative.`);
 }
+const r = responsiveAttrs(src);
+const attrs: Record<string, unknown> = { ...rest };
+if (r) {
+  attrs.width ??= r.width;
+  attrs.height ??= r.height;
+  if (layout) { attrs.srcset = r.srcset; attrs.sizes = SIZES[layout]; }
+}
+if (!attrs.width || !attrs.height) {
+  throw new Error(`[Img] width/height ausentes em ${src}`);
+}
+if (priority) { attrs.fetchpriority = 'high'; attrs.loading = 'eager'; }
+else attrs.loading ??= 'lazy';
+attrs.decoding ??= 'async';
 ---
-<img alt={alt} aria-hidden={decorative ? 'true' : undefined} {...rest} />
+<img src={src} alt={alt} aria-hidden={decorative ? 'true' : undefined} {...attrs} />

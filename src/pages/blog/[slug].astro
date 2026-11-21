@@ -17,7 +17,7 @@ const d = post.data;
 const raw = post.rendered?.html ?? '';
 const toc: { id: string; text: string }[] = [];
 const used = new Set<string>();
-const html = raw.replace(/<h2>(.*?)<\/h2>/g, (_, inner) => {
+const html = raw.replace(/<h2(?: id="[^"]*")?>(.*?)<\/h2>/g, (_, inner) => {
   const text = inner.replace(/<[^>]+>/g, '').trim();
   let id = slugify(text) || 'secao';
   while (used.has(id)) id += '-2';
@@ -75,7 +75,7 @@ const shareText = encodeURIComponent(`${d.title} ${url}`);
             <time datetime={d.date.toISOString()}>{fmtDate(d.date)}</time> · {minutes} min de leitura</span>
         </div>
         <div class="article-cover">
-          <Img src={d.cover} alt={d.title} width="1200" height="800" fetchpriority="high" />
+          <Img src={d.cover} alt={d.title} layout="article" priority />
         </div>
         <div class="prose" set:html={html} />
         <div class="share">

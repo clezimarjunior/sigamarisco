@@ -8,7 +8,7 @@ const d = post.data;
 ---
 <a href={`/blog/${post.id}`} class={featured ? 'featured' : 'card'}>
   <div class="card-img">
-    <Img src={featured ? d.cover : (d.thumb ?? d.cover)} alt={d.title} loading={eager ? 'eager' : 'lazy'} decoding="async" width="800" height="600" />
+    <Img src={featured ? d.cover : (d.thumb ?? d.cover)} alt={d.title} layout={featured ? 'featured' : 'card'} priority={eager} />
   </div>
   <div class="card-body">
     <span class="cat">{d.category}</span>
