@@ -29,7 +29,7 @@ author: "Marina Petrovich"
 
 <p>João Lostau Navarro foi beatificado em 5 de março de 2000 pelo Papa João Paulo II e posteriormente canonizado em 15 de outubro de 2017 pelo Papa Francisco. Ele é reconhecido como um dos Mártires de Cunhaú e Uruaçu e é considerado o &quot;Protomártir do Brasil&quot;. Além disso, João Lostau é honrado como patrono do estado do Rio Grande do Norte.</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/ruinas-de-sao-joao-lostau-em-pium-rn/ruinas-de-sao-joao-lostau-em-pium-rn-2.webp"/></div><figcaption>Ruínas de São João Lostau, RN | Foto: Siga Marisco</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Paredes de pedra das Ruínas de São João Lostau, em Pium, RN" src="/images/blog/ruinas-de-sao-joao-lostau-em-pium-rn/ruinas-de-sao-joao-lostau-em-pium-rn-2.webp"/></div><figcaption>Ruínas de São João Lostau, RN | Foto: Siga Marisco</figcaption></figure>
 
 <p>As comemorações em sua memória ocorrem em duas datas: 16 de julho em Canguaretama e 3 de outubro em São Gonçalo do Amarante, sendo esta última um feriado estadual estabelecido pela lei Nº 8.913/2006.</p>
 
@@ -47,7 +47,7 @@ author: "Marina Petrovich"
 
 <p>As ruínas estão localizadas em uma propriedade privada, por isso é recomendável que, caso encontre o portão fechado ao chegar, procure informar a alguém que você está lá para visitar.</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/ruinas-de-sao-joao-lostau-em-pium-rn/ruinas-de-sao-joao-lostau-em-pium-rn-3.webp"/></div></figure>
+<figure class="img"><div><img loading="lazy" alt="Janela em arco nas paredes de pedra das Ruínas de São João Lostau" src="/images/blog/ruinas-de-sao-joao-lostau-em-pium-rn/ruinas-de-sao-joao-lostau-em-pium-rn-3.webp"/></div></figure>
 
 <h2>Informações importantes</h2>
 

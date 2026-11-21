@@ -57,7 +57,7 @@ author: "Marina Petrovich"
 
 <h3>Caminho da hidrelétrica </h3>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/como-chegar-em-machu-picchu/05.webp"/></div></figure>
+<figure class="img"><div><img loading="lazy" alt="Placa indicando a Hidrelétrica e Machu Picchu (Aguas Calientes) no início da trilha pela linha do trem" src="/images/blog/como-chegar-em-machu-picchu/05.webp"/></div></figure>
 
 <p>Essa é a<strong> opção mais barata para chegar em Machu Picchu. </strong>O caminho da Hidrelétrica consiste em você pegar um transporte que te deixe na Hidrelétrica e de lá fazer uma caminha de mais ou menos 10 Km até chegar em Aguas Calientes. </p>
 
@@ -69,7 +69,7 @@ author: "Marina Petrovich"
 
 <p>Ressaltamos, que você deve ter cuidado com o trem,  escolha sempre andar pelas laterais do trilho e só ande pelo meio quando tiver necessidade para passar em alguns locais. </p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/como-chegar-em-machu-picchu/03.webp"/></div></figure>
+<figure class="img"><div><img loading="lazy" alt="Trilha ao lado dos trilhos do trem no caminho da Hidrelétrica até Aguas Calientes, Peru" src="/images/blog/como-chegar-em-machu-picchu/03.webp"/></div></figure>
 
 <p><strong>Dica bônus: </strong>Se você tiver a oportunidade, escolha sair de Ollantaytambo. E como fazer isso? Bom, compre o passeio para o Valle Sagrado um dia antes, faça todo o percurso, e quando chegar em Ollantaytambo fique. Durma uma noite e avise a agência para te buscar lá. Assim, você economiza duas horas de estrada e ainda curte essa região belíssima.</p>
 
@@ -115,9 +115,9 @@ author: "Marina Petrovich"
 
 <h2>5 dicas para aproveitar Machu Picchu</h2>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/como-chegar-em-machu-picchu/01.webp"/></div></figure>
+<figure class="img"><div><img loading="lazy" alt="Marina e Francisco no mirante de Machu Picchu, com Huayna Picchu ao fundo" src="/images/blog/como-chegar-em-machu-picchu/01.webp"/></div></figure>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/como-chegar-em-machu-picchu/02.webp"/></div></figure>
+<figure class="img"><div><img loading="lazy" alt="Selfie do casal em frente ao letreiro de Machu Picchu em Aguas Calientes, Peru" src="/images/blog/como-chegar-em-machu-picchu/02.webp"/></div></figure>
 
 <h3>1. Compre seus ingressos com antecedência</h3>
 

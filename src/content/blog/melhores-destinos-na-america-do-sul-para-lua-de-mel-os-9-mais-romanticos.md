@@ -53,7 +53,7 @@ author: "Marina Petrovich"
 
 <p>‍</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/melhores-destinos-na-america-do-sul-para-lua-de-mel-os-9-mais-romanticos/vmu0bazbrqizzxaqoe1g67-bvat1ufyrlo97ibu-piisoxfss5rjzazvqkaboxbbnyuaahu3ci2vu8zi0lbuiowwz3vyj9qdystyis-duvorf017x9lgyeuoqo-6yfcfe5s-abz4yu5t5homkvmk6he.webp"/></div><figcaption>Luján de Cuyo, Argentina | Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Lago entre montanhas em Luján de Cuyo, Mendoza, Argentina" src="/images/blog/melhores-destinos-na-america-do-sul-para-lua-de-mel-os-9-mais-romanticos/vmu0bazbrqizzxaqoe1g67-bvat1ufyrlo97ibu-piisoxfss5rjzazvqkaboxbbnyuaahu3ci2vu8zi0lbuiowwz3vyj9qdystyis-duvorf017x9lgyeuoqo-6yfcfe5s-abz4yu5t5homkvmk6he.webp"/></div><figcaption>Luján de Cuyo, Argentina | Foto: Siga Marisco.</figcaption></figure>
 
 <p>‍</p>
 
@@ -67,7 +67,7 @@ author: "Marina Petrovich"
 
 <p>‍</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/melhores-destinos-na-america-do-sul-para-lua-de-mel-os-9-mais-romanticos/hhnlfryputyiebzdhq3yzoodrghmk2opuh-wt06wdxwlqwmdooixihwxwbymlhoyqxwwd1uaepv01lf8b4l-saptqnlk7lo1u6f7gx-rnvyt5yf8pqum3zrjh7hi3y7vsyv6kjb5n5scbfl-puxvg88.webp"/></div><figcaption>Piedras Blancas, Bariloche, Argnetina | Foto: Siga Marisco</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Neve no Cerro Piedras Blancas, em Bariloche, Argentina" src="/images/blog/melhores-destinos-na-america-do-sul-para-lua-de-mel-os-9-mais-romanticos/hhnlfryputyiebzdhq3yzoodrghmk2opuh-wt06wdxwlqwmdooixihwxwbymlhoyqxwwd1uaepv01lf8b4l-saptqnlk7lo1u6f7gx-rnvyt5yf8pqum3zrjh7hi3y7vsyv6kjb5n5scbfl-puxvg88.webp"/></div><figcaption>Piedras Blancas, Bariloche, Argnetina | Foto: Siga Marisco</figcaption></figure>
 
 <p>No verão, é possível desfrutar de passeios de barco, pesca e banhos de sol nas praias de areia branca. </p>
 
@@ -83,7 +83,7 @@ author: "Marina Petrovich"
 
 <p>‍</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/melhores-destinos-na-america-do-sul-para-lua-de-mel-os-9-mais-romanticos/r0jsoknvsnykgxn-cwgjbbugpdswnxhfff5nyo9-urjrvpt7emd61qfprikadjprymjem5aciusz0idv-winsbdzsfii-joilaz1qwaoa0orte5s9qmai8m0ik4gbhco94g-p8xm50r8ktjpw5grzre.webp"/></div><figcaption>Mercado de las Brujas, La Paz, Bolívia | Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Mercado de las Brujas, em La Paz, Bolívia" src="/images/blog/melhores-destinos-na-america-do-sul-para-lua-de-mel-os-9-mais-romanticos/r0jsoknvsnykgxn-cwgjbbugpdswnxhfff5nyo9-urjrvpt7emd61qfprikadjprymjem5aciusz0idv-winsbdzsfii-joilaz1qwaoa0orte5s9qmai8m0ik4gbhco94g-p8xm50r8ktjpw5grzre.webp"/></div><figcaption>Mercado de las Brujas, La Paz, Bolívia | Foto: Siga Marisco.</figcaption></figure>
 
 <p>‍</p>
 
@@ -101,7 +101,7 @@ author: "Marina Petrovich"
 
 <p>A sua visita pode tornar-se ainda mais romântica se escolher se hospedar no <a href="/blog/hotel-palacio-de-sal-nossa-experiencia-no-primeiro-hotel-de-sal-do-mundo">Palácio de Sal</a>, o primeiro hotel de sal do mundo, essa é uma experiência romântica e confortável para os noivos.</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/melhores-destinos-na-america-do-sul-para-lua-de-mel-os-9-mais-romanticos/img-5608.webp"/></div><figcaption>Salar do Uyuni | Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Casal sobre o espelho d&#x27;água do Salar do Uyuni, Bolívia" src="/images/blog/melhores-destinos-na-america-do-sul-para-lua-de-mel-os-9-mais-romanticos/img-5608.webp"/></div><figcaption>Salar do Uyuni | Foto: Siga Marisco.</figcaption></figure>
 
 <p>Os casais podem desfrutar de<a href="/blog/passeio-salar-do-uyuni-bolivia"> passeios de carros 4x4 pelo Salar</a>, contemplando o espetáculo das planícies brancas estendendo-se até o horizonte, especialmente durante o pôr do sol, quando o céu se transforma em um espetáculo de cores deslumbrantes. </p>
 
@@ -119,7 +119,7 @@ author: "Marina Petrovich"
 
 <p>Os casais podem explorar os bairros históricos, como o encantador Centro Histórico, onde encontrarão belos edifícios coloniais e ruas de paralelepípedos que contam a história rica do país.  </p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/melhores-destinos-na-america-do-sul-para-lua-de-mel-os-9-mais-romanticos/upevvlllkbyzqqzpjdtz4-hsd2zm3estoymy95ojqwh3wjp9kpe0je-rmzfq2rdnl1lwttysqjm6xjqwjdqpo-rnsnetklfresbhs4ia2gu7mhddzo-lqlpjsncy-ro8dl0ve5juvk0v8iuoezeqod8.webp"/></div><figcaption>Centro de Lima, Peru | Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Centro histórico de Lima, Peru" src="/images/blog/melhores-destinos-na-america-do-sul-para-lua-de-mel-os-9-mais-romanticos/upevvlllkbyzqqzpjdtz4-hsd2zm3estoymy95ojqwh3wjp9kpe0je-rmzfq2rdnl1lwttysqjm6xjqwjdqpo-rnsnetklfresbhs4ia2gu7mhddzo-lqlpjsncy-ro8dl0ve5juvk0v8iuoezeqod8.webp"/></div><figcaption>Centro de Lima, Peru | Foto: Siga Marisco.</figcaption></figure>
 
 <p>‍</p>
 
@@ -137,7 +137,7 @@ author: "Marina Petrovich"
 
 <p>‍</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/melhores-destinos-na-america-do-sul-para-lua-de-mel-os-9-mais-romanticos/gkwibt9-aus-utwjf6mdjkzco4oqmmm-mr-z70vxadedhidsyoymyheu3fbwckfiilpyxvdlcw5dwiqzinc9-h9n7ylzs0ilpdbi-d9rvhscrib791levcrbgfvmz-47d5qd6ldazc6aisavw-o4f4w.webp"/></div><figcaption>Machu Picchu, Peru | Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Marina em Machu Picchu com as ruínas e o Huayna Picchu ao fundo" src="/images/blog/melhores-destinos-na-america-do-sul-para-lua-de-mel-os-9-mais-romanticos/gkwibt9-aus-utwjf6mdjkzco4oqmmm-mr-z70vxadedhidsyoymyheu3fbwckfiilpyxvdlcw5dwiqzinc9-h9n7ylzs0ilpdbi-d9rvhscrib791levcrbgfvmz-47d5qd6ldazc6aisavw-o4f4w.webp"/></div><figcaption>Machu Picchu, Peru | Foto: Siga Marisco.</figcaption></figure>
 
 <p>‍</p>
 
@@ -189,7 +189,7 @@ author: "Marina Petrovich"
 
 <p>Os casais podem explorar as passarelas panorâmicas que oferecem vistas deslumbrantes das quedas d&#x27;água imponentes, com seus arco-íris deslumbrantes e uma atmosfera de mistério e grandiosidade. Passeios de barco até as quedas e trilhas pela mata oferecem uma perspectiva única das cataratas, permitindo que os recém-casados vivenciem sua beleza de perto.</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/melhores-destinos-na-america-do-sul-para-lua-de-mel-os-9-mais-romanticos/img-6094.webp"/></div><figcaption>Foz do Iguaçu | Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Cataratas de Foz do Iguaçu, Paraná" src="/images/blog/melhores-destinos-na-america-do-sul-para-lua-de-mel-os-9-mais-romanticos/img-6094.webp"/></div><figcaption>Foz do Iguaçu | Foto: Siga Marisco.</figcaption></figure>
 
 <p>Além das Cataratas do Iguaçu, a região de Foz oferece uma diversidade impressionante de flora e fauna. Os casais podem explorar o Parque Nacional do Iguaçu, lar de uma rica biodiversidade, com oportunidades para avistar animais selvagens, como aves tropicais coloridas, borboletas exóticas e até mesmo jaguatiricas. </p>
 

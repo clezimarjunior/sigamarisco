@@ -29,7 +29,7 @@ author: "Marina Petrovich"
 
 <p>Por mais que tivéssemos que sempre estar atento, é uma região que merece estar no seu roteiro. Afinal, é lá que fica a Plaza Botero com as famosas estátuas. Além disso, para comprar souvenirs, o centro se torna um dos lugares mais baratos.</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-em-medellin/img-5770.webp"/></div><figcaption>Plaza Botero, Medellín | Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Casal ao lado de uma das esculturas de Botero na Plaza Botero, centro de Medellín" src="/images/blog/o-que-fazer-em-medellin/img-5770.webp"/></div><figcaption>Plaza Botero, Medellín | Foto: Siga Marisco.</figcaption></figure>
 
 <p>A minha sugestão é que você contrate um city tour ou  um &quot;<strong>Free Walking Tour</strong>&quot;, normalmente oferecidos em hostels.</p>
 
@@ -49,13 +49,13 @@ author: "Marina Petrovich"
 
 <p>ESe eu puder lhe dar mais uma sugestão é: hospede-se e  aproveite a energia do &quot;El Poblado&quot;. Essa é a região mais badalada  de Medellin.</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-em-medellin/img-5478.webp"/></div><figcaption>El Poblado, Medellín | Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Casal em frente ao mural &quot;Medellín es una chimba&quot;, em El Poblado" src="/images/blog/o-que-fazer-em-medellin/img-5478.webp"/></div><figcaption>El Poblado, Medellín | Foto: Siga Marisco.</figcaption></figure>
 
 <p>‍<br/><br/>À medida que anoitece, a vida noturna de El Poblado ganha vida, com uma variedade de bares e clubes que proporcionam experiências inesquecíveis. <br/></p>
 
 <p>Seja para apreciar a música local, dançar ao ritmo de salsa contagiante ou simplesmente desfrutar de um coquetel sob as estrelas, a diversão noturna aqui é inigualável.</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-em-medellin/img-5463.webp"/></div><figcaption>El Poblado, Medellín | Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Caminho arborizado em El Poblado, Medellín" src="/images/blog/o-que-fazer-em-medellin/img-5463.webp"/></div><figcaption>El Poblado, Medellín | Foto: Siga Marisco.</figcaption></figure>
 
 <p>‍</p>
 
@@ -69,7 +69,7 @@ author: "Marina Petrovich"
 
 <p>Nós tivemos a sorte de conhecer a região com uma Paísa (como chamam pessoas que nascem em Medellín), isso foi essencial para não cairmos em golpes de &quot;pega turista&quot; que tem muito por lá.</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-em-medellin/img-5723.webp"/></div><figcaption>Comuna 13, Medellín | Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Grafites coloridos ao lado das escadas da Comuna 13, em Medellín" src="/images/blog/o-que-fazer-em-medellin/img-5723.webp"/></div><figcaption>Comuna 13, Medellín | Foto: Siga Marisco.</figcaption></figure>
 
 <p>Para chegar, pegamos um metrô até a estação <em>San Javier, </em>depois pegamos um teleférico e subimos até a última estação, que se chama <em>Aurora</em>, para ter uma vista de cima da cidade, por sinal, uma bela vista!</p>
 
@@ -81,7 +81,7 @@ author: "Marina Petrovich"
 
 <p>Essa vilinha antioquena tem uma bela arquitetura, é um local bem instragramável e ótimo para um passeio pelo fim da manhã, início da tarde, afinal, lá tem um restaurante com comidas típicas deliciosas, o Restaurante<em> Tradición Paisa </em>que vamos falar dele mais a frente.</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-em-medellin/img-5604.webp"/></div><figcaption>Pueblito Paisa, Medellín | Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Praça com chafariz e casario colonial no Pueblito Paisa, Medellín" src="/images/blog/o-que-fazer-em-medellin/img-5604.webp"/></div><figcaption>Pueblito Paisa, Medellín | Foto: Siga Marisco.</figcaption></figure>
 
 <h3>Jardim Botânico de Medellín</h3>
 
@@ -109,17 +109,17 @@ author: "Marina Petrovich"
 
 <p>Você se transporta para as vilas de praia do Brasil, lembrou muito as ruas principais de Pipa, São Miguel do Gostoso, Arrial D&#x27; Ajuda. A rua mais fotogenica é toda colorida e cheia de sombrinhas!</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-em-medellin/img-0779.webp"/></div><figcaption>Guatapé | Foto: Siga Marisco</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Selfie com amigos em rua colorida decorada com guarda-chuvas em Guatapé, Colômbia" src="/images/blog/o-que-fazer-em-medellin/img-0779.webp"/></div><figcaption>Guatapé | Foto: Siga Marisco</figcaption></figure>
 
 <p>‍</p>
 
 <p>Já a  Pedra do Peñol é um cartão postal da região, com 220 metros de altura e uma escadaria de 649 degraus, é possível subir para contemplar uma vista panorâmica da represa El Peñol.</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-em-medellin/img-5875.webp"/></div><figcaption>Pedra del Peñol | Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Piedra del Peñol, a grande rocha de Guatapé, Colômbia" src="/images/blog/o-que-fazer-em-medellin/img-5875.webp"/></div><figcaption>Pedra del Peñol | Foto: Siga Marisco.</figcaption></figure>
 
 <p>‍</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-em-medellin/img-0843.webp"/></div><figcaption>Vista de cima da Pedra del Peñol | Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Casal no alto da Piedra del Peñol com vista para a represa de Guatapé" src="/images/blog/o-que-fazer-em-medellin/img-0843.webp"/></div><figcaption>Vista de cima da Pedra del Peñol | Foto: Siga Marisco.</figcaption></figure>
 
 <p>A minha sugestão de roteiro para  Guatapé é de passar o final de semana.  Você tem a opção de fazer a Piedra del Peñol assim que chegar, como primeira atração, depois vai para Guatapé e aproveite a vila. Ou, como nós fizemos, descer em Guatapé, aproveitar a vila e na manhã do segundo dia (já retornando) para na Pedra.</p>
 
@@ -131,7 +131,7 @@ author: "Marina Petrovich"
 
 <h3>Selina Medellín</h3>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-em-medellin/489837804.webp"/></div><figcaption>Selina Medellín | Foto: <a href="https://www.booking.com/hotel/co/selina-medellin-america.pt.html?aid=311840&amp;label=selina-medellin-america-PIn8EPiI45vFAID*0u90igS507584374510%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atiaud-297601666555%3Akwd-321129709566%3Alp1001662%3Ali%3Adec%3Adm&amp;ws=&amp;gad_source=1&amp;gclid=CjwKCAiAzc2tBhA6EiwArv-i6QfogRfGRr5MVZT5mQKMchiW0BSH6rSWHum-TK0hSclrpmrj4LVKFxoCOskQAvD_BwE&amp;activeTab=photosGallery">Booking</a></figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Quarto do hostel Selina Medellín" src="/images/blog/o-que-fazer-em-medellin/489837804.webp"/></div><figcaption>Selina Medellín | Foto: <a href="https://www.booking.com/hotel/co/selina-medellin-america.pt.html?aid=311840&amp;label=selina-medellin-america-PIn8EPiI45vFAID*0u90igS507584374510%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atiaud-297601666555%3Akwd-321129709566%3Alp1001662%3Ali%3Adec%3Adm&amp;ws=&amp;gad_source=1&amp;gclid=CjwKCAiAzc2tBhA6EiwArv-i6QfogRfGRr5MVZT5mQKMchiW0BSH6rSWHum-TK0hSclrpmrj4LVKFxoCOskQAvD_BwE&amp;activeTab=photosGallery">Booking</a></figcaption></figure>
 
 <p>O <a href="https://www.booking.com/Share-BJo7am">Selina Medellín</a> é um hostel moderno e bem localizado, a poucos passos do Parque Lleras e do Parque El Poblado. O hostel oferece quartos compartilhados e privados, além de uma variedade de comodidades, incluindo coworking, restaurante, sala de cinema e festas.</p>
 
@@ -139,13 +139,13 @@ author: "Marina Petrovich"
 
 <h3>Celestino Boutique Hotel</h3>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-em-medellin/173913219.webp"/></div><figcaption>Celestino Boutique Hotel | Foto: <a href="https://www.booking.com/hotel/co/celestino.pt-pt.html?aid=311840&amp;label=selina-medellin-america-PIn8EPiI45vFAID*0u90igS507584374510%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atiaud-297601666555%3Akwd-321129709566%3Alp1001662%3Ali%3Adec%3Adm&amp;sid=4145b6d790d009be5361f0366c9b1491&amp;all_sr_blocks=419281004_379497946_2_2_0&amp;checkin=2024-10-19&amp;checkout=2024-10-22&amp;dest_id=4192810&amp;dest_type=hotel&amp;dist=0&amp;group_adults=2&amp;group_children=0&amp;hapos=1&amp;highlighted_blocks=419281004_379497946_2_2_0&amp;hpos=1&amp;matching_block_id=419281004_379497946_2_2_0&amp;no_rooms=1&amp;req_adults=2&amp;req_children=0&amp;room1=A%2CA&amp;sb_price_type=total&amp;sr_order=popularity&amp;sr_pri_blocks=419281004_379497946_2_2_0__147900000&amp;srepoch=1706294819&amp;srpvid=76eb840441ba018e&amp;type=total&amp;ucfs=1&amp;activeTab=photosGallery">Booking</a></figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Quarto do Celestino Boutique Hotel, em Medellín" src="/images/blog/o-que-fazer-em-medellin/173913219.webp"/></div><figcaption>Celestino Boutique Hotel | Foto: <a href="https://www.booking.com/hotel/co/celestino.pt-pt.html?aid=311840&amp;label=selina-medellin-america-PIn8EPiI45vFAID*0u90igS507584374510%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atiaud-297601666555%3Akwd-321129709566%3Alp1001662%3Ali%3Adec%3Adm&amp;sid=4145b6d790d009be5361f0366c9b1491&amp;all_sr_blocks=419281004_379497946_2_2_0&amp;checkin=2024-10-19&amp;checkout=2024-10-22&amp;dest_id=4192810&amp;dest_type=hotel&amp;dist=0&amp;group_adults=2&amp;group_children=0&amp;hapos=1&amp;highlighted_blocks=419281004_379497946_2_2_0&amp;hpos=1&amp;matching_block_id=419281004_379497946_2_2_0&amp;no_rooms=1&amp;req_adults=2&amp;req_children=0&amp;room1=A%2CA&amp;sb_price_type=total&amp;sr_order=popularity&amp;sr_pri_blocks=419281004_379497946_2_2_0__147900000&amp;srepoch=1706294819&amp;srpvid=76eb840441ba018e&amp;type=total&amp;ucfs=1&amp;activeTab=photosGallery">Booking</a></figcaption></figure>
 
 <p>O <a href="https://www.booking.com/Share-o1mekC">Celestino Boutique Hotel</a> é a nossa indicação mais cara, um hotel elegante e luxuoso, localizado no coração de El Poblado. O hotel oferece quartos e suites espaçosos, além de uma variedade de comodidades, incluindo piscina, spa e restaurante. </p>
 
 <h3>Los Patios Hostel</h3>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-em-medellin/328386907.webp"/></div><figcaption>Los Patios Hostel | Foto: <a href="https://www.booking.com/hotel/co/los-patios-hostal-boutique.pt-pt.html?aid=311840&amp;label=selina-medellin-america-PIn8EPiI45vFAID*0u90igS507584374510%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atiaud-297601666555%3Akwd-321129709566%3Alp1001662%3Ali%3Adec%3Adm&amp;sid=4145b6d790d009be5361f0366c9b1491&amp;all_sr_blocks=213788536_212761823_0_0_0&amp;checkin=2024-10-19&amp;checkout=2024-10-22&amp;dist=0&amp;group_adults=2&amp;group_children=0&amp;hapos=3&amp;highlighted_blocks=213788536_212761823_0_0_0&amp;hpos=3&amp;matching_block_id=213788536_212761823_0_0_0&amp;no_rooms=1&amp;req_adults=2&amp;req_children=0&amp;room1=A%2CA&amp;sb_price_type=total&amp;sr_order=popularity&amp;sr_pri_blocks=213788536_212761823_0_0_0__117860197&amp;srepoch=1706294910&amp;srpvid=2454843c8d260117&amp;type=total&amp;ucfs=1&amp;activeTab=photosGallery">Booking</a></figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Quarto do Los Patios Hostel, em Medellín" src="/images/blog/o-que-fazer-em-medellin/328386907.webp"/></div><figcaption>Los Patios Hostel | Foto: <a href="https://www.booking.com/hotel/co/los-patios-hostal-boutique.pt-pt.html?aid=311840&amp;label=selina-medellin-america-PIn8EPiI45vFAID*0u90igS507584374510%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atiaud-297601666555%3Akwd-321129709566%3Alp1001662%3Ali%3Adec%3Adm&amp;sid=4145b6d790d009be5361f0366c9b1491&amp;all_sr_blocks=213788536_212761823_0_0_0&amp;checkin=2024-10-19&amp;checkout=2024-10-22&amp;dist=0&amp;group_adults=2&amp;group_children=0&amp;hapos=3&amp;highlighted_blocks=213788536_212761823_0_0_0&amp;hpos=3&amp;matching_block_id=213788536_212761823_0_0_0&amp;no_rooms=1&amp;req_adults=2&amp;req_children=0&amp;room1=A%2CA&amp;sb_price_type=total&amp;sr_order=popularity&amp;sr_pri_blocks=213788536_212761823_0_0_0__117860197&amp;srepoch=1706294910&amp;srpvid=2454843c8d260117&amp;type=total&amp;ucfs=1&amp;activeTab=photosGallery">Booking</a></figcaption></figure>
 
 <p>O <a href="https://www.booking.com/Share-VaUDi3">Los Patios Hostel</a> é um hostel econômico e acolhedor, localizado em uma área tranquila de El Poblado. O hostel oferece quartos compartilhados e privados, além de uma variedade de comodidades, incluindo piscina, churrasqueira e cozinha compartilhada. </p>
 
@@ -159,7 +159,7 @@ author: "Marina Petrovich"
 
 <h3>Restaurante Tradición Paisa</h3>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-em-medellin/img-5618.webp"/></div><figcaption>Prato Bandeja Paisa, Tradicíon Paisa | Foto: Siga Marisco</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Bandeja paisa servida no restaurante Tradición Paisa, em Medellín" src="/images/blog/o-que-fazer-em-medellin/img-5618.webp"/></div><figcaption>Prato Bandeja Paisa, Tradicíon Paisa | Foto: Siga Marisco</figcaption></figure>
 
 <p>Este é o restaurante que comentamos que fica dentro do &quot;Pueblito Paisa&quot;.</p>
 
@@ -167,7 +167,7 @@ author: "Marina Petrovich"
 
 <h3>Crepes &amp; Waffles</h3>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-em-medellin/img-5396.webp"/></div><figcaption>Crepes &amp; Waffles, Medellín | Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Crepe servido no restaurante Crepes &amp; Waffles, em Medellín" src="/images/blog/o-que-fazer-em-medellin/img-5396.webp"/></div><figcaption>Crepes &amp; Waffles, Medellín | Foto: Siga Marisco.</figcaption></figure>
 
 <p>Esse nos impressionou. O nome não parece, mas é um restaurante Colombiano considerado mais &quot;sofisticado&quot; . O Crepes &amp; Waffles é uma rede de restaurantes que serve crepes, waffles e outros pratos doces e salgados. O restaurante é uma ótima opção para quem procura uma refeição rápida e saborosa. </p>
 
@@ -177,9 +177,9 @@ author: "Marina Petrovich"
 
 <p>Antes de Finalizar esse blog, queremos deixar o nosso agradecimento a Lina, Jonathan e Vanessa, os melhores amigos paisas que fizeram dessa experiência inesquecível.</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-em-medellin/img-5393.webp"/></div><figcaption>Com nossos amigos Lina e Jonahtan | Foto: Siga Marisco. </figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Casal com os amigos Lina e Jonahtan em um restaurante de Medellín" src="/images/blog/o-que-fazer-em-medellin/img-5393.webp"/></div><figcaption>Com nossos amigos Lina e Jonahtan | Foto: Siga Marisco. </figcaption></figure>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-em-medellin/img-0762.webp"/></div><figcaption>Com nossa amiga Vanessa em Guatapé | Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Casal com a amiga Vanessa nas ruas coloridas de Guatapé" src="/images/blog/o-que-fazer-em-medellin/img-0762.webp"/></div><figcaption>Com nossa amiga Vanessa em Guatapé | Foto: Siga Marisco.</figcaption></figure>
 
 <p>‍</p>
 

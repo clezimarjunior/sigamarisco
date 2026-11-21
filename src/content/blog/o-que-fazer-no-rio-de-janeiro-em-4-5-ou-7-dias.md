@@ -31,13 +31,13 @@ author: "Marina Petrovich"
 
 <h4>Dia 1 </h4>
 
-<h5>Cristo Redentor</h5><figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/img-0927-1.webp"/></div><figcaption>Cristo Redentor, Rio de Janeiro | Foto: Siga Marisco</figcaption></figure>
+<h5>Cristo Redentor</h5><figure class="img"><div><img loading="lazy" alt="Selfie do casal aos pés do Cristo Redentor, Rio de Janeiro" src="/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/img-0927-1.webp"/></div><figcaption>Cristo Redentor, Rio de Janeiro | Foto: Siga Marisco</figcaption></figure>
 
 <p>Assim que chegamos em um lugar novo, a primeira coisa que buscamos fazer é conhecer logo o principal ponto turístico. Por isso, a minha dica é ir direto ao Cristo Redentor. </p>
 
 <p>Chegando na entrada do Cristo, você compra<a href="https://ingressos.paineirascorcovado.com.br/"> o ingresso</a> (custa R$55,00) e espera o seu turno para pegar a van. A subida até o Cristo, dura mais ou menos 10 min de van e só o transfer do local faz esse caminho. </p>
 
-<h5>Pão de açúcar</h5><figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/img-0538-1.webp"/></div><figcaption>Pão de Açúcar, Rio de Janeiro | Foto: Siga Marisco</figcaption></figure>
+<h5>Pão de açúcar</h5><figure class="img"><div><img loading="lazy" alt="Vista da Baía de Guanabara do alto do Pão de Açúcar, Rio de Janeiro" src="/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/img-0538-1.webp"/></div><figcaption>Pão de Açúcar, Rio de Janeiro | Foto: Siga Marisco</figcaption></figure>
 
 <p>‍</p>
 
@@ -47,7 +47,7 @@ author: "Marina Petrovich"
 
 <h5>Shopping Botafogo</h5><p>Caso não espere para ver o pôr do sol no Pão de Açúcar, indico que faça uma parada no Shopping Botafogo que fica bem próximo aos bondinhos. </p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/img-0554-1.webp"/></div><figcaption>Shopping Botafogo com vista para o Pão de Açúcar | Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Pão de Açúcar visto da janela do Botafogo Praia Shopping" src="/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/img-0554-1.webp"/></div><figcaption>Shopping Botafogo com vista para o Pão de Açúcar | Foto: Siga Marisco.</figcaption></figure>
 
 <p>Da praça de alimentação, você vai ter uma vista incrível da Cidade do Rio de Janeiro sem pagar nada e ainda conta com várias opções de comida.<br/>‍</p>
 
@@ -63,7 +63,7 @@ author: "Marina Petrovich"
 
 <p>Para saber mais detalhes <a href="https://www.bondesdesantateresa.rj.gov.br/">acesse aqui</a>.</p>
 
-<h5>Escadaria Selaron</h5><figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/img-0809-1.webp"/></div><figcaption>Escadaria Selaron, Rio de Janeiro - RJ | Foto: Siga Marisco</figcaption></figure>
+<h5>Escadaria Selaron</h5><figure class="img"><div><img loading="lazy" alt="Degraus coloridos da Escadaria Selarón, na Lapa, Rio de Janeiro" src="/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/img-0809-1.webp"/></div><figcaption>Escadaria Selaron, Rio de Janeiro - RJ | Foto: Siga Marisco</figcaption></figure>
 
 <h5>‍<br/>Após descer do Bonde de Santa Teresa, você pode ir até o Escadaria Selarón tirar as famosas fotos nas escadas coloridas. </h5><p>Indico também almoçar por lá. Em frente a escadaria tem ótimos restaurantes de comidas típicas cariocas, com preço bom e muito bem servidas.</p>
 
@@ -75,7 +75,7 @@ author: "Marina Petrovich"
 
 <h5>Angra dos Reis ou Arraial do cabo</h5><p>No dia 03, você pode escolher fazer o passeio de Angra dos Reis ou de Arraial do Cabo. Mas, para fazer uma boa escolha, vou te apresentar detalhes:</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/img-20210130-wa0178-1.webp"/></div><figcaption>Arraial do Cabo - Rio de Janeiro | Foto: Siga Marisco</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Mirante sobre o mar azul de Arraial do Cabo, RJ" src="/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/img-20210130-wa0178-1.webp"/></div><figcaption>Arraial do Cabo - Rio de Janeiro | Foto: Siga Marisco</figcaption></figure>
 
 <ul><li><strong>Angra dos Reis:</strong> O passeio é mais curto, pois é perto da capital Carioca, além disso não é prejudicado pela maré e tem paradas no meio do mar para mergulho. No entanto, recomendo este passeio para quem sabe nadar, pois vai conseguir aproveitar melhor os pontos turísticos.</li><li><strong>Arraial do Cabo: </strong>Lá você vai ter diversas opções de praias e o famoso passeio de barco. No entanto, a saída dos barcos depende dos ventos. Dessa forma, pode ser que ao chegar você não consiga realizar o passeio (o que aconteceu comigo). Mas, foi tão legal quanto. Passamos pela Praia do Forno e a Praia do Atalaia (onde fica a famosa escadaria de madeira).</li></ul>
 
@@ -83,7 +83,7 @@ author: "Marina Petrovich"
 
 <h4>Parque lage</h4>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias-1.webp"/></div><figcaption>Parque Lage, Rio de Janeiro | Foto: Siga Marisco</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Palacete do Parque Lage com o Corcovado ao fundo, Rio de Janeiro" src="/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias-1.webp"/></div><figcaption>Parque Lage, Rio de Janeiro | Foto: Siga Marisco</figcaption></figure>
 
 <p>A primeira parada no seu quarto dia na cidade maravilhosa é no Parque Lage.</p>
 
@@ -91,7 +91,7 @@ author: "Marina Petrovich"
 
 <h5>Museu do amanhã</h5><p>Apesar de muitas pessoas passarem apenas em frente a ele para tirar foto com a sua arquitetura diferente, sugiro a visita interna. O museu é bem interessante e conta com exposições futuristas.</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/img-1083-1.webp"/></div><figcaption>Museu do Amanhã, Rio de Janeiro | Foto: Siga Marisco</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Museu do Amanhã, na Praça Mauá, Rio de Janeiro" src="/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/img-1083-1.webp"/></div><figcaption>Museu do Amanhã, Rio de Janeiro | Foto: Siga Marisco</figcaption></figure>
 
 <p>‍</p>
 
@@ -133,7 +133,7 @@ author: "Marina Petrovich"
 
 <h4>Dia 7</h4>
 
-<h5>Maracanã</h5><figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/img-1135-1-compressed.webp"/></div><figcaption>Maracanã, RJ | Foto: Siga Marisco</figcaption></figure>
+<h5>Maracanã</h5><figure class="img"><div><img loading="lazy" alt="Estádio do Maracanã, no Rio de Janeiro" src="/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/img-1135-1-compressed.webp"/></div><figcaption>Maracanã, RJ | Foto: Siga Marisco</figcaption></figure>
 
 <p>O Maracanã é um ótimo passeio para os amantes de futebol, conta toda a história do futebol brasileiro, os maiores momentos e com um museu de camisas, chuteiras e bolas utilizadas pelos maiores jogadores brasileiros.</p>
 
@@ -143,7 +143,7 @@ author: "Marina Petrovich"
 
 <h5>Sapucaí</h5><p>Depois, você pode passar e conhecer a Sapucaí. Normalmente você só consegue ver a estrutura de onde saem as escolas de samba. Mas para quem gosta de carnaval, vale a pena uma passagem rápida para observar a grandeza do sambódromo.</p>
 
-<h5>Leblon</h5><figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/img-1184-1.webp"/></div><figcaption>Praia do Leblon, Rio de Janeiro | Foto: Siga Marisco</figcaption></figure>
+<h5>Leblon</h5><figure class="img"><div><img loading="lazy" alt="Praia do Leblon, no Rio de Janeiro" src="/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/img-1184-1.webp"/></div><figcaption>Praia do Leblon, Rio de Janeiro | Foto: Siga Marisco</figcaption></figure>
 
 <p>Para fechar, pode passear pelo fim de tarde e aproveitar para jantar na região do Leblon. Uma das áreas mais sofisticadas do Rio com várias lojas, shoppings e restaurantes diversos.</p>
 
@@ -163,7 +163,7 @@ author: "Marina Petrovich"
 
 <p>‍</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/eyiayrfb7iq0swj8siyuec8l-9z-bahkideyhb87rollcggmay-4wdr31hjpcxlvznxlhhywoypmo4ebgpotafquir-sutqf2tb3y3ygfeyldyeghhllzftawh7hgseopgrdw2j4xgn3imeepnl5u0u.webp"/></div><figcaption>Confeitaria Colombo / Foto: <a href="https://www.confeitariacolombo.com.br/content/img/galeria/galeria-2.jpg">Site</a> da Confeitaria Colombo</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Salão histórico da Confeitaria Colombo, no centro do Rio" src="/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/eyiayrfb7iq0swj8siyuec8l-9z-bahkideyhb87rollcggmay-4wdr31hjpcxlvznxlhhywoypmo4ebgpotafquir-sutqf2tb3y3ygfeyldyeghhllzftawh7hgseopgrdw2j4xgn3imeepnl5u0u.webp"/></div><figcaption>Confeitaria Colombo / Foto: <a href="https://www.confeitariacolombo.com.br/content/img/galeria/galeria-2.jpg">Site</a> da Confeitaria Colombo</figcaption></figure>
 
 <p>A segunda opção, é no Forte de Copacabana, lá você tem uma linda vista da praia de Copacabana e pode aproveitar para pedir o famoso &quot;café colonial&quot; oferecido especificamente na unidade do Forte. </p>
 
@@ -173,7 +173,7 @@ author: "Marina Petrovich"
 
 <p>‍</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/dbmvvhj98wcj98jckxaikw7i0lsiecq0flb8bd8boqitfz6mq2cnph-sej9b9-amkklufiejehhlgvszkywzdn4nafvxnffhjz70uw6mkh-d89kfoy-zp37c9gxyzf0wcxgs6eej8oim31f6nwlsft8.webp"/></div><figcaption>Bar da Laje / Foto: <a href="https://www.instagram.com/p/CxxpjSmM6iL/">Instagram Bar da Laje</a></figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Vista do Bar da Laje, no Vidigal, para as praias de Ipanema e Leblon" src="/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/dbmvvhj98wcj98jckxaikw7i0lsiecq0flb8bd8boqitfz6mq2cnph-sej9b9-amkklufiejehhlgvszkywzdn4nafvxnffhjz70uw6mkh-d89kfoy-zp37c9gxyzf0wcxgs6eej8oim31f6nwlsft8.webp"/></div><figcaption>Bar da Laje / Foto: <a href="https://www.instagram.com/p/CxxpjSmM6iL/">Instagram Bar da Laje</a></figcaption></figure>
 
 <p>O <a href="https://bardalaje.rio/">Bar da Laje</a> é muito famoso entre os jovens. E com razão. </p>
 
@@ -185,13 +185,13 @@ author: "Marina Petrovich"
 
 <h3>Bar e Restaurante Os Ximenes</h3>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/3hh8jstteu1zpo7fr-rtkrwaydbkznrk0hcjmhr9m8iubqzyq6-4ktlmcgq7hpbudcdphjpugxa40bun9h2ne2a7pl40zmg7qjjtilerq8dsboghsofwurbf3fffgp2ws68gdxcxos9dpfvc69ju-sw.webp"/></div><figcaption>Prato filé Mignon à Oswaldo Aranha / <a href="https://osximenes.com.br/wp-content/uploads/2019/03/filet-mignon-a-oswaldo-aranha.jpg">Foto</a>: Os Ximenes</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Filé mignon à Oswaldo Aranha do restaurante Os Ximenes" src="/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/3hh8jstteu1zpo7fr-rtkrwaydbkznrk0hcjmhr9m8iubqzyq6-4ktlmcgq7hpbudcdphjpugxa40bun9h2ne2a7pl40zmg7qjjtilerq8dsboghsofwurbf3fffgp2ws68gdxcxos9dpfvc69ju-sw.webp"/></div><figcaption>Prato filé Mignon à Oswaldo Aranha / <a href="https://osximenes.com.br/wp-content/uploads/2019/03/filet-mignon-a-oswaldo-aranha.jpg">Foto</a>: Os Ximenes</figcaption></figure>
 
 <p>‍<a href="https://osximenes.com.br/">Os Ximenes</a> é um dos restaurantes que mais gostei, onde oferece vários almoços típicos cariocas. Aproveitei para experimentar o feijão preto típico do Rio e amei. Os pratos são bem servidos e possuem um ótimo custo benefício.</p>
 
 <h3>Casa da Feijoada </h3>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/wuy7c-ml26plxg1zutmk0k-su0-7curwvo9-zcptcvlljuo2ga-wj96cn8-ssq77wgvvz5yqeccvnmq5foprm5rnqnblp46gtajkyyka0vg1sbxchki6ycjjcnjaojkqvi5a-1id5brhx3t2oea3kc.webp"/></div><figcaption>Feijoada / Foto: <a href="https://www.instagram.com/p/CqGAETDJqdV/">Instagram</a> Casa da Feijoada</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Feijoada servida na Casa da Feijoada, em Ipanema" src="/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/wuy7c-ml26plxg1zutmk0k-su0-7curwvo9-zcptcvlljuo2ga-wj96cn8-ssq77wgvvz5yqeccvnmq5foprm5rnqnblp46gtajkyyka0vg1sbxchki6ycjjcnjaojkqvi5a-1id5brhx3t2oea3kc.webp"/></div><figcaption>Feijoada / Foto: <a href="https://www.instagram.com/p/CqGAETDJqdV/">Instagram</a> Casa da Feijoada</figcaption></figure>
 
 <p>Para fechar com chave de ouro, não poderia deixar de indicar uma boa feijoada. A <a href="https://casadafeijoada.com.br/">Casa da Feijoada</a> é um dos lugares tradicionais para comer uma deliciosa feijoada. Por isso, quando for ao Rio de Janeiro, não deixe de almoçar por lá.</p>
 
@@ -201,7 +201,7 @@ author: "Marina Petrovich"
 
 <h3>Selina Lapa</h3>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/zak-hholiqgxfgg9wxzyuaeo-zlrbowuw-rq8qvxwdvglc5r0mptcwiad-3zrzxo3n6i5ncsr-wyj0oa3wa-0l1-t8wcyzcw-w8pmfr5zstiqwpew14al-5z3cs4wf3zru4mu3wam1tgzo-d0qsjhtm.webp"/></div><figcaption><em>Quarto no Selina Lapa / Foto: </em><a href="https://cf.bstatic.com/xdata/images/hotel/max1280x900/197281196.jpg?k=f1f6b9cf465a339d1ffa591f321f1f3424e0ba2c2c86d9755141a129cbbd7c04&amp;o=&amp;hp=1"><em>Booking</em></a></figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Quarto do hostel Selina Lapa, no Rio de Janeiro" src="/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/zak-hholiqgxfgg9wxzyuaeo-zlrbowuw-rq8qvxwdvglc5r0mptcwiad-3zrzxo3n6i5ncsr-wyj0oa3wa-0l1-t8wcyzcw-w8pmfr5zstiqwpew14al-5z3cs4wf3zru4mu3wam1tgzo-d0qsjhtm.webp"/></div><figcaption><em>Quarto no Selina Lapa / Foto: </em><a href="https://cf.bstatic.com/xdata/images/hotel/max1280x900/197281196.jpg?k=f1f6b9cf465a339d1ffa591f321f1f3424e0ba2c2c86d9755141a129cbbd7c04&amp;o=&amp;hp=1"><em>Booking</em></a></figcaption></figure>
 
 <p>Para quem prefere se hospedar na parte histórica, a minha indicação é o <a href="https://www.booking.com/hotel/br/selina-lapa.pt-br.html">Selina Lapa</a>. </p>
 
@@ -209,7 +209,7 @@ author: "Marina Petrovich"
 
 <h3>Selina Copacabana</h3>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/mzux9yowcfivz99uoum8dmyorkdnwteymhmp1n95zavbzlnrevf2ihsusrznn7ckh13cbnvuae7fyx-hyq7pdpmxcgt1xwvptqhrhaumgopwapbvgvjpv9ngfgsad-lunezhdovrqnhnyuxtq2mq1y8.webp"/></div><figcaption><em>Quarto no Selina Copacabana / Foto: </em><a href="https://cf.bstatic.com/xdata/images/hotel/max1280x900/332488038.jpg?k=a098c5e3a35bd648be10129f5fb37d5c5335cb26d0d7eee6d1bc640a05f6e5e8&amp;o=&amp;hp=1">Booking</a></figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Quarto do hostel Selina Copacabana, no Rio de Janeiro" src="/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/mzux9yowcfivz99uoum8dmyorkdnwteymhmp1n95zavbzlnrevf2ihsusrznn7ckh13cbnvuae7fyx-hyq7pdpmxcgt1xwvptqhrhaumgopwapbvgvjpv9ngfgsad-lunezhdovrqnhnyuxtq2mq1y8.webp"/></div><figcaption><em>Quarto no Selina Copacabana / Foto: </em><a href="https://cf.bstatic.com/xdata/images/hotel/max1280x900/332488038.jpg?k=a098c5e3a35bd648be10129f5fb37d5c5335cb26d0d7eee6d1bc640a05f6e5e8&amp;o=&amp;hp=1">Booking</a></figcaption></figure>
 
 <p>Além da Lapa, tem o <a href="https://www.booking.com/hotel/br/debret.pt-br.html">Selina Copacabana</a>, ideal para quem busca o estilo de hospedagem Selina só que melhor ainda, pois, é de frente para a praia. </p>
 
@@ -217,7 +217,7 @@ author: "Marina Petrovich"
 
 <h3>Ipanema Inn Hotel</h3>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/shqr1md3kk3knjtbvryebua-kqwk30pukjgkjbdbbdjwylenpgeqxugwmguc-362bkshaeuwgr8s1k-ooarjae6zwgdklmsl2zsdzjf4gordqn2n28p00ss3enbxofvriydyakde5bxsa9vpnhzikia.webp"/></div><figcaption><em>Quarto do Ipanema Inn Hotel / Foto: </em><a href="https://cf.bstatic.com/xdata/images/hotel/max1280x900/354481425.jpg?k=4e7c38b79f9e11dfc2fe1000e32f1c17562d5829d80f5e18107c36e8139b4e4d&amp;o=&amp;hp=1"><em>Booking</em></a></figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Quarto do Ipanema Inn Hotel, no Rio de Janeiro" src="/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/shqr1md3kk3knjtbvryebua-kqwk30pukjgkjbdbbdjwylenpgeqxugwmguc-362bkshaeuwgr8s1k-ooarjae6zwgdklmsl2zsdzjf4gordqn2n28p00ss3enbxofvriydyakde5bxsa9vpnhzikia.webp"/></div><figcaption><em>Quarto do Ipanema Inn Hotel / Foto: </em><a href="https://cf.bstatic.com/xdata/images/hotel/max1280x900/354481425.jpg?k=4e7c38b79f9e11dfc2fe1000e32f1c17562d5829d80f5e18107c36e8139b4e4d&amp;o=&amp;hp=1"><em>Booking</em></a></figcaption></figure>
 
 <p>Para quem vai com a família e busca uma opção mais cômoda, tem o <a href="https://www.booking.com/hotel/br/ipanema-inn.pt-br.html">Ipanema Inn Hotel</a>. </p>
 

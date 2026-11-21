@@ -1,0 +1,20 @@
+---
+// Imagem padrão do site. `alt` é obrigatório: use texto descritivo,
+// ou alt="" junto com decorative para imagens puramente decorativas.
+import type { HTMLAttributes } from 'astro/types';
+
+type Props = Omit<HTMLAttributes<'img'>, 'alt'> & {
+  src: string;
+  alt: string;
+  decorative?: boolean;
+};
+
+const { alt, decorative = false, ...rest } = Astro.props;
+if (typeof alt !== 'string') {
+  throw new Error(`[Img] Imagem sem "alt": ${Astro.props.src} (em ${Astro.url.pathname})`);
+}
+if (alt.trim() === '' && !decorative) {
+  throw new Error(`[Img] alt vazio em ${Astro.props.src}. Descreva a imagem ou marque decorative.`);
+}
+---
+<img alt={alt} aria-hidden={decorative ? 'true' : undefined} {...rest} />

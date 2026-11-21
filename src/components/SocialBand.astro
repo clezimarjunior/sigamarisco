@@ -1,5 +1,6 @@
 ---
 import { SITE } from '../site';
+import Img from './Img.astro';
 ---
 <section class="band">
   <div style="position:relative;z-index:1">
@@ -10,5 +11,5 @@ import { SITE } from '../site';
     <a class="btn btn-orange" href={SITE.youtube} target="_blank" rel="noopener">Inscreva-se no YouTube</a>
     <a class="btn btn-ghost" href={SITE.instagram} target="_blank" rel="noopener">@sigamarisco</a>
   </div>
-  <img class="star" src="/brand/star.svg" alt="" width="200" height="200" />
+  <Img class="star" src="/brand/star.svg" alt="" decorative width="200" height="200" />
 </section>

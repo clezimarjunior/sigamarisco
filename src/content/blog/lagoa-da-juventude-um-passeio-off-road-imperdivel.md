@@ -15,7 +15,7 @@ author: "Marina Petrovich"
 
 <p>Para chegar à Lagoa da Juventude, partindo de Natal, o trajeto mais recomendado é seguir pela Rota do Sol até chegar a Pium. De lá, entre na Estrada de Pium e na primeira rotatória, vire à esquerda.</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/lagoa-da-juventude-um-passeio-off-road-imperdivel/ad-4nxct3dnmebwsk7hxu1yjvdonw-yfafjxrj2mxqhcysohqzcfkq4evvfe6c13vymszxmk8ddkxnuzcgsq7ka1r8ga-4n5tvk1fi-xxuhd58-48kfukfymhjpfesbvh5eh0kvqrtyfdlb78zqr2ij-qhudcx8.webp"/></div><figcaption>Caminho para a Lagoa da Juventude/RN | Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Estrada de terra vista de dentro do carro 4x4 no caminho para a Lagoa da Juventude, RN" src="/images/blog/lagoa-da-juventude-um-passeio-off-road-imperdivel/ad-4nxct3dnmebwsk7hxu1yjvdonw-yfafjxrj2mxqhcysohqzcfkq4evvfe6c13vymszxmk8ddkxnuzcgsq7ka1r8ga-4n5tvk1fi-xxuhd58-48kfukfymhjpfesbvh5eh0kvqrtyfdlb78zqr2ij-qhudcx8.webp"/></div><figcaption>Caminho para a Lagoa da Juventude/RN | Foto: Siga Marisco.</figcaption></figure>
 
 <p>Quando passar o presídio de Alcaçuz você segue na principal até chegar à única placa que indica o caminho para alguma das lagoas, aí você vira direita.</p>
 
@@ -31,7 +31,7 @@ author: "Marina Petrovich"
 
 <p>O local é conhecido por sua simplicidade e ausência de infraestrutura, o que significa que os <strong>visitantes devem levar consigo tudo o que precisarão para passar o dia</strong>, incluindo alimentos, bebidas e qualquer equipamento de lazer ou segurança. Essa característica contribui para a sensação de aventura e autossuficiência que muitos buscam.</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/lagoa-da-juventude-um-passeio-off-road-imperdivel/img-0513.webp"/></div><figcaption>Lagoa da Juventude | Foto: Siga Marisco</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="Selfie do casal dentro da água na Lagoa da Juventude, Rio Grande do Norte" src="/images/blog/lagoa-da-juventude-um-passeio-off-road-imperdivel/img-0513.webp"/></div><figcaption>Lagoa da Juventude | Foto: Siga Marisco</figcaption></figure>
 
 <p>A Lagoa da Juventude é especialmente famosa entre famílias e grupos de amigos que possuem carros off-road, tornando-se um refúgio perfeito para aqueles que desejam descansar e aproveitar um fim de semana tranquilo em meio à natureza. </p>
 

@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import PostCard from '../../components/PostCard.astro';
 import SocialBand from '../../components/SocialBand.astro';
+import Img from '../../components/Img.astro';
 import { getCollection } from 'astro:content';
 import { SITE, slugify, readingTime, fmtDate } from '../../site';
 
@@ -69,12 +70,12 @@ const shareText = encodeURIComponent(`${d.title} ${url}`);
         <h1>{d.title}</h1>
         <p class="lead">{d.description}</p>
         <div class="meta">
-          <img src="/images/brand/marina-thumb.webp" alt="" class="avatar" width="40" height="40" />
+          <Img src="/images/brand/marina-thumb.webp" alt={d.author} class="avatar" width="40" height="40" />
           <span><strong style="color:var(--navy)">{d.author}</strong><br />
             <time datetime={d.date.toISOString()}>{fmtDate(d.date)}</time> · {minutes} min de leitura</span>
         </div>
         <div class="article-cover">
-          <img src={d.cover} alt={d.title} width="1200" height="800" fetchpriority="high" />
+          <Img src={d.cover} alt={d.title} width="1200" height="800" fetchpriority="high" />
         </div>
         <div class="prose" set:html={html} />
         <div class="share">
@@ -89,7 +90,7 @@ const shareText = encodeURIComponent(`${d.title} ${url}`);
           <p>Roteiros em vídeo no YouTube e bastidores no Instagram.</p>
           <a class="btn btn-white" href={SITE.youtube} target="_blank" rel="noopener">Ver no YouTube →</a>
           <p style="margin:14px 0 0"><a href={SITE.instagram} target="_blank" rel="noopener" style="color:#fff;font-weight:700">Instagram →</a></p>
-          <img class="star" src="/brand/star.svg" alt="" width="110" height="110" />
+          <Img class="star" src="/brand/star.svg" alt="" decorative width="110" height="110" />
         </div>
         {toc.length > 2 && (
           <nav class="box toc" aria-label="Neste artigo">
