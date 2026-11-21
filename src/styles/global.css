@@ -192,3 +192,4 @@ h1, h2, h3, h4 { color: var(--navy); line-height: 1.15; letter-spacing: -.01em; 
 /* Avatares de mais de um autor, sobrepostos */
 .avatars { display: inline-flex; flex-shrink: 0; }
 .avatars .avatar + .avatar { margin-left: -10px; box-shadow: 0 0 0 2px #fff; }
+.footer-bottom a { color: var(--navy); font-weight: 500; }

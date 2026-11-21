@@ -15,7 +15,7 @@ Quando revisar um post de verdade, atualize o conteúdo e adicione no frontmatte
 
 ## Página /sobre
 
-- [ ] Confirmar se a empresa da Marina deve ser citada e se concordam com o aviso de parcerias.
+- [ ] Confirmar se concordam com o aviso de parcerias ("se um dia um post vier de parceria, isso vai estar escrito no próprio post").
 
 ## Autoria
 
