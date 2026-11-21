@@ -95,9 +95,9 @@ export const organizationSchema = {
 };
 
 /** Autores conhecidos. A âncora aponta para o bloco da pessoa em /sobre. */
-export const AUTHORS: Record<string, { id: string; url: string }> = {
-  'Marina Petrovich': { id: `${SITE.url}/sobre#marina`, url: `${SITE.url}/sobre#marina` },
-  'Francisco Oliveira': { id: `${SITE.url}/sobre#francisco`, url: `${SITE.url}/sobre#francisco` },
+export const AUTHORS: Record<string, { id: string; url: string; avatar?: string }> = {
+  'Marina Petrovich': { id: `${SITE.url}/sobre#marina`, url: `${SITE.url}/sobre#marina`, avatar: '/images/brand/marina-thumb.webp' },
+  'Francisco Oliveira': { id: `${SITE.url}/sobre#francisco`, url: `${SITE.url}/sobre#francisco`, avatar: '/images/brand/francisco-thumb.webp' },
 };
 
 export const personSchema = (name: string) => ({
@@ -105,6 +105,7 @@ export const personSchema = (name: string) => ({
   '@id': AUTHORS[name]?.id,
   name,
   url: AUTHORS[name]?.url ?? `${SITE.url}/sobre`,
+  image: AUTHORS[name]?.avatar ? `${SITE.url}${AUTHORS[name].avatar}` : undefined,
   sameAs: SOCIAL,
 });
 
@@ -113,3 +114,7 @@ export const authorNames = (d: { author: string; coauthors?: string[] }) => {
   const all = [d.author, ...(d.coauthors ?? [])];
   return all.length > 1 ? `${all.slice(0, -1).join(', ')} e ${all.at(-1)}` : all[0];
 };
+
+/** Autores do post com avatar, na ordem de assinatura. */
+export const postAuthors = (d: { author: string; coauthors?: string[] }) =>
+  [d.author, ...(d.coauthors ?? [])].map((name) => ({ name, avatar: AUTHORS[name]?.avatar ?? '/images/brand/marina-thumb.webp' }));

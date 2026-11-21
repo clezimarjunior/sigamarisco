@@ -15,8 +15,7 @@ Quando revisar um post de verdade, atualize o conteúdo e adicione no frontmatte
 
 ## Página /sobre
 
-- [ ] Confirmar o nome da praia do casamento (10/08/2025, em Natal) se quiserem citá-la.
-- [ ] Opcional: uma foto individual do Francisco para o bloco "Quem somos" (`src/pages/sobre.astro`, campo `photo`).
+- [ ] Confirmar se a empresa da Marina deve ser citada e se concordam com o aviso de parcerias.
 
 ## Autoria
 

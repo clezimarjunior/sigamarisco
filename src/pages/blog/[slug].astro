@@ -4,7 +4,7 @@ import PostCard from '../../components/PostCard.astro';
 import SocialBand from '../../components/SocialBand.astro';
 import Img from '../../components/Img.astro';
 import { getCollection } from 'astro:content';
-import { SITE, slugify, readingTime, fmtDate, RELATED, ORG_ID, organizationSchema, personSchema, authorNames } from '../../site';
+import { SITE, slugify, readingTime, fmtDate, RELATED, ORG_ID, organizationSchema, personSchema, authorNames, postAuthors } from '../../site';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', (p) => !p.data.draft);
@@ -73,7 +73,7 @@ const shareText = encodeURIComponent(`${d.title} ${url}`);
         <h1>{d.title}</h1>
         <p class="lead">{d.description}</p>
         <div class="meta">
-          <Img src="/images/brand/marina-thumb.webp" alt={d.author} class="avatar" width="40" height="40" />
+          <span class="avatars">{postAuthors(d).map((a) => <Img src={a.avatar} alt={a.name} class="avatar" width="40" height="40" />)}</span>
           <span><strong style="color:var(--navy)">{authorNames(d)}</strong><br />
             <time datetime={d.date.toISOString()}>{fmtDate(d.date)}</time>
             {d.updatedDate && <> · Atualizado em <time datetime={d.updatedDate.toISOString()}>{fmtDate(d.updatedDate)}</time></>}

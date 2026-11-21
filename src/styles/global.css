@@ -188,3 +188,7 @@ h1, h2, h3, h4 { color: var(--navy); line-height: 1.15; letter-spacing: -.01em; 
 .cat-intro { max-width: 760px; margin: -4px 0 28px; font-size: 18px; line-height: 1.7; color: #1f2d38; }
 .cat-intro p { margin: 0 0 14px; }
 .list-title { font-size: clamp(22px, 2.6vw, 26px); margin: 8px 0 20px; }
+
+/* Avatares de mais de um autor, sobrepostos */
+.avatars { display: inline-flex; flex-shrink: 0; }
+.avatars .avatar + .avatar { margin-left: -10px; box-shadow: 0 0 0 2px #fff; }
