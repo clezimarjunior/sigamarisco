@@ -1,0 +1,38 @@
+---
+import { SITE } from '../site';
+import { getCollection } from 'astro:content';
+const cats = [...new Set((await getCollection('blog')).map((p) => p.data.category))].sort();
+import { slugify } from '../site';
+---
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/brand/logo.svg" alt="Siga Marisco" width="180" height="33" style="height:30px;width:auto;margin-bottom:12px" />
+        <p>Blog de viagens e aventuras de um casal nordestino. Roteiros reais, custos e dicas pelo Brasil e América do Sul.</p>
+      </div>
+      <div>
+        <h4>Destinos</h4>
+        <ul>{cats.map((c) => <li><a href={`/categoria/${slugify(c)}`}>{c}</a></li>)}</ul>
+      </div>
+      <div>
+        <h4>Siga Marisco</h4>
+        <ul>
+          <li><a href="/sobre">Sobre nós</a></li>
+          <li><a href="/contato">Contato</a></li>
+          <li><a href={SITE.instagram} rel="noopener" target="_blank">Instagram</a></li>
+          <li><a href={SITE.whatsapp} rel="noopener" target="_blank">Comunidade WhatsApp</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/legal/politica-de-privacidade">Política de Privacidade</a></li>
+          <li><a href="/legal/termos-e-condicoes">Termos e Condições</a></li>
+          <li><a href="/rss.xml">RSS</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom"><strong>Siga Marisco</strong> | Feito com ❤️ por mãos nordestinas.</div>
+  </div>
+</footer>

@@ -1,0 +1,31 @@
+---
+import Base from '../../layouts/Base.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+import { slugify } from '../../site';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', (p) => !p.data.draft);
+  const cats = [...new Set(posts.map((p) => p.data.category))];
+  return cats.map((c) => ({
+    params: { cat: slugify(c) },
+    props: { name: c, posts: posts.filter((p) => p.data.category === c).sort((a, b) => +b.data.date - +a.data.date) },
+  }));
+}
+const { name, posts } = Astro.props;
+const all = await getCollection('blog', (p) => !p.data.draft);
+const cats = [...new Set(all.map((p) => p.data.category))].sort();
+const title = name === 'Informação' ? 'Dicas de viagem' : `${name}: roteiros e dicas de viagem`;
+---
+<Base title={`${title} | Siga Marisco`} description={`Artigos do Siga Marisco sobre ${name}: o que fazer, quanto custa e dicas de quem já foi.`}>
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head"><h1 style="font-size:clamp(32px,4.4vw,46px)">{title}</h1></div>
+      <nav class="chips" aria-label="Destinos">
+        <a class="chip" href="/blog">Todos</a>
+        {cats.map((c) => <a class="chip" href={`/categoria/${slugify(c)}`} aria-current={c === name ? 'page' : undefined}>{c}</a>)}
+      </nav>
+      <div class="grid">{posts.map((p) => <PostCard post={p} />)}</div>
+    </div>
+  </section>
+</Base>

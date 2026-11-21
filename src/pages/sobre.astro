@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import CommunityBand from '../components/CommunityBand.astro';
+import { SITE } from '../site';
+const jsonLd = { '@context': 'https://schema.org', '@type': 'AboutPage', name: 'Sobre o Siga Marisco', url: `${SITE.url}/sobre` };
+---
+<Base title="Sobre nós — Marina e Francisco | Siga Marisco" description="Conheça a Marina e o Francisco, o casal nordestino por trás do Siga Marisco, blog de viagens e aventuras." jsonLd={jsonLd}>
+  <section class="section">
+    <div class="wrap">
+      <div class="about">
+        <div class="about-text">
+          <span class="eyebrow">Sobre nós</span>
+          <h1 style="color:#fff;font-size:clamp(30px,4vw,44px);margin:10px 0 16px">Prazer, somos <span style="color:var(--yellow)">Marina</span> e <span style="color:var(--yellow)">Francisco</span>!</h1>
+          <p>Mas também pode nos chamar de Marisco. Somos noivos, viajantes, nordestinos e buscamos ter uma vida com uma mistura de aventura, nomadismo e destinos extraordinários.</p>
+          <p>Aqui no blog contamos tudo o que vivemos na estrada: como chegar, quanto custa, onde ficar e o que vale (ou não) a pena — sempre com a sinceridade de quem foi de verdade.</p>
+          <p>Fale com a gente: <a href={`mailto:${SITE.email}`}>{SITE.email}</a> · <a href={SITE.instagram} target="_blank" rel="noopener">@SigaMarisco</a></p>
+        </div>
+        <div class="about-img" role="img" aria-label="Marina e Francisco"></div>
+      </div>
+    </div>
+  </section>
+  <div class="wrap"><CommunityBand /></div>
+</Base>

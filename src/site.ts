@@ -1,0 +1,23 @@
+export const SITE = {
+  name: 'Siga Marisco',
+  url: 'https://www.sigamarisco.com',
+  tagline: 'Blog de viagens e aventuras',
+  description:
+    'Blog de viagem do casal Marina e Francisco: roteiros, dicas e experiências reais pelo Brasil e América do Sul — de Natal/RN ao Salar de Uyuni.',
+  email: 'sigamarisco@gmail.com',
+  instagram: 'https://www.instagram.com/sigamarisco/',
+  whatsapp: 'https://chat.whatsapp.com/IFDWQNzlWg2F3QT3vjpsrT',
+};
+
+export const slugify = (s: string) =>
+  s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+
+export const readingTime = (html: string) =>
+  Math.max(1, Math.round(html.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length / 200));
+
+export const fmtDate = (d: Date) =>
+  d.toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+
+// Webflow CDN serves resized variants as name-p-800.ext
+export const resized = (url: string, w: 500 | 800 | 1080) =>
+  url.includes('website-files.com') ? url.replace(/(\.[a-zA-Z]+)$/, `-p-${w}$1`) : url;

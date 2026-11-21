@@ -1,0 +1,69 @@
+---
+import Base from '../layouts/Base.astro';
+import PostCard from '../components/PostCard.astro';
+import CommunityBand from '../components/CommunityBand.astro';
+import { getCollection } from 'astro:content';
+import { SITE, slugify } from '../site';
+
+const posts = (await getCollection('blog', (p) => !p.data.draft)).sort((a, b) => +b.data.date - +a.data.date);
+const [first, ...rest] = posts;
+const cats = [...new Set(posts.map((p) => p.data.category))].sort();
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: SITE.name,
+  url: SITE.url,
+  description: SITE.description,
+  inLanguage: 'pt-BR',
+  publisher: { '@type': 'Organization', name: SITE.name, logo: `${SITE.url}/brand/logo.svg`, sameAs: [SITE.instagram] },
+};
+---
+<Base title="Siga Marisco — Blog de viagem: roteiros, dicas e o que fazer" jsonLd={jsonLd}>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-box">
+        <div class="hero-inner">
+          <span class="eyebrow">{SITE.tagline}</span>
+          <h1>Uma mistura de aventura, nomadismo e <em>destinos extraordinários.</em></h1>
+          <p>Roteiros reais, quanto custa e o que vale a pena — do litoral potiguar ao Salar de Uyuni.</p>
+          <div class="hero-actions">
+            <a class="btn btn-orange" href="#artigos">Ver artigos</a>
+            <a class="btn btn-ghost" href={SITE.whatsapp} target="_blank" rel="noopener">Comunidade no WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="artigos">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Artigos recentes</h2>
+        <a class="link-arrow" href="/blog">Ver todos os posts →</a>
+      </div>
+      <nav class="chips" aria-label="Destinos">
+        {cats.map((c) => <a class="chip" href={`/categoria/${slugify(c)}`}>{c}</a>)}
+      </nav>
+      <PostCard post={first} featured eager />
+      <div class="grid" style="margin-top:28px">
+        {rest.slice(0, 9).map((p) => <PostCard post={p} />)}
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><CommunityBand /></div>
+
+  <section class="section" id="sobre">
+    <div class="wrap">
+      <div class="about">
+        <div class="about-text">
+          <h2>Prazer, somos <span>Marina</span> e <span>Francisco</span>!</h2>
+          <p>Mas também pode nos chamar de Marisco. Somos noivos, viajantes, nordestinos e buscamos ter uma vida com uma mistura de aventura, nomadismo e destinos extraordinários.</p>
+          <p>Para entrar em contato conosco basta enviar um e-mail para <a href={`mailto:${SITE.email}`}>{SITE.email}</a> ou falar com a gente nas redes sociais.</p>
+          <p><a href={SITE.instagram} target="_blank" rel="noopener">@SigaMarisco</a></p>
+        </div>
+        <div class="about-img" role="img" aria-label="Marina e Francisco viajando"></div>
+      </div>
+    </div>
+  </section>
+</Base>

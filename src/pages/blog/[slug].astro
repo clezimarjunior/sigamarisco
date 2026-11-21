@@ -1,0 +1,111 @@
+---
+import Base from '../../layouts/Base.astro';
+import PostCard from '../../components/PostCard.astro';
+import CommunityBand from '../../components/CommunityBand.astro';
+import { getCollection } from 'astro:content';
+import { SITE, slugify, readingTime, fmtDate } from '../../site';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', (p) => !p.data.draft);
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+const { post } = Astro.props;
+const d = post.data;
+
+// Add ids to h2 headings for the table of contents
+const raw = post.rendered?.html ?? '';
+const toc: { id: string; text: string }[] = [];
+const used = new Set<string>();
+const html = raw.replace(/<h2>(.*?)<\/h2>/g, (_, inner) => {
+  const text = inner.replace(/<[^>]+>/g, '').trim();
+  let id = slugify(text) || 'secao';
+  while (used.has(id)) id += '-2';
+  used.add(id);
+  toc.push({ id, text });
+  return `<h2 id="${id}">${inner}</h2>`;
+});
+const minutes = readingTime(raw);
+
+const all = (await getCollection('blog', (p) => !p.data.draft && p.id !== post.id)).sort((a, b) => +b.data.date - +a.data.date);
+const related = [...all.filter((p) => p.data.category === d.category), ...all.filter((p) => p.data.category !== d.category)].slice(0, 3);
+
+const url = `${SITE.url}/blog/${post.id}`;
+const catUrl = `${SITE.url}/categoria/${slugify(d.category)}`;
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: d.title,
+    description: d.description,
+    image: [d.cover],
+    datePublished: d.date.toISOString(),
+    dateModified: (d.updated ?? d.date).toISOString(),
+    author: { '@type': 'Person', name: d.author, url: `${SITE.url}/sobre` },
+    publisher: { '@type': 'Organization', name: SITE.name, logo: { '@type': 'ImageObject', url: `${SITE.url}/brand/logo.svg` } },
+    mainEntityOfPage: url,
+    inLanguage: 'pt-BR',
+    articleSection: d.category,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
+      { '@type': 'ListItem', position: 2, name: d.category, item: catUrl },
+      { '@type': 'ListItem', position: 3, name: d.title, item: url },
+    ],
+  },
+];
+const shareText = encodeURIComponent(`${d.title} ${url}`);
+---
+<Base title={d.seoTitle ?? d.title} description={d.description} image={d.cover} type="article" jsonLd={jsonLd}>
+  <div class="wrap">
+    <div class="article-wrap">
+      <article class="article">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a> / <a href={`/categoria/${slugify(d.category)}`}>{d.category}</a>
+        </nav>
+        <span class="cat">{d.category}</span>
+        <h1>{d.title}</h1>
+        <p class="lead">{d.description}</p>
+        <div class="meta">
+          <img src="/brand/marina.png" alt="" class="avatar" width="40" height="40" />
+          <span><strong style="color:var(--navy)">{d.author}</strong><br />
+            <time datetime={d.date.toISOString()}>{fmtDate(d.date)}</time> · {minutes} min de leitura</span>
+        </div>
+        <div class="article-cover">
+          <img src={d.cover} alt={d.title} width="1200" height="800" fetchpriority="high" />
+        </div>
+        <div class="prose" set:html={html} />
+        <div class="share">
+          Compartilhe:
+          <a href={`https://wa.me/?text=${shareText}`} target="_blank" rel="noopener">WhatsApp</a>
+          <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`} target="_blank" rel="noopener">Facebook</a>
+          <a href={`https://twitter.com/intent/tweet?text=${shareText}`} target="_blank" rel="noopener">X</a>
+        </div>
+      </article>
+      <aside class="sidebar">
+        <div class="box box-blue">
+          <h3>Comunidade no WhatsApp</h3>
+          <p>Receba conteúdos exclusivos semanalmente.</p>
+          <a class="btn btn-white" href={SITE.whatsapp} target="_blank" rel="noopener">Entrar agora →</a>
+          <img class="star" src="/brand/star.svg" alt="" width="110" height="110" />
+        </div>
+        {toc.length > 2 && (
+          <nav class="box toc" aria-label="Neste artigo">
+            <h3>Neste artigo</h3>
+            <ol>{toc.map((t) => <li><a href={`#${t.id}`}>{t.text}</a></li>)}</ol>
+          </nav>
+        )}
+      </aside>
+    </div>
+  </div>
+
+  <section class="section" style="background:var(--bg-soft);margin-top:64px">
+    <div class="wrap">
+      <div class="section-head"><h2>Veja outros artigos</h2><a class="link-arrow" href="/blog">Todos os posts →</a></div>
+      <div class="grid">{related.map((p) => <PostCard post={p} />)}</div>
+    </div>
+  </section>
+  <div class="wrap" style="margin-top:56px"><CommunityBand /></div>
+</Base>

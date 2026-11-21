@@ -1,0 +1,21 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { fmtDate } from '../site';
+interface Props { post: CollectionEntry<'blog'>; featured?: boolean; eager?: boolean }
+const { post, featured = false, eager = false } = Astro.props;
+const d = post.data;
+---
+<a href={`/blog/${post.id}`} class={featured ? 'featured' : 'card'}>
+  <div class="card-img">
+    <img src={featured ? d.cover : (d.thumb ?? d.cover)} alt={d.title} loading={eager ? 'eager' : 'lazy'} decoding="async" width="800" height="600" />
+  </div>
+  <div class="card-body">
+    <span class="cat">{d.category}</span>
+    <h3>{d.title}</h3>
+    <p>{d.description}</p>
+    <div class="meta">
+      <img src="/brand/marina.png" alt="" class="avatar" width="30" height="30" loading="lazy" />
+      <span>{d.author} · {fmtDate(d.date)}</span>
+    </div>
+  </div>
+</a>

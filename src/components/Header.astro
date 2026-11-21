@@ -1,0 +1,20 @@
+---
+const path = Astro.url.pathname;
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/sobre', label: 'Sobre', cls: 'hide-sm' },
+  { href: '/contato', label: 'Contato' },
+];
+const isActive = (h: string) => (h === '/' ? path === '/' : path.startsWith(h));
+---
+<header class="header">
+  <div class="wrap">
+    <a href="/" class="logo" aria-label="Siga Marisco — página inicial">
+      <img src="/brand/logo.svg" alt="Siga Marisco" width="296" height="54" />
+    </a>
+    <nav class="nav" aria-label="Principal">
+      {links.map((l) => <a href={l.href} class={l.cls} aria-current={isActive(l.href) ? 'page' : undefined}>{l.label}</a>)}
+    </nav>
+  </div>
+</header>
