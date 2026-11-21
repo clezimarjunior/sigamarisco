@@ -1,8 +1,77 @@
 ---
 import Base from '../layouts/Base.astro';
 import SocialBand from '../components/SocialBand.astro';
-import { SITE, PAGE_META } from '../site';
-const jsonLd = { '@context': 'https://schema.org', '@type': 'AboutPage', name: 'Sobre o Siga Marisco', url: `${SITE.url}/sobre` };
+import Img from '../components/Img.astro';
+import { getCollection } from 'astro:content';
+import { SITE, PAGE_META, ORG_ID, SOCIAL, slugify } from '../site';
+
+// ------------------------------------------------------------------
+// COMO PREENCHER: troque cada [PREENCHER: ...] por fatos reais.
+// Blocos que ainda contêm [PREENCHER] aparecem destacados no `npm run dev`
+// e NÃO são publicados no site até serem preenchidos.
+// ------------------------------------------------------------------
+const PEOPLE = [
+  {
+    id: 'marina',
+    name: 'Marina Petrovich',
+    photo: '/images/brand/marina-thumb.webp',
+    role: '[PREENCHER: o que a Marina faz no blog, ex.: escreve os roteiros e cuida das fotos]',
+    bio: '[PREENCHER: 2 a 3 frases sobre a Marina: de onde é, profissão ou rotina, que tipo de viagem mais gosta]',
+  },
+  {
+    id: 'francisco',
+    name: 'Francisco',
+    photo: undefined,
+    role: '[PREENCHER: o que o Francisco faz no blog, ex.: vídeos do YouTube, planejamento]',
+    bio: '[PREENCHER: 2 a 3 frases sobre o Francisco, com o sobrenome se quiser]',
+  },
+];
+
+const WHY = [
+  '[PREENCHER: por que o Siga Marisco existe: quando começou e o que motivou vocês a contar as viagens]',
+  '[PREENCHER: para quem o blog é feito, ex.: quem viaja com orçamento planejado, casais, quem mora no Nordeste]',
+];
+
+const HOW = [
+  { title: 'Viajamos de verdade', text: '[PREENCHER: confirmem que os posts são de lugares que vocês visitaram e como registram preços e informações durante a viagem]' },
+  { title: 'Quem paga as viagens', text: '[PREENCHER: se as viagens são pagas por vocês, se já houve parceria ou convite e como sinalizam isso nos posts]' },
+  { title: 'Como pesquisamos', text: '[PREENCHER: fontes que usam além da experiência própria, ex.: sites oficiais, companhias aéreas, agências locais]' },
+  { title: 'Atualização dos posts', text: '[PREENCHER: de quanto em quanto tempo revisam preços e regras; posts revisados mostram "Atualizado em"]' },
+];
+
+const isFilled = (t?: string) => !!t && !t.includes('[PREENCHER');
+const show = (t?: string) => isFilled(t) || import.meta.env.DEV;
+const why = WHY.filter(show);
+const how = HOW.filter((h) => show(h.text));
+
+// Países que já aparecem no blog (derivado dos posts, nada inventado)
+const posts = await getCollection('blog', (p) => !p.data.draft);
+const countries = [...new Set(posts.map((p) => p.data.category))].filter((c) => c !== 'Informação').sort();
+
+const people = PEOPLE.map((p) => ({
+  '@type': 'Person',
+  '@id': `${SITE.url}/sobre#${p.id}`,
+  name: p.name,
+  url: `${SITE.url}/sobre#${p.id}`,
+  ...(isFilled(p.bio) ? { description: p.bio } : {}),
+  sameAs: SOCIAL,
+}));
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: 'Sobre o Siga Marisco',
+  url: `${SITE.url}/sobre`,
+  inLanguage: 'pt-BR',
+  about: { '@id': ORG_ID },
+  mainEntity: {
+    '@type': 'Organization',
+    '@id': ORG_ID,
+    name: SITE.name,
+    url: SITE.url,
+    sameAs: SOCIAL,
+    founder: people,
+  },
+};
 ---
 <Base title={PAGE_META.sobre.title} description={PAGE_META.sobre.description} jsonLd={jsonLd}>
   <section class="section">
@@ -12,12 +81,85 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'AboutPage', name: '
           <span class="eyebrow">Sobre nós</span>
           <h1 style="color:#fff;font-size:clamp(30px,4vw,44px);margin:10px 0 16px">Prazer, somos <span style="color:var(--yellow)">Marina</span> e <span style="color:var(--yellow)">Francisco</span>!</h1>
           <p>Mas também pode nos chamar de Marisco. Somos noivos, viajantes, nordestinos e buscamos ter uma vida com uma mistura de aventura, nomadismo e destinos extraordinários.</p>
-          <p>Aqui no blog contamos tudo o que vivemos na estrada: como chegar, quanto custa, onde ficar e o que vale (ou não) a pena — sempre com a sinceridade de quem foi de verdade.</p>
-          <p>Fale com a gente: <a href={`mailto:${SITE.email}`}>{SITE.email}</a> · <a href={SITE.instagram} target="_blank" rel="noopener">@SigaMarisco</a></p>
+          <p>Aqui no blog contamos o que vivemos na estrada: como chegar, quanto custa, onde ficar e o que vale (ou não) a pena.</p>
         </div>
-        <div class="about-img" role="img" aria-label="Marina e Francisco"></div>
+        <div class="about-img" role="img" aria-label="Marina e Francisco em Machu Picchu"></div>
       </div>
     </div>
   </section>
-  <div class="wrap"><SocialBand /></div>
+
+  <div class="wrap about-page">
+    <section aria-labelledby="quem-somos">
+      <h2 id="quem-somos">Quem somos</h2>
+      <div class="people">
+        {PEOPLE.map((p) => (
+          <article class="person" id={p.id}>
+            {p.photo && <Img src={p.photo} alt={p.name} class="person-photo" width="96" height="96" />}
+            <div>
+              <h3>{p.name}</h3>
+              {show(p.role) && <p class={isFilled(p.role) ? 'role' : 'role todo'}>{p.role}</p>}
+              {show(p.bio) && <p class={isFilled(p.bio) ? '' : 'todo'}>{p.bio}</p>}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    {why.length > 0 && (
+      <section aria-labelledby="por-que">
+        <h2 id="por-que">Por que o blog existe</h2>
+        {why.map((t) => <p class={isFilled(t) ? '' : 'todo'}>{t}</p>)}
+      </section>
+    )}
+
+    {how.length > 0 && (
+      <section aria-labelledby="como-viajamos">
+        <h2 id="como-viajamos">Como pesquisamos e viajamos</h2>
+        <div class="how">
+          {how.map((h) => (
+            <div class="how-item">
+              <h3>{h.title}</h3>
+              <p class={isFilled(h.text) ? '' : 'todo'}>{h.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <section aria-labelledby="onde-estivemos">
+      <h2 id="onde-estivemos">Onde já estivemos no blog</h2>
+      <p>Até agora, contamos viagens por {countries.length} países da América do Sul:</p>
+      <nav class="chips" aria-label="Países">
+        {countries.map((c) => <a class="chip" href={`/categoria/${slugify(c)}`}>{c}</a>)}
+      </nav>
+    </section>
+
+    <section aria-labelledby="fale">
+      <h2 id="fale">Acompanhe e fale com a gente</h2>
+      <ul class="contact-list">
+        <li><strong>YouTube:</strong> <a href={SITE.youtube} target="_blank" rel="noopener">youtube.com/@sigamarisco</a></li>
+        <li><strong>Instagram:</strong> <a href={SITE.instagram} target="_blank" rel="noopener">@sigamarisco</a></li>
+        <li><strong>E-mail:</strong> <a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+        <li>Ou use a nossa <a href="/contato">página de contato</a>.</li>
+      </ul>
+    </section>
+  </div>
+
+  <div class="wrap" style="margin-top:56px"><SocialBand /></div>
 </Base>
+
+<style>
+  .about-page { max-width: 860px; display: flex; flex-direction: column; gap: 44px; font-size: 18px; line-height: 1.7; }
+  .about-page h2 { font-size: clamp(24px, 3vw, 30px); margin-bottom: 14px; }
+  .about-page h3 { font-size: 20px; margin-bottom: 4px; }
+  .about-page p { margin: 0 0 12px; }
+  .people { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .person { display: flex; gap: 16px; align-items: flex-start; background: var(--bg-soft); border-radius: var(--radius); padding: 22px; scroll-margin-top: 90px; }
+  .person-photo { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+  .role { color: var(--blue); font-weight: 500; font-size: 16px; }
+  .how { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+  .how-item { border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; }
+  .contact-list { padding-left: 1.2em; margin: 0; }
+  .contact-list li + li { margin-top: 6px; }
+  .todo { background: #fff4d6; outline: 2px dashed var(--orange); padding: 6px 10px; border-radius: 6px; font-size: 16px; }
+</style>
