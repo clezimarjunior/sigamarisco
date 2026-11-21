@@ -2,11 +2,11 @@
 import Base from '../../layouts/Base.astro';
 import PostCard from '../../components/PostCard.astro';
 import { getCollection } from 'astro:content';
-import { slugify } from '../../site';
+import { slugify, PAGE_META } from '../../site';
 const posts = (await getCollection('blog', (p) => !p.data.draft)).sort((a, b) => +b.data.date - +a.data.date);
 const cats = [...new Set(posts.map((p) => p.data.category))].sort();
 ---
-<Base title="Blog de viagem — todos os artigos | Siga Marisco" description="Todos os roteiros, guias e reviews do Siga Marisco: Brasil, Bolívia, Peru, Colômbia, Argentina e dicas de viagem.">
+<Base title={PAGE_META.blog.title} description={PAGE_META.blog.description}>
   <section class="section">
     <div class="wrap">
       <div class="section-head"><h1 style="font-size:clamp(32px,4.4vw,46px)">Todos os artigos</h1></div>

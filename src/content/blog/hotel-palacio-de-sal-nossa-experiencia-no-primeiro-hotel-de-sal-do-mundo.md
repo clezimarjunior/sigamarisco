@@ -1,7 +1,8 @@
 ---
 title: "Hotel Palacio de sal: Nossa experiência no primeiro hotel de sal do mundo"
-seoTitle: "Hotel Palacio de sal: Nossa experiência no primeiro hotel de sal do mundo"
+seoTitle: "Hotel Palacio de Sal em Uyuni: nossa experiência e preços"
 description: "Descubra conosco a fascinante jornada em um dos destinos mais únicos do mundo: o Hotel Palácio de Sal, o primeiro hotel inteiramente construído com sal."
+seoDescription: "Como é dormir no Hotel Palacio de Sal, o primeiro hotel feito de sal, à beira do Salar do Uyuni: quartos, piscina, spa e quanto pagamos. Veja se vale a pena."
 category: "Bolívia"
 date: "2024-02-15"
 cover: "/images/blog/hotel-palacio-de-sal-nossa-experiencia-no-primeiro-hotel-de-sal-do-mundo/100660847.webp"

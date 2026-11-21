@@ -7,6 +7,8 @@ const blog = defineCollection({
     title: z.string(),
     seoTitle: z.string().optional(),
     description: z.string(),
+    /** Meta description (120-158 caracteres). Se vazio, usa description. */
+    seoDescription: z.string().optional(),
     category: z.string(),
     date: z.coerce.date(),
     updated: z.coerce.date().optional(),
@@ -19,7 +21,7 @@ const blog = defineCollection({
 
 const legal = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/legal' }),
-  schema: z.object({ title: z.string() }),
+  schema: z.object({ title: z.string(), description: z.string().optional() }),
 });
 
 export const collections = { blog, legal };

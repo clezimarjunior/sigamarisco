@@ -1,7 +1,8 @@
 ---
 title: "Como chegar em Machu Picchu: 3 melhores maneiras de ir"
-seoTitle: "Como chegar em Machu Picchu: 3 melhores maneiras de ir"
+seoTitle: "Como chegar em Machu Picchu: as 3 melhores formas de ir"
 description: "Se você está planejando uma viagem a Machu Picchu, é importante saber que não é tão simples chegar. Existem três maneiras principais de chegar e são elas que vamos conhecer neste blog."
+seoDescription: "Trekking Salkantay, caminho da Hidrelétrica ou trem: veja as 3 formas de chegar em Machu Picchu, como comprar o ingresso e 5 dicas para curtir a visita."
 category: "Peru"
 date: "2023-09-04"
 cover: "/images/blog/como-chegar-em-machu-picchu/01.webp"

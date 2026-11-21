@@ -1,13 +1,13 @@
 ---
 import Base from '../layouts/Base.astro';
-import { SITE } from '../site';
+import { SITE, PAGE_META } from '../site';
 ---
-<Base title="Contato | Siga Marisco" description="Fale com o Siga Marisco: parcerias, dúvidas sobre roteiros e sugestões de destinos.">
+<Base title={PAGE_META.contato.title} description={PAGE_META.contato.description}>
   <div class="page">
     <h1>Contato</h1>
     <p style="font-size:19px;color:var(--muted)">Dúvidas sobre algum roteiro, sugestões de destino ou propostas de parceria? Adoramos conversar.</p>
     <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:28px">
-      <a class="card" href={`mailto:${SITE.email}`}><div class="card-body"><span class="cat">E-mail</span><h3>{SITE.email}</h3><p>Respondemos em até 2 dias úteis.</p></div></a>
+      <a class="card" href={`mailto:${SITE.email}`}><div class="card-body"><span class="cat">E-mail</span><h3>{SITE.email}</h3><p>Dúvidas sobre roteiros e parcerias.</p></div></a>
       <a class="card" href={SITE.instagram} target="_blank" rel="noopener"><div class="card-body"><span class="cat">Instagram</span><h3>@sigamarisco</h3><p>Bastidores das viagens e stories.</p></div></a>
       <a class="card" href={SITE.youtube} target="_blank" rel="noopener"><div class="card-body"><span class="cat">YouTube</span><h3>@sigamarisco</h3><p>Os roteiros em vídeo.</p></div></a>
     </div>

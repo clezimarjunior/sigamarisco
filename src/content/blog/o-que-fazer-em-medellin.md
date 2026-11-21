@@ -1,7 +1,8 @@
 ---
 title: "O que fazer em Medellín: melhores pontos turísticos, hotéis e mais!"
-seoTitle: "O que fazer em Medellín: melhores pontos turísticos, hotéis e mais!"
+seoTitle: "O que fazer em Medellín: pontos turísticos, hotéis e mais"
 description: "Se você está procurando uma viagem para a noitada, passeios diversos, muita animação e festa, vá para Medellín. Esse lugar incrível está na lista dos lugares que queremos voltar para curtir ainda mais!"
+seoDescription: "Comuna 13, El Poblado, Pueblito Paisa e Guatapé: o que fazer em Medellín, onde se hospedar e onde comer, com dicas de quem já foi. Monte o seu roteiro!"
 category: "Colômbia"
 date: "2024-01-26"
 cover: "/images/blog/o-que-fazer-em-medellin/img-5478.webp"

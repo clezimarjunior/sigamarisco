@@ -62,7 +62,7 @@ const jsonLd = [
 ];
 const shareText = encodeURIComponent(`${d.title} ${url}`);
 ---
-<Base title={d.seoTitle ?? d.title} description={d.description} image={d.cover} type="article" jsonLd={jsonLd}>
+<Base title={d.seoTitle ?? d.title} description={d.seoDescription ?? d.description} image={d.cover} type="article" jsonLd={jsonLd}>
   <div class="wrap">
     <div class="article-wrap">
       <article class="article">

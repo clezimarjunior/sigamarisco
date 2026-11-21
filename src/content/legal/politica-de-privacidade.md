@@ -1,5 +1,6 @@
 ---
 title: "Política de Privacidade"
+description: "Política de Privacidade do Siga Marisco: como tratamos dados pessoais, cookies e anúncios do Google AdSense, e os compromissos de quem usa o site."
 ---
 
 <p>A sua privacidade é importante para nós. É política do Siga Marisco respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site Siga Marisco, e outros sites que possuímos e operamos.</p>

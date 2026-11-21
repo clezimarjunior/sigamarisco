@@ -2,6 +2,7 @@
 title: "Mala que pode levar no avião: tamanhos permitidos e modelos"
 seoTitle: "Mala que pode levar no avião: tamanhos permitidos e modelos"
 description: "Eu sei que são muitas expectativas que antecedem uma viagem de avião. Sempre surgem vários questionamentos. Estou esquecendo algo?  E se a mala não puder ser essa?"
+seoDescription: "Mochila, mala de mão e bagagem despachada: medidas permitidas, o que pode e o que não pode levar no avião e quanto custa despachar. Confira antes de embarcar."
 category: "Informação"
 date: "2024-02-02"
 cover: "/images/blog/mala-que-pode-levar-no-aviao-melhores-modelos-e-tamanhos-permitidos/35d1a894-65e6-497f-9ecd-e59d8b54ad79.webp"

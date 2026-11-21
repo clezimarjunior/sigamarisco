@@ -1,7 +1,8 @@
 ---
 title: "Melhores destinos na américa do sul para lua de mel: os 9 mais românticos"
-seoTitle: "Melhores destinos na américa do sul para lua de mel: os 9 mais românticos"
+seoTitle: "Lua de mel na América do Sul: 9 destinos mais românticos"
 description: "Entre praias paradisíacas, paisagens exuberantes e cidades românticas, como decidir qual será o cenário ideal para celebrar o início dessa nova fase da vida a dois?"
+seoDescription: "Cartagena, San Andrés, Mendoza, Bariloche, Salar do Uyuni, Machu Picchu e mais: 9 destinos românticos na América do Sul para a lua de mel. Escolha o seu!"
 category: "Informação"
 date: "2024-04-24"
 cover: "/images/blog/melhores-destinos-na-america-do-sul-para-lua-de-mel-os-9-mais-romanticos/img-5608.webp"

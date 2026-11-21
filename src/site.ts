@@ -34,3 +34,19 @@ export const RELATED: Record<string, string[]> = {
   'ruinas-de-sao-joao-lostau-em-pium-rn': ['trilha-do-vale-encantado-tudo-que-voce-precisa-saber', 'lagoa-da-juventude-um-passeio-off-road-imperdivel', 'o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias'],
   'trilha-do-vale-encantado-tudo-que-voce-precisa-saber': ['lagoa-da-juventude-um-passeio-off-road-imperdivel', 'ruinas-de-sao-joao-lostau-em-pium-rn', 'o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias'],
 };
+
+// Título e meta description de cada categoria (a intro editorial fica em CATEGORY_INTRO).
+export const CATEGORY_META: Record<string, { title: string; description: string }> = {
+  "Argentina": { title: "Argentina: roteiros e dicas de viagem | Siga Marisco", description: "Dicas de viagem para a Argentina: review do restaurante Abrasado, em Mendoza, e ideias de roteiro romântico por Mendoza e Bariloche. Veja os posts." },
+  "Bolívia": { title: "Bolívia: roteiros e dicas de viagem | Siga Marisco", description: "Guias da Bolívia por quem foi: tour de 3 dias no Salar do Uyuni, Hotel Palacio de Sal e o que fazer em Santa Cruz de la Sierra. Comece a planejar." },
+  "Brasil": { title: "Brasil: roteiros e dicas de viagem | Siga Marisco", description: "Roteiros pelo Rio de Janeiro e passeios perto de Natal, como a Trilha do Vale Encantado, a Lagoa da Juventude e as Ruínas de São João Lostau. Confira." },
+  "Colômbia": { title: "Colômbia: roteiros e dicas de viagem | Siga Marisco", description: "O que fazer em Medellín, na Colômbia: Comuna 13, Guatapé, onde ficar e onde comer, além de destinos colombianos para a lua de mel. Confira os posts." },
+  "Informação": { title: "Dicas de viagem e planejamento | Siga Marisco", description: "Dicas práticas para planejar a viagem: tamanho de mala permitido no avião e os destinos mais românticos da América do Sul para a lua de mel. Confira." },
+  "Peru": { title: "Peru: roteiros e dicas de viagem | Siga Marisco", description: "Como chegar em Machu Picchu pelo trem, pela Hidrelétrica ou pelo Trekking Salkantay, com dicas de ingresso e da visita. Tudo para sua viagem ao Peru." },
+};
+
+export const PAGE_META = {
+  "blog": { title: "Blog de viagem: todos os artigos | Siga Marisco", description: "Todos os roteiros, guias e reviews do Siga Marisco: Brasil, Bolívia, Peru, Colômbia, Argentina e dicas de viagem, com custos e experiências reais." },
+  "contato": { title: "Contato | Siga Marisco", description: "Fale com o Siga Marisco por e-mail, Instagram ou YouTube: dúvidas sobre roteiros, sugestões de destinos e propostas de parceria. Vamos adorar conversar!" },
+  "sobre": { title: "Sobre nós: Marina e Francisco | Siga Marisco", description: "Conheça a Marina e o Francisco, o casal nordestino por trás do Siga Marisco: quem somos, como viajamos e por que contamos tudo aqui no blog de viagem." },
+};

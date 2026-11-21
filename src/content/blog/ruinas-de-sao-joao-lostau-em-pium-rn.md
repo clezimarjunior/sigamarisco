@@ -1,7 +1,8 @@
 ---
 title: "Ruínas de São João Lostau em Pium/RN"
-seoTitle: "Ruínas de São João Lostau em Pium/RN"
+seoTitle: "Ruínas de São João Lostau em Pium, RN: história e visita"
 description: "Pertinho da capital do Rio Grande do Norte, existe um local pouco conhecido que esconde uma mistura de história, religiosidade e mistério. Estou falando das Ruínas de São João Lostau."
+seoDescription: "A história das Ruínas de São João Lostau, quem foi o santo que morou ali e como chegar ao local em Pium, perto de Natal, com dicas para a visita. Confira!"
 category: "Brasil"
 date: "2024-07-07"
 cover: "/images/blog/ruinas-de-sao-joao-lostau-em-pium-rn/ruinas-de-sao-joao-lostau-em-pium-rn-1.webp"

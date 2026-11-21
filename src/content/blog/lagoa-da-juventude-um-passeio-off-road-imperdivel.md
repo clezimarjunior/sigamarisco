@@ -1,7 +1,8 @@
 ---
 title: "Lagoa da Juventude: Um passeio off road imperdível"
-seoTitle: "Lagoa da Juventude: Um passeio off road imperdível"
+seoTitle: "Lagoa da Juventude, RN: passeio off road perto de Natal"
 description: "Colocamos o Timão (Nosso carro) para rodar 4x4 pela primeira vez nesse passeio, e olha… acho que agora é um caminho sem volta."
+seoDescription: "Como chegar na Lagoa da Juventude saindo de Natal, como é o caminho de 4x4 e o que esperar dessa lagoa em Nísia Floresta, RN. Veja as dicas antes de ir."
 category: "Brasil"
 date: "2024-07-20"
 cover: "/images/blog/lagoa-da-juventude-um-passeio-off-road-imperdivel/669c4b8012ec992bbe6be840-img-0513.webp"

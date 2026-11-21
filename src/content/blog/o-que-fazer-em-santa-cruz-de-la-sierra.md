@@ -1,7 +1,8 @@
 ---
 title: "O que fazer em Santa Cruz de La Sierra, Bolívia: Guia completo"
-seoTitle: "O que fazer em Santa Cruz de La Sierra, Bolívia: Guia completo"
+seoTitle: "O que fazer em Santa Cruz de la Sierra, Bolívia: guia"
 description: "Na nossa última viagem para a Bolívia desbravamos lugares encantadores e um deles foi Santa Cruz. Por isso, resolvemos construir esse artigo para te explicar tudo!"
+seoDescription: "Centro histórico, Samaipata, Lomas de Arena e Amboró: o que fazer em Santa Cruz de la Sierra, onde ficar, onde comer e como chegar. Planeje sua viagem."
 category: "Bolívia"
 date: "2023-09-12"
 cover: "/images/blog/o-que-fazer-em-santa-cruz-de-la-sierra/02.webp"

@@ -1,5 +1,6 @@
 ---
 title: "Termos e Condições"
+description: "Termos e Condições de uso do blog Siga Marisco: licença de uso do conteúdo, isenção de responsabilidade, limitações e regras para acessar o site."
 ---
 
 <h2>1. Termos</h2>

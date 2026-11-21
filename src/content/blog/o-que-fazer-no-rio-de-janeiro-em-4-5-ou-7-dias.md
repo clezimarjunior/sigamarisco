@@ -2,6 +2,7 @@
 title: "O que fazer no Rio de Janeiro em 4, 5 ou 7 dias"
 seoTitle: "O que fazer no Rio de Janeiro em 4, 5 ou 7 dias"
 description: "A capital carioca é um dos lugares mais lindos do Brasil. Porém, para aproveitar tudo que ela tem a oferecer é importante se planejar e, principalmente, saber o que fazer no Rio de Janeiro."
+seoDescription: "Roteiros de 4, 5 e 7 dias no Rio de Janeiro com Cristo Redentor, Pão de Açúcar, trilhas e praias, além de onde comer e onde ficar. Monte o seu roteiro!"
 category: "Brasil"
 date: "2024-01-02"
 cover: "/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/img-0470-1.webp"

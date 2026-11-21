@@ -1,10 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
 import SocialBand from '../components/SocialBand.astro';
-import { SITE } from '../site';
+import { SITE, PAGE_META } from '../site';
 const jsonLd = { '@context': 'https://schema.org', '@type': 'AboutPage', name: 'Sobre o Siga Marisco', url: `${SITE.url}/sobre` };
 ---
-<Base title="Sobre nós — Marina e Francisco | Siga Marisco" description="Conheça a Marina e o Francisco, o casal nordestino por trás do Siga Marisco, blog de viagens e aventuras." jsonLd={jsonLd}>
+<Base title={PAGE_META.sobre.title} description={PAGE_META.sobre.description} jsonLd={jsonLd}>
   <section class="section">
     <div class="wrap">
       <div class="about">

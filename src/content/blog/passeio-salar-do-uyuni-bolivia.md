@@ -1,7 +1,8 @@
 ---
 title: "Passeio Salar do Uyuni: 3 dias incríveis"
-seoTitle: "Passeio Salar do Uyuni: 3 dias incríveis"
+seoTitle: "Passeio no Salar do Uyuni: roteiro de 3 dias e preços"
 description: "Durante três dias incríveis, desbravamos as maravilhas deste destino e agora compartilhamos com vocês a beleza e a aventura que permeou essa viagem extraordinária."
+seoDescription: "Roteiro dia a dia do tour de 3 dias pelo Salar do Uyuni, o que levar, a melhor época e quanto custa o passeio, com a nossa experiência. Planeje o seu!"
 category: "Bolívia"
 date: "2023-09-30"
 cover: "/images/blog/passeio-salar-do-uyuni-bolivia/12-grupo-salar-do-yuni.webp"

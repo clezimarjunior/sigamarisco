@@ -1,7 +1,8 @@
 ---
 title: "Restaurante Abrasado Mendoza: Review Completo"
-seoTitle: "Restaurante Abrasado Mendoza: Review Completo"
+seoTitle: "Restaurante Abrasado em Mendoza: review completo"
 description: "Entre as muitas opções de restaurantes da cidade, o Restaurante Abrasado Mendoza é um dos mais populares, oferecendo uma experiência gastronômica de alta qualidade em um ambiente elegante."
+seoDescription: "Pratos, vinhos, estrutura e preço do Restaurante Abrasado, na Bodega Los Toneles, em Mendoza. Contamos como foi e se vale a pena reservar. Confira!"
 category: "Argentina"
 date: "2024-01-10"
 cover: "/images/blog/restaurante-abrasado-mendoza-review-completo/restaurante-abrasado-mendoza-review-completo-1.webp"
