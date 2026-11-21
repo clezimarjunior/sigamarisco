@@ -4,8 +4,8 @@ seoTitle: "Mala que pode levar no avião: tamanhos permitidos e modelos"
 description: "Eu sei que são muitas expectativas que antecedem uma viagem de avião. Sempre surgem vários questionamentos. Estou esquecendo algo?  E se a mala não puder ser essa?"
 category: "Informação"
 date: "2024-02-02"
-cover: "https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/65bd66a4e1c44fec2ddc66c2_35D1A894-65E6-497F-9ECD-E59D8B54AD79.JPG"
-thumb: "https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/65bd66a4e1c44fec2ddc66c2_35D1A894-65E6-497F-9ECD-E59D8B54AD79-p-800.jpg"
+cover: "/images/blog/mala-que-pode-levar-no-aviao-melhores-modelos-e-tamanhos-permitidos/35d1a894-65e6-497f-9ecd-e59d8b54ad79.webp"
+thumb: "/images/blog/mala-que-pode-levar-no-aviao-melhores-modelos-e-tamanhos-permitidos/35d1a894-65e6-497f-9ecd-e59d8b54ad79-thumb.webp"
 author: "Marina Petrovich"
 ---
 
@@ -27,7 +27,7 @@ author: "Marina Petrovich"
 
 <p>No entanto, posso adiantar que o melhor modelo são mochilas comuns de costas. Mas, há pessoas que preferem bolsas femininas, as de lado ou até pochetes. Então, escolha o que melhor se enquadra na sua necessidade e ao mesmo tempo esteja de acordo com o permitido.</p>
 
-<figure class="img"><div><img loading="lazy" src="https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/65bd6708e1c44fec2ddcb561_IMG_4683.JPG" alt=""/></div><figcaption>Mochila Item pessoal | Foto: Siga Marisco</figcaption></figure>
+<figure class="img"><div><img loading="lazy" src="/images/blog/mala-que-pode-levar-no-aviao-melhores-modelos-e-tamanhos-permitidos/img-4683.webp" alt=""/></div><figcaption>Mochila Item pessoal | Foto: Siga Marisco</figcaption></figure>
 
 <h3>O que pode levar na mochila no avião</h3>
 
@@ -51,7 +51,7 @@ author: "Marina Petrovich"
 
 <p>Agora todos falam dela, a preciosa bagagem de mão. Que nada mais é, do que uma mini mala, de até 10kg que pode ir em cima com você ajudando a garantir uma experiência tranquila e eficiente. </p>
 
-<figure class="img"><div><img loading="lazy" src="https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/65bd66a4e1c44fec2ddc66c2_35D1A894-65E6-497F-9ECD-E59D8B54AD79.JPG" alt=""/></div><figcaption>Bagagem de mão | Foto: Siga Marisco</figcaption></figure>
+<figure class="img"><div><img loading="lazy" src="/images/blog/mala-que-pode-levar-no-aviao-melhores-modelos-e-tamanhos-permitidos/35d1a894-65e6-497f-9ecd-e59d8b54ad79.webp" alt=""/></div><figcaption>Bagagem de mão | Foto: Siga Marisco</figcaption></figure>
 
 <h3>Medidas da bagagem de mão </h3>
 
@@ -123,7 +123,7 @@ author: "Marina Petrovich"
 
 <h2>E o mochilão?</h2>
 
-<figure class="img"><div><img loading="lazy" src="https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/65bd677f5a41ba6f9b81829b_IMG_4220%20(1).jpg" alt=""/></div><figcaption>Mochilão | Foto: Siga Marisco</figcaption></figure>
+<figure class="img"><div><img loading="lazy" src="/images/blog/mala-que-pode-levar-no-aviao-melhores-modelos-e-tamanhos-permitidos/img-4220-1.webp" alt=""/></div><figcaption>Mochilão | Foto: Siga Marisco</figcaption></figure>
 
 <p>Os mochilões são mochilas grandes, bem maiores que as tradicionais, muitas vezes usadas por viajantes que preferem uma abordagem mais descontraída e flexível em suas jornadas. </p>
 

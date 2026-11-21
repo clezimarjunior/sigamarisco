@@ -54,7 +54,7 @@ h1, h2, h3, h4 { color: var(--navy); line-height: 1.15; letter-spacing: -.01em; 
 .hero-box {
   position: relative; overflow: hidden; border-radius: 24px; color: #fff;
   min-height: 440px; display: flex; align-items: flex-end;
-  background: linear-gradient(180deg, rgba(19,107,197,.35) 0%, rgba(2,48,71,.88) 100%), url('https://cdn.prod.website-files.com/64f5f8ead351decb8d4c0ada/650077e74f6bb1963e72980d_marisco2.webp') center 35%/cover;
+  background: linear-gradient(180deg, rgba(19,107,197,.35) 0%, rgba(2,48,71,.88) 100%), url('/images/brand/marisco2.webp') center 35%/cover;
 }
 .hero-inner { padding: 48px; max-width: 760px; }
 .eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: 13px; font-weight: 700; color: var(--yellow); }
@@ -114,7 +114,7 @@ h1, h2, h3, h4 { color: var(--navy); line-height: 1.15; letter-spacing: -.01em; 
 .about h2 { color: #fff; font-size: clamp(26px, 3vw, 34px); margin-bottom: 14px; }
 .about h2 span { color: var(--yellow); }
 .about a { color: #fff; font-weight: 700; }
-.about-img { background: url('https://cdn.prod.website-files.com/64f5f8ead351decb8d4c0ada/650077e74f6bb1963e72980d_marisco2.webp') center/cover; min-height: 320px; }
+.about-img { background: url('/images/brand/marisco2.webp') center/cover; min-height: 320px; }
 @media (max-width: 760px) { .about { grid-template-columns: 1fr; } .about-text { padding: 28px 24px; } }
 
 /* Article */

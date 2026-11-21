@@ -4,8 +4,8 @@ seoTitle: "Passeio Salar do Uyuni: 3 dias incríveis"
 description: "Durante três dias incríveis, desbravamos as maravilhas deste destino e agora compartilhamos com vocês a beleza e a aventura que permeou essa viagem extraordinária."
 category: "Bolívia"
 date: "2023-09-30"
-cover: "https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/65187424fa9c3abad0a3d1c0_12_grupo-salar-do-yuni.jpg"
-thumb: "https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/65187424fa9c3abad0a3d1c0_12_grupo-salar-do-yuni-p-800.jpg"
+cover: "/images/blog/passeio-salar-do-uyuni-bolivia/12-grupo-salar-do-yuni.webp"
+thumb: "/images/blog/passeio-salar-do-uyuni-bolivia/12-grupo-salar-do-yuni-thumb.webp"
 author: "Marina Petrovich"
 ---
 
@@ -57,7 +57,7 @@ author: "Marina Petrovich"
 
 <p>Caso goste de fotos conceituais é um ótimo espaço para desbravar e conseguir cliques impressionantes em cima dos trens.</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/6518699b3305a3dccd4f2211_cemiterio-de-trens%20(1).jpg"/></div><figcaption>Cemitério de Trens, comunidade de Colchani, Bolívia. Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/passeio-salar-do-uyuni-bolivia/cemiterio-de-trens-1.webp"/></div><figcaption>Cemitério de Trens, comunidade de Colchani, Bolívia. Foto: Siga Marisco.</figcaption></figure>
 
 <p>Depois, temos uma parada de em média  40 min em uma pequena comunidade chamada de Colchani para comprar artesanatos locais, sais temperados e aproveitar e utilizar o banheiro.</p>
 
@@ -71,7 +71,7 @@ author: "Marina Petrovich"
 
 <p>A nossa primeira parada no Salar foi nos Ojos del Salar, buracos que brotam água no meio do deserto. Apesar de parecer inofensivo, não pode tocar pela concentração de sal. Além disso, precisamos usar proteção solar e óculos de sol para não nos causar danos pelo reflexo do sal.</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/65186ee36e40bcdba471689f_16_salar-do-yuni.jpg"/></div><figcaption>Salar do Uyuni, Bolívia. Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/passeio-salar-do-uyuni-bolivia/16-salar-do-yuni.webp"/></div><figcaption>Salar do Uyuni, Bolívia. Foto: Siga Marisco.</figcaption></figure>
 
 <p>Só nesse primeiro momento, eu já estava encantada com a grandeza do Salar, pois já era possível ver aquela imensidão branca.</p>
 
@@ -79,19 +79,19 @@ author: "Marina Petrovich"
 
 <p>Chegamos à escadaria (Escalera al cielo), tiramos algumas fotos e fomos visitar monumentos de sal, eles ficam espalhados. Pagamos um valor de BOB 10 (R$7,00) para entrar e tirar foto com as esculturas. </p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/65186f1d6e40bcdba4718865_15_momumento-salar-do-yuni.jpg"/></div><figcaption>Monumentos de sal, Salar do Uyuni, Bolívia. Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/passeio-salar-do-uyuni-bolivia/15-momumento-salar-do-yuni.webp"/></div><figcaption>Monumentos de sal, Salar do Uyuni, Bolívia. Foto: Siga Marisco.</figcaption></figure>
 
-<figure class="img"><div><img loading="lazy" alt="" src="https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/65187375e1b2cdca51b489b3_14_condor-salar-do-yuni.jpg"/></div><figcaption>Monumentos de sal, Salar do Uyuni, Bolívia. Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/passeio-salar-do-uyuni-bolivia/14-condor-salar-do-yuni.webp"/></div><figcaption>Monumentos de sal, Salar do Uyuni, Bolívia. Foto: Siga Marisco.</figcaption></figure>
 
-<figure class="img"><div><img loading="lazy" alt="" src="https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/65186fa11ea129f5f5145adb_13_escaleira-salar-do-yuni.jpg"/></div><figcaption>Escadaria de sal, salar do Uyuni, Bolívia. Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/passeio-salar-do-uyuni-bolivia/13-escaleira-salar-do-yuni.webp"/></div><figcaption>Escadaria de sal, salar do Uyuni, Bolívia. Foto: Siga Marisco.</figcaption></figure>
 
 <p>No entanto, no caminho ainda paramos no meio do deserto para tirar várias fotos engraçadas do grupo todo.</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/65186fc231fc63d56f5499c3_12_grupo-salar-do-yuni.jpg"/></div><figcaption>Grupo da viagem, Salar do Uyuni, Bolívia. Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/passeio-salar-do-uyuni-bolivia/12-grupo-salar-do-yuni-2.webp"/></div><figcaption>Grupo da viagem, Salar do Uyuni, Bolívia. Foto: Siga Marisco.</figcaption></figure>
 
 <p>Ainda paramos na praça das bandeiras onde tivemos de 20 a 45 min e acesso ao banheiro.</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/65186feeaaddbac5eb6f6e24_11_bandeiras-salar-dp-yuni.jpg"/></div><figcaption>Monumento das bandeiras, Salar do Uyuni, Bolívia. Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/passeio-salar-do-uyuni-bolivia/11-bandeiras-salar-dp-yuni.webp"/></div><figcaption>Monumento das bandeiras, Salar do Uyuni, Bolívia. Foto: Siga Marisco.</figcaption></figure>
 
 <h4>Bônus do dia 1</h4>
 
@@ -101,11 +101,11 @@ author: "Marina Petrovich"
 
 <p>Com certeza, essa foi a melhor troca que fizemos! Pegamos as botas e fomos para as poças!</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/6518701f4e58ab7e47687eb5_10_noivado-salar-do-yuni-1.jpg"/></div><figcaption>Pedido de noivado, Salar do Uyuni, Bolívia. Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/passeio-salar-do-uyuni-bolivia/10-noivado-salar-do-yuni-1.webp"/></div><figcaption>Pedido de noivado, Salar do Uyuni, Bolívia. Foto: Siga Marisco.</figcaption></figure>
 
 <p>Fazia muito frio, mas só se vive uma vez então ficamos quase todo o tempo do lado de fora observando aquela obra de arte.Vimos o pôr do sol refletido no sal e vivemos uma das cenas mais emocionantes de nossas vidas.</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/65187044269cbcd85848bac0_09_noivado-salar-do-yuni-2.jpg"/></div><figcaption>Noivado no Salar do Uyuni, Bolívia. Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/passeio-salar-do-uyuni-bolivia/09-noivado-salar-do-yuni-2.webp"/></div><figcaption>Noivado no Salar do Uyuni, Bolívia. Foto: Siga Marisco.</figcaption></figure>
 
 <p>Encerramos o dia dormindo na comunidade de Colchani, em uma hospedagem feita de Sal. A noite não é muito confortável pois faz muito frio. Mas, não temos o que reclamar no meio do deserto.</p>
 
@@ -129,31 +129,31 @@ author: "Marina Petrovich"
 
 <p>Fomos para o meio da natureza, fazer a parada para um delicioso almoço, onde só tínhamos nós e a vista para uma lagoa surpreendente.</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/651870dcf5483906e4f86202_18_lagoa.jpg"/></div><figcaption>Lagoa nas proximidades do Salar do Uyuni, Bolívia. Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/passeio-salar-do-uyuni-bolivia/18-lagoa.webp"/></div><figcaption>Lagoa nas proximidades do Salar do Uyuni, Bolívia. Foto: Siga Marisco.</figcaption></figure>
 
 <h4>Pela tarde do dia 2</h4>
 
 <p>Após o almoço, embarcamos no carro e começamos a explorar o percurso, que nos presenteou com paisagens verdadeiramente deslumbrantes, enquanto nos dirigíamos a várias lagoas para visitar.</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/65187114269cbcd858492d07_08_laguna-salar-do-yuni.jpg"/></div><figcaption>Laguna Cañapa, Bolívia. Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/passeio-salar-do-uyuni-bolivia/08-laguna-salar-do-yuni.webp"/></div><figcaption>Laguna Cañapa, Bolívia. Foto: Siga Marisco.</figcaption></figure>
 
 <p>A primeira foi a Laguna Cañapa, depois a Charchota, Honda e por último a Hedionda. Em todas elas conseguimos ver diversos flamingos. </p>
 
 <p>A cor da água varia,  mas normalmente são claras e com a vista para as montanhas a paisagem se torna ainda mais bonita.</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/651871311ea129f5f5153604_07_laguna-2-salar-do-yuni.jpg"/></div><figcaption>Laguna Honda, Bolívia. Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/passeio-salar-do-uyuni-bolivia/07-laguna-2-salar-do-yuni.webp"/></div><figcaption>Laguna Honda, Bolívia. Foto: Siga Marisco.</figcaption></figure>
 
 <p>Mais tarde passamos pelo Deserto Siloli, onde admiramos algumas obras de arte feitas pela natureza através da erosão do vento durante séculos, como a Árbol de piedra.</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/65187157c81b21b5826644ab_06_arvore-salar-do-yuni.jpg"/></div><figcaption>Árbol de Piedra, Desierto Siloli, Bolívia. Foto: Siga Marisco</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/passeio-salar-do-uyuni-bolivia/06-arvore-salar-do-yuni.webp"/></div><figcaption>Árbol de Piedra, Desierto Siloli, Bolívia. Foto: Siga Marisco</figcaption></figure>
 
 <p>E por fim, e o ponto alto do segundo dia, a parada na Laguna Colorada, onde observamos de perto seu peculiar tom avermelhado, flamingos por toda parte e uma grandeza surpreendente. A vista é tão bonita que chega a ser emocionante.</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/6518716dfdbf61a739e0f31c_05_laguna-colorada.jpg"/></div><figcaption>Laguna Colorada, Reserva nacional de fauna andina Eduardo Avaroa, Bolívia. Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/passeio-salar-do-uyuni-bolivia/05-laguna-colorada.webp"/></div><figcaption>Laguna Colorada, Reserva nacional de fauna andina Eduardo Avaroa, Bolívia. Foto: Siga Marisco.</figcaption></figure>
 
 <p>Ah! Vale ressaltar que para entrar na Laguna Colorada e para os passeios do terceiro dia, pagamos um valor de BOB 150 (R$110,00). O ingresso dá direito a ficar até 3 dias no parque.</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/6518718a73313990f5173e21_04_marisco-laguna-colorada.jpg"/></div><figcaption>Laguna Colorada, Reserva nacional de fauna andina Eduardo Avaroa, Bolívia. Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/passeio-salar-do-uyuni-bolivia/04-marisco-laguna-colorada.webp"/></div><figcaption>Laguna Colorada, Reserva nacional de fauna andina Eduardo Avaroa, Bolívia. Foto: Siga Marisco.</figcaption></figure>
 
 <p>Depois de um dia cheio de emoções, passamos a noite no meio do deserto em um hotel peculiar que funciona à base de energia solar e tem acomodações bem simples, mas super aconchegantes. </p>
 
@@ -179,7 +179,7 @@ author: "Marina Petrovich"
 
 <p>Depois, a parada mais especial do dia, as águas termais, para um bom banho de água em temperatura ambiente. </p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/651871a810c721e06b8296d4_03_termales-salar-yuni.jpeg"/></div><figcaption>Águas termais, Bolívia. Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/passeio-salar-do-uyuni-bolivia/03-termales-salar-yuni.webp"/></div><figcaption>Águas termais, Bolívia. Foto: Siga Marisco.</figcaption></figure>
 
 <p>Enquanto no lado de fora fazia em média 5°C, dentro estava mais ou menos 30°C. Uma delícia! Ficamos mais ou menos 1 hora no espaço.</p>
 
@@ -187,15 +187,15 @@ author: "Marina Petrovich"
 
 <p>De lá, já partimos em direção à fronteira com o Chile. Paramos apenas para visitar a Laguna Verde e tirar uma última foto de todo o grupo. </p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/6518720299a03a574156cc1f_19_grupo.jpg"/></div><figcaption>Laguna Verde, Bolívia. Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/passeio-salar-do-uyuni-bolivia/19-grupo.webp"/></div><figcaption>Laguna Verde, Bolívia. Foto: Siga Marisco.</figcaption></figure>
 
 <p>Continuamos a viagem até a fronteira para deixar parte do grupo que ia para o Deserto do Atacama.</p>
 
 <p>Na volta, paramos para uma pequena trilha para visitar mais uma lagoa, onde tivemos a sorte de ver um grupo de llamas voltando do pasto.</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/6518725c10c721e06b82f703_20_ultima-lagoa.jpg"/></div><figcaption>Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/passeio-salar-do-uyuni-bolivia/20-ultima-lagoa.webp"/></div><figcaption>Foto: Siga Marisco.</figcaption></figure>
 
-<figure class="img"><div><img loading="lazy" alt="" src="https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/651872674d58dab32ef4c58a_01_marina-salar-do-yuni.jpg"/></div><figcaption>Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/passeio-salar-do-uyuni-bolivia/01-marina-salar-do-yuni.webp"/></div><figcaption>Foto: Siga Marisco.</figcaption></figure>
 
 <p>Concluímos o tour de 3 dias pelo Salar de Uyuni e seus desertos desfrutando de um delicioso almoço tradicional e depois partimos em retorno a cidade de Uyuni, onde chegamos aproximadamente às 17:00.</p>
 

@@ -17,7 +17,3 @@ export const readingTime = (html: string) =>
 
 export const fmtDate = (d: Date) =>
   d.toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
-
-// Webflow CDN serves resized variants as name-p-800.ext
-export const resized = (url: string, w: 500 | 800 | 1080) =>
-  url.includes('website-files.com') ? url.replace(/(\.[a-zA-Z]+)$/, `-p-${w}$1`) : url;

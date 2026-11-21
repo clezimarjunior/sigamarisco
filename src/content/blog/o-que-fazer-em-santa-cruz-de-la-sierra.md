@@ -4,8 +4,8 @@ seoTitle: "O que fazer em Santa Cruz de La Sierra, Bolívia: Guia completo"
 description: "Na nossa última viagem para a Bolívia desbravamos lugares encantadores e um deles foi Santa Cruz. Por isso, resolvemos construir esse artigo para te explicar tudo!"
 category: "Bolívia"
 date: "2023-09-12"
-cover: "https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/6504c8167e0e1974b3700069_02.jpg"
-thumb: "https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/6504c8167e0e1974b3700069_02-p-800.jpg"
+cover: "/images/blog/o-que-fazer-em-santa-cruz-de-la-sierra/02.webp"
+thumb: "/images/blog/o-que-fazer-em-santa-cruz-de-la-sierra/02-thumb.webp"
 author: "Marina Petrovich"
 ---
 
@@ -31,7 +31,7 @@ author: "Marina Petrovich"
 
 <ul><li>Manzana uno</li><li>El altillo </li><li>Casa cultural Melchor pinto</li><li>Plaza Callejas</li><li>Mercadito Nuevo (mercado de comidas)</li></ul>
 
-<figure class="img"><div><img loading="lazy" alt="" src="https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/6504c8dfffd1d227c081ca72_04.jpg"/></div></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-em-santa-cruz-de-la-sierra/04.webp"/></div></figure>
 
 <h3>Samaipata</h3>
 
@@ -47,7 +47,7 @@ author: "Marina Petrovich"
 
 <p>Na verdade, o local é conhecido por ter sido ocupado e utilizado como centro ritual e residencial por pessoas pertencentes à cultura Mojocoyas já em 300 d.C., e foi nessa época que começaram os trabalhos de moldagem desta grande rocha.</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/6504c9ae8da9ae0eecc14950_03.jpg"/></div></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-em-santa-cruz-de-la-sierra/03.webp"/></div></figure>
 
 <p>Para chegar ao forte a opção mais comum é por agência de turismo, você pode sair de Samaipata ou de Santa Cruz e eles fazem todo o passeio por lá. </p>
 
@@ -59,7 +59,7 @@ author: "Marina Petrovich"
 
 <p>São 3 cachoeiras, uma mais rasa e com uma queda de água menor, ideal para crianças, outra intermediária que você pode aproveitar para descansar e a terceira (a da foto abaixo) que tem a queda d&#x27;água mais forte e mais bonita também.</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/6504c99265e731da34472c42_01.jpg"/></div></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-em-santa-cruz-de-la-sierra/01.webp"/></div></figure>
 
 <p>Chegando na entrada do parque, do outro lado da rua você tem uma estrutura de banheiros, áreas verdes e um restaurante para servir como apoio. Porém, dentro do ambiente das cachoeiras não há estrutura. Por isso, recomendamos que leve uma toalha, lanches rápidos, protetor solar e a câmera ou celular.</p>
 
@@ -105,7 +105,7 @@ author: "Marina Petrovich"
 
 <p>Bom, a estrutura de Santa Cruz de La Sierra é em anéis, ou seja, grandes círculos um dentro do outro, como mostra na imagem a seguir. </p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/6504d4bc536a9c3fc6736633_273705324_4981549928563974_8694251432956729333_n.jpg"/></div><figcaption>Fonte: <a href="https://www.facebook.com/iduurb/photos/a.749592261759783/4981549938563973/?type=3">Facebook</a></figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-em-santa-cruz-de-la-sierra/273705324-4981549928563974-8694251432956729333-n.webp"/></div><figcaption>Fonte: <a href="https://www.facebook.com/iduurb/photos/a.749592261759783/4981549938563973/?type=3">Facebook</a></figcaption></figure>
 
 <p>O Círculo menor é a região que consideramos do Centro. Logo, para turistas, a melhor região para se hospedar é dentro desse círculo menor ou o mais próximo dele. </p>
 
@@ -113,7 +113,7 @@ author: "Marina Petrovich"
 
 <h3>Cosmopolitan Hotel Boutique</h3>
 
-<figure class="img"><div><img loading="lazy" alt="" src="https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/6504d4f04401a6666ccae1ff_88006895.jpg"/></div><figcaption>Fonte: <a href="https://cf.bstatic.com/xdata/images/hotel/max1280x900/88006895.jpg?k=d58366542f45d200f182b37d1abf2f4a71a781ad37e115f39bdf2f71b95ea5ee&amp;o=&amp;hp=1">Booking</a></figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-em-santa-cruz-de-la-sierra/88006895.webp"/></div><figcaption>Fonte: <a href="https://cf.bstatic.com/xdata/images/hotel/max1280x900/88006895.jpg?k=d58366542f45d200f182b37d1abf2f4a71a781ad37e115f39bdf2f71b95ea5ee&amp;o=&amp;hp=1">Booking</a></figcaption></figure>
 
 <p>Destacamos a <a href="https://www.booking.com/hotel/bo/cosmopolitano-boutique.pt-br.html?aid=2033670&amp;label=checkmybus-homepage-SearchExtension-click&amp;sid=c18fd41d0499bdc934a5d965a73caab1&amp;all_sr_blocks=214644401_374713415_0_1_0&amp;checkin=2023-09-22&amp;checkout=2023-09-23&amp;dest_id=-700816&amp;dest_type=city&amp;dist=0&amp;group_adults=2&amp;group_children=0&amp;hapos=1&amp;highlighted_blocks=214644401_374713415_0_1_0&amp;hpos=1&amp;matching_block_id=214644401_374713415_0_1_0&amp;no_rooms=1&amp;req_adults=2&amp;req_children=0&amp;room1=A%2CA&amp;sb_price_type=total&amp;sr_order=popularity&amp;sr_pri_blocks=214644401_374713415_0_1_0__7009&amp;srepoch=1694626544&amp;srpvid=a5847bb66aaf031a&amp;type=total&amp;ucfs=1&amp;activeTab=main">Cosmopolitan </a>aqui para quem busca uma opção mais fina, que preze pelo bem-estar e por uma qualidade de serviços e estruturas mais completa. </p>
 
@@ -123,7 +123,7 @@ author: "Marina Petrovich"
 
 <h3>Pacífico Apart Hotel</h3>
 
-<figure class="img"><div><img loading="lazy" alt="" src="https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/6504d59b72e2d2509353b3b2_445879400.jpg"/></div><figcaption>Fonte: <a href="https://cf.bstatic.com/xdata/images/hotel/max1280x900/445879400.jpg?k=548024d2b871eb50210609c6225baaaf44f584148d9a5246efa40c15c3935569&amp;o=&amp;hp=1">Booking</a></figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-em-santa-cruz-de-la-sierra/445879400.webp"/></div><figcaption>Fonte: <a href="https://cf.bstatic.com/xdata/images/hotel/max1280x900/445879400.jpg?k=548024d2b871eb50210609c6225baaaf44f584148d9a5246efa40c15c3935569&amp;o=&amp;hp=1">Booking</a></figcaption></figure>
 
 <p>Agora para as pessoas que buscam uma hospedagem tradicional, o <a href="https://www.booking.com/hotel/bo/pacifico-apart.pt-br.html?label=checkmybus-homepage-SearchExtension-click&amp;aid=2033670&amp;ucfs=1&amp;arphpl=1&amp;checkin=2023-09-22&amp;checkout=2023-09-23&amp;dest_id=-700816&amp;dest_type=city&amp;group_adults=2&amp;req_adults=2&amp;no_rooms=1&amp;group_children=0&amp;req_children=0&amp;sr_order=class&amp;ucfac=61">Pacífico</a> é uma ótima escolha.</p>
 
@@ -133,7 +133,7 @@ author: "Marina Petrovich"
 
 <h3>Nomad Hostel </h3>
 
-<figure class="img"><div><img loading="lazy" alt="" src="https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/6504d64924617f02ab6bc4bf_147812693.jpg"/></div><figcaption>Fonte<a href="https://cf.bstatic.com/xdata/images/hotel/max1280x900/147812693.jpg?k=a02590f8fd28aafa4959c92a9e66262c49aac9a9b3bf17fc4fbbd31ee5125717&amp;o=&amp;hp=1">: Booking</a></figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-em-santa-cruz-de-la-sierra/147812693.webp"/></div><figcaption>Fonte<a href="https://cf.bstatic.com/xdata/images/hotel/max1280x900/147812693.jpg?k=a02590f8fd28aafa4959c92a9e66262c49aac9a9b3bf17fc4fbbd31ee5125717&amp;o=&amp;hp=1">: Booking</a></figcaption></figure>
 
 <p>O <a href="https://www.booking.com/hotel/bo/nomad-316-hostel.pt-br.html?aid=802974&amp;label=santa-cruz-de-la-sierra-_RnZ1b0oOQlb4B0BumLy2gS625998766938%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atiaud-2009137019968%3Akwd-326511676212%3Alp1001662%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YXL5GV3cgz10x_9GE_xy2hg&amp;sid=c18fd41d0499bdc934a5d965a73caab1&amp;all_sr_blocks=244185303_270153202_0_0_0;checkin=2023-09-22;checkout=2023-09-23;dest_id=-700816;dest_type=city;dist=0;group_adults=2;group_children=0;hapos=1;highlighted_blocks=244185303_270153202_0_0_0;hpos=1;matching_block_id=244185303_270153202_0_0_0;no_rooms=1;req_adults=2;req_children=0;room1=A%2CA;sb_price_type=total;sr_order=popularity;sr_pri_blocks=244185303_270153202_0_0_0__2700;srepoch=1694639741;srpvid=df13957c6b220146;type=total;ucfs=1&amp;#hotelTmpl">Nomad</a> é uma opção para quem gosta de Hostel. Um modelo mais dinâmico, onde você consegue interagir com outras pessoas, conversar sobre a viagem, ter mais liberdade para utilizar os ambientes comuns e cozinha. </p>
 

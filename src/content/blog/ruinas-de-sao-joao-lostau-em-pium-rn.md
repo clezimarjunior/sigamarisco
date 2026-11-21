@@ -4,8 +4,8 @@ seoTitle: "Ruínas de São João Lostau em Pium/RN"
 description: "Pertinho da capital do Rio Grande do Norte, existe um local pouco conhecido que esconde uma mistura de história, religiosidade e mistério. Estou falando das Ruínas de São João Lostau."
 category: "Brasil"
 date: "2024-07-07"
-cover: "https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/668b31ee98ff0621741311fa_WhatsApp%20Image%202024-07-06%20at%2015.59.59%20(1).jpeg"
-thumb: "https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/668b31ee98ff0621741311fa_WhatsApp%20Image%202024-07-06%20at%2015.59.59%20(1)-p-800.jpeg"
+cover: "/images/blog/ruinas-de-sao-joao-lostau-em-pium-rn/whatsapp-image-2024-07-06-at-15-59-59-1.webp"
+thumb: "/images/blog/ruinas-de-sao-joao-lostau-em-pium-rn/whatsapp-image-2024-07-06-at-15-59-59-1-thumb.webp"
 author: "Marina Petrovich"
 ---
 
@@ -29,7 +29,7 @@ author: "Marina Petrovich"
 
 <p>João Lostau Navarro foi beatificado em 5 de março de 2000 pelo Papa João Paulo II e posteriormente canonizado em 15 de outubro de 2017 pelo Papa Francisco. Ele é reconhecido como um dos Mártires de Cunhaú e Uruaçu e é considerado o &quot;Protomártir do Brasil&quot;. Além disso, João Lostau é honrado como patrono do estado do Rio Grande do Norte.</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/668b320598ff062174132e59_WhatsApp%20Image%202024-07-06%20at%2015.59.59%20(2).jpeg"/></div><figcaption>Ruínas de São João Lostau, RN | Foto: Siga Marisco</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/ruinas-de-sao-joao-lostau-em-pium-rn/whatsapp-image-2024-07-06-at-15-59-59-2.webp"/></div><figcaption>Ruínas de São João Lostau, RN | Foto: Siga Marisco</figcaption></figure>
 
 <p>As comemorações em sua memória ocorrem em duas datas: 16 de julho em Canguaretama e 3 de outubro em São Gonçalo do Amarante, sendo esta última um feriado estadual estabelecido pela lei Nº 8.913/2006.</p>
 
@@ -47,7 +47,7 @@ author: "Marina Petrovich"
 
 <p>As ruínas estão localizadas em uma propriedade privada, por isso é recomendável que, caso encontre o portão fechado ao chegar, procure informar a alguém que você está lá para visitar.</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/668b32d21826df437e0b1a87_WhatsApp%20Image%202024-07-06%20at%2016.18.24.jpeg"/></div></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/ruinas-de-sao-joao-lostau-em-pium-rn/whatsapp-image-2024-07-06-at-16-18-24.webp"/></div></figure>
 
 <h2>Informações importantes</h2>
 

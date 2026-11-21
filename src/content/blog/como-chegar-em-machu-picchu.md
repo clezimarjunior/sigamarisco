@@ -4,8 +4,8 @@ seoTitle: "Como chegar em Machu Picchu: 3 melhores maneiras de ir"
 description: "Se você está planejando uma viagem a Machu Picchu, é importante saber que não é tão simples chegar. Existem três maneiras principais de chegar e são elas que vamos conhecer neste blog."
 category: "Peru"
 date: "2023-09-04"
-cover: "https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/6504cd138da9ae0eecc4de01_01.jpg"
-thumb: "https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/6504cd138da9ae0eecc4de01_01-p-800.jpg"
+cover: "/images/blog/como-chegar-em-machu-picchu/01.webp"
+thumb: "/images/blog/como-chegar-em-machu-picchu/01-thumb.webp"
 author: "Marina Petrovich"
 ---
 
@@ -57,7 +57,7 @@ author: "Marina Petrovich"
 
 <h3>Caminho da hidrelétrica </h3>
 
-<figure class="img"><div><img loading="lazy" alt="" src="https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/6504cd7a1d8f733d45d518d5_05.jpg"/></div></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/como-chegar-em-machu-picchu/05.webp"/></div></figure>
 
 <p>Essa é a<strong> opção mais barata para chegar em Machu Picchu. </strong>O caminho da Hidrelétrica consiste em você pegar um transporte que te deixe na Hidrelétrica e de lá fazer uma caminha de mais ou menos 10 Km até chegar em Aguas Calientes. </p>
 
@@ -69,7 +69,7 @@ author: "Marina Petrovich"
 
 <p>Ressaltamos, que você deve ter cuidado com o trem,  escolha sempre andar pelas laterais do trilho e só ande pelo meio quando tiver necessidade para passar em alguns locais. </p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/6504cd3d9ffb9aca83a128b5_03.jpg"/></div></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/como-chegar-em-machu-picchu/03.webp"/></div></figure>
 
 <p><strong>Dica bônus: </strong>Se você tiver a oportunidade, escolha sair de Ollantaytambo. E como fazer isso? Bom, compre o passeio para o Valle Sagrado um dia antes, faça todo o percurso, e quando chegar em Ollantaytambo fique. Durma uma noite e avise a agência para te buscar lá. Assim, você economiza duas horas de estrada e ainda curte essa região belíssima.</p>
 
@@ -115,9 +115,9 @@ author: "Marina Petrovich"
 
 <h2>5 dicas para aproveitar Machu Picchu</h2>
 
-<figure class="img"><div><img loading="lazy" alt="" src="https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/6504cd138da9ae0eecc4de01_01.jpg"/></div></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/como-chegar-em-machu-picchu/01.webp"/></div></figure>
 
-<figure class="img"><div><img loading="lazy" alt="" src="https://cdn.prod.website-files.com/64f5f9def2005cf7ecf3b0fa/6504d25325ec0563bde6d4c0_02.jpg"/></div></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/como-chegar-em-machu-picchu/02.webp"/></div></figure>
 
 <h3>1. Compre seus ingressos com antecedência</h3>
 
