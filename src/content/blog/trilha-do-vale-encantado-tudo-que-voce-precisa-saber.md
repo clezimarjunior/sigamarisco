@@ -53,4 +53,6 @@ author: "Marina Petrovich"
 
 <p>Contato do Vale Encantado: Tuta (84) 999705410. <a href="https://www.instagram.com/valeencantadoficial/">Link do Instagram do Vale Encantado</a>.</p>
 
+<p>Pium tem outros passeios que valem a visita: as <a href="/blog/ruinas-de-sao-joao-lostau-em-pium-rn">Ruínas de São João Lostau</a>, cheias de história, e, seguindo para Nísia Floresta, a <a href="/blog/lagoa-da-juventude-um-passeio-off-road-imperdivel">Lagoa da Juventude</a>, ótima para quem tem carro 4x4. Veja mais <a href="/categoria/brasil">roteiros pelo Brasil</a>.</p>
+
 <p>Qualquer dúvida, pode entrar em contato conosco.</p>

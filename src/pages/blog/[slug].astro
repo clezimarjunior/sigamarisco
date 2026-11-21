@@ -4,7 +4,7 @@ import PostCard from '../../components/PostCard.astro';
 import SocialBand from '../../components/SocialBand.astro';
 import Img from '../../components/Img.astro';
 import { getCollection } from 'astro:content';
-import { SITE, slugify, readingTime, fmtDate } from '../../site';
+import { SITE, slugify, readingTime, fmtDate, RELATED } from '../../site';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', (p) => !p.data.draft);
@@ -28,7 +28,10 @@ const html = raw.replace(/<h2(?: id="[^"]*")?>(.*?)<\/h2>/g, (_, inner) => {
 const minutes = readingTime(raw);
 
 const all = (await getCollection('blog', (p) => !p.data.draft && p.id !== post.id)).sort((a, b) => +b.data.date - +a.data.date);
-const related = [...all.filter((p) => p.data.category === d.category), ...all.filter((p) => p.data.category !== d.category)].slice(0, 3);
+const byId = new Map(all.map((p) => [p.id, p]));
+const picked = (RELATED[post.id] ?? []).map((id) => byId.get(id)).filter((p) => p !== undefined);
+const fallback = [...all.filter((p) => p.data.category === d.category), ...all.filter((p) => p.data.category !== d.category)];
+const related = [...new Set([...picked, ...fallback])].slice(0, 3);
 
 const url = `${SITE.url}/blog/${post.id}`;
 const catUrl = `${SITE.url}/categoria/${slugify(d.category)}`;

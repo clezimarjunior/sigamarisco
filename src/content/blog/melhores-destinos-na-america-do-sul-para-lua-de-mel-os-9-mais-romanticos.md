@@ -19,7 +19,7 @@ author: "Marina Petrovich"
 
 <h2><strong>Cartagena e San Andres</strong></h2>
 
-<p>Eu diria que essa é uma das principais escolhas para os Brasileiros que querem visitar a Colômbia. Cartagena e San Andrés mostram a cultura colombiana e um paraíso de praia caribenha. </p>
+<p>Eu diria que essa é uma das principais escolhas para os Brasileiros que querem visitar a <a href="/categoria/colombia">Colômbia</a>. Cartagena e San Andrés mostram a cultura colombiana e um paraíso de praia caribenha. </p>
 
 <h3>Cartagena</h3>
 
@@ -41,7 +41,7 @@ author: "Marina Petrovich"
 
 <h2>Mendoza e Bariloche</h2>
 
-<p>Para os casais que buscam uma lua de mel repleta de romance e aventura, Mendoza e Bariloche, na Argentina, oferecem uma combinação perfeita de paisagens deslumbrantes, vinhedos encantadores e atividades emocionantes.</p>
+<p>Para os casais que buscam uma lua de mel repleta de romance e aventura, Mendoza e Bariloche, na <a href="/categoria/argentina">Argentina</a>, oferecem uma combinação perfeita de paisagens deslumbrantes, vinhedos encantadores e atividades emocionantes.</p>
 
 <h3>Mendoza </h3>
 
@@ -143,7 +143,7 @@ author: "Marina Petrovich"
 
 <p>Os casais podem explorar as ruínas antigas, caminhar pelos trilhos incas que cortam as montanhas e maravilhar-se com a beleza intocada da natureza ao redor. </p>
 
-<p>Para saber mais sobre como chegar em Machu Picchu, <a href="/blog/como-chegar-em-machu-picchu">leia esse conteúdo.</a></p>
+<p>Para saber mais sobre como chegar em Machu Picchu, <a href="/blog/como-chegar-em-machu-picchu">veja as 3 formas de chegar em Machu Picchu</a>.</p>
 
 <h2>Pucón </h2>
 

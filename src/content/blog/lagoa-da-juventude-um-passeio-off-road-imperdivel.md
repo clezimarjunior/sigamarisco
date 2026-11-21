@@ -15,6 +15,8 @@ author: "Marina Petrovich"
 
 <p>Para chegar à Lagoa da Juventude, partindo de Natal, o trajeto mais recomendado é seguir pela Rota do Sol até chegar a Pium. De lá, entre na Estrada de Pium e na primeira rotatória, vire à esquerda.</p>
 
+<p>Pium também é o ponto de partida da <a href="/blog/trilha-do-vale-encantado-tudo-que-voce-precisa-saber">Trilha do Vale Encantado</a> e onde ficam as <a href="/blog/ruinas-de-sao-joao-lostau-em-pium-rn">Ruínas de São João Lostau</a>, então dá para combinar os passeios no mesmo fim de semana.</p>
+
 <figure class="img"><div><img loading="lazy" alt="Estrada de terra vista de dentro do carro 4x4 no caminho para a Lagoa da Juventude, RN" src="/images/blog/lagoa-da-juventude-um-passeio-off-road-imperdivel/ad-4nxct3dnmebwsk7hxu1yjvdonw-yfafjxrj2mxqhcysohqzcfkq4evvfe6c13vymszxmk8ddkxnuzcgsq7ka1r8ga-4n5tvk1fi-xxuhd58-48kfukfymhjpfesbvh5eh0kvqrtyfdlb78zqr2ij-qhudcx8.webp"/></div><figcaption>Caminho para a Lagoa da Juventude/RN | Foto: Siga Marisco.</figcaption></figure>
 
 <p>Quando passar o presídio de Alcaçuz você segue na principal até chegar à única placa que indica o caminho para alguma das lagoas, aí você vira direita.</p>
@@ -37,7 +39,7 @@ author: "Marina Petrovich"
 
 <p>Além disso, a lagoa é envolta em uma lenda local: dizem que cada mergulho em suas águas tem o poder de rejuvenescer a pessoa, fazendo com que ela pareça alguns anos mais jovem.</p>
 
-<p>Se você quer saber mais sobre esse destino eu aconselho assistir o nosso vídeo no Youtube. </p>
+<p>Se você quer saber mais sobre esse destino eu aconselho assistir o <a href="https://www.youtube.com/@sigamarisco">nosso vídeo no YouTube</a>. Para mais passeios perto de Natal, veja nossos <a href="/categoria/brasil">roteiros pelo Brasil</a>. </p>
 
 <p>Qualquer dúvida que tiver é só falar com a gente!</p>
 

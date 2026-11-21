@@ -9,7 +9,7 @@ thumb: "/images/blog/como-chegar-em-machu-picchu/01-thumb.webp"
 author: "Marina Petrovich"
 ---
 
-<p>Machu Picchu é uma das maravilhas do mundo moderno e um dos destinos turísticos mais populares do Peru. A cidadela Inca, localizada no alto das montanhas dos Andes, é um lugar de beleza e mistério que atrai visitantes de todo o mundo.</p>
+<p>Machu Picchu é uma das maravilhas do mundo moderno e um dos destinos turísticos mais populares do <a href="/categoria/peru">Peru</a>. A cidadela Inca, localizada no alto das montanhas dos Andes, é um lugar de beleza e mistério que atrai visitantes de todo o mundo.</p>
 
 <p>Se você está planejando uma viagem a Machu Picchu, é importante saber que não é tão simples chegar lá como se imagina. Existem três maneiras principais de chegar e são elas que vamos conhecer neste blog.</p>
 
@@ -146,6 +146,8 @@ author: "Marina Petrovich"
 <p>Aguas Calientes é a cidade base mais próxima de Machu Picchu e oferece várias opções de acomodação para todos os orçamentos.</p>
 
 <p>Além disso, dormindo em Aguas Calientes voce pode conhecer o povoado </p>
+
+<p>Pelos Andes, outra aventura em altitude que fizemos foi o <a href="/blog/passeio-salar-do-uyuni-bolivia">passeio de 3 dias pelo Salar do Uyuni</a>, na Bolívia. E, se a viagem até o Peru for de avião, confira <a href="/blog/mala-que-pode-levar-no-aviao-melhores-modelos-e-tamanhos-permitidos">o tamanho de mala que pode levar no avião</a> antes de arrumar a bagagem. Machu Picchu também está na nossa lista de <a href="/blog/melhores-destinos-na-america-do-sul-para-lua-de-mel-os-9-mais-romanticos">destinos mais românticos da América do Sul para lua de mel</a>.</p>
 
 <p>Se vai viajar para Machu Picchu e ainda ficou com dúvida é só entrar em contato conosco pelo e-mail (<a href="mailto:contato@sigamarisco.com.br">contato@sigamarisco.com.br</a>) ou pelo <a href="https://www.instagram.com/sigamarisco/">nosso instagram </a>que te ajudamos! </p>
 

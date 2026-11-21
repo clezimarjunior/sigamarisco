@@ -53,7 +53,9 @@ author: "Marina Petrovich"
 
 <p>Já fomos algumas vezes ao local e aqui estão as nossas considerações:</p>
 
-<ul><li>Lever água: a trilha é curta mas a região é muito quente porque não tem sombra.</li><li>Ir de tênis: dá para ir com outros sapatos? Sim. Mas é melhor ir de tênis para garantir um conforto maior já que o terreno é de terra.</li><li>Repelente: Não senti muito mosquito, mas se quiser evitar, indico que passe um repelente antes.</li><li>Ir cedo: Fomos à tarde e também pela manhã. Optando pela manhã, você pode visitar o local e ainda aproveitar a região de Pium, como a feira de frutas, a praia ou até mesmo as lagoas.</li></ul>
+<ul><li>Lever água: a trilha é curta mas a região é muito quente porque não tem sombra.</li><li>Ir de tênis: dá para ir com outros sapatos? Sim. Mas é melhor ir de tênis para garantir um conforto maior já que o terreno é de terra.</li><li>Repelente: Não senti muito mosquito, mas se quiser evitar, indico que passe um repelente antes.</li><li>Ir cedo: Fomos à tarde e também pela manhã. Optando pela manhã, você pode visitar o local e ainda aproveitar a região de Pium, como a feira de frutas, a praia, a <a href="/blog/trilha-do-vale-encantado-tudo-que-voce-precisa-saber">Trilha do Vale Encantado</a> ou até mesmo as lagoas de Nísia Floresta, como a <a href="/blog/lagoa-da-juventude-um-passeio-off-road-imperdivel">Lagoa da Juventude</a>.</li></ul>
+
+<p>Veja outros <a href="/categoria/brasil">passeios pelo Brasil e pelo Rio Grande do Norte</a>.</p>
 
 <p>Se você for visitar as Ruínas de São João Lostau pode entrar em contato com a gente que tiramos todas as dúvidas!</p>
 

@@ -13,7 +13,7 @@ author: "Marina Petrovich"
 
 <h2>Sobre Medellín</h2>
 
-<p>Para começar, vale lembrar que escolhemos conhecer Medellín sem muitas expectativas, apenas para reencontrar alguns amigos de Francisco que moram lá. No entanto, nos surpreendemos com o tanto que a cidade tem a nos oferecer, desde uma gastronomia rica a pontos turísticos bem interessantes.<br/><br/>Medellín é a segunda maior cidade da Colômbia e a capital do departamento de Antioquia. Está localizada no Vale do Aburrá, uma região central da Cordilheira dos Andes.</p>
+<p>Para começar, vale lembrar que escolhemos conhecer Medellín sem muitas expectativas, apenas para reencontrar alguns amigos de Francisco que moram lá. No entanto, nos surpreendemos com o tanto que a cidade tem a nos oferecer, desde uma gastronomia rica a pontos turísticos bem interessantes.<br/><br/>Medellín é a segunda maior cidade da <a href="/categoria/colombia">Colômbia</a> e a capital do departamento de Antioquia. Está localizada no Vale do Aburrá, uma região central da Cordilheira dos Andes.</p>
 
 <p>Ela é conhecida como a &quot;cidade da eterna primavera&quot; devido ao seu clima ameno, que varia entre 18 e 24 graus Celsius ao longo do ano. A cidade é também conhecida por sua rica cultura e história, sua gastronomia e sua vida noturna vibrante.</p>
 
@@ -185,6 +185,6 @@ author: "Marina Petrovich"
 
 <p>Tem alguma dúvida ou quer saber mais detalhes sobre algo específico de Medellín? Entre em contato conosco pelo: <a href="mailto:contato@sigamarisco.com.br">contato@sigamarisco.com.br</a>.</p>
 
-<p>Aproveite e<a href="/"> confira mais </a>destinos de viagem no nosso blog!</p>
+<p>Aproveite e confira a nossa lista de <a href="/blog/melhores-destinos-na-america-do-sul-para-lua-de-mel-os-9-mais-romanticos">destinos na América do Sul para viajar a dois</a>, que inclui Cartagena e San Andrés, e veja <a href="/blog/mala-que-pode-levar-no-aviao-melhores-modelos-e-tamanhos-permitidos">o que pode levar na mala de mão</a> antes de embarcar. Tem muito mais em <a href="/blog">todos os roteiros do blog</a>!</p>
 
 <p>‍</p>

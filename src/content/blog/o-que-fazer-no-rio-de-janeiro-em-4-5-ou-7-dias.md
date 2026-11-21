@@ -107,7 +107,7 @@ author: "Marina Petrovich"
 
 <h4>Dia 5 </h4>
 
-<h5>Trilha pedra Bonita</h5><p>O Rio de Janeiro é um dos lugares no Brasil com maior quantidade de trilhas, através delas, você consegue ver a cidade maravilhosa por diversos ângulos incríveis. </p>
+<h5>Trilha pedra Bonita</h5><p>O Rio de Janeiro é um dos lugares no <a href="/categoria/brasil">Brasil</a> com maior quantidade de trilhas, através delas, você consegue ver a cidade maravilhosa por diversos ângulos incríveis. </p>
 
 <p>Nesse sentido, uma das mais fáceis para iniciantes é a Pedra Bonita, você consegue fazer ela sozinho, sem precisar de guia local,  pois é toda demarcada.</p>
 
@@ -227,4 +227,4 @@ author: "Marina Petrovich"
 
 <p>Espero que esse conteúdo tenha te ajudado a planejar a sua viagem à cidade maravilhosa. Caso tenha qualquer dúvida, é só entrar em contato com a gente!</p>
 
-<p>Para conhecer mais destinos turísticos, <a href="/">continue navegando</a> no nosso blog.</p>
+<p>Antes de embarcar, confira <a href="/blog/mala-que-pode-levar-no-aviao-melhores-modelos-e-tamanhos-permitidos">o tamanho de mala que pode levar no avião</a>. Se você curte trilha e vai ao Nordeste, a <a href="/blog/trilha-do-vale-encantado-tudo-que-voce-precisa-saber">Trilha do Vale Encantado, perto de Natal</a> é ótima para iniciantes. E, para viajar a dois, veja nossa lista de <a href="/blog/melhores-destinos-na-america-do-sul-para-lua-de-mel-os-9-mais-romanticos">destinos para lua de mel na América do Sul</a>.</p>

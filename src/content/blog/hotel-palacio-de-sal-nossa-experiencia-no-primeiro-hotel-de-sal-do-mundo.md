@@ -25,7 +25,7 @@ author: "Marina Petrovich"
 
 <p>Desse modo, o Palácio de Sal recebeu diversos prêmios e reconhecimentos internacionais.</p>
 
-<p>Considerado um dos hotéis mais singulares do mundo. Um importante destino turístico na Bolívia.</p>
+<p>Considerado um dos hotéis mais singulares do mundo. Um importante destino turístico na <a href="/categoria/bolivia">Bolívia</a>.</p>
 
 <p>Atualmente, ele é símbolo da criatividade e do potencial da Bolívia, demonstra a capacidade de transformar recursos naturais em algo único e especial e inspira outras iniciativas inovadoras no país.</p>
 
@@ -68,3 +68,5 @@ author: "Marina Petrovich"
 <p>No entanto, ao verificar o site de reservas, percebi que as diárias agora estão disponíveis a partir de R$ 1.700 para o casal. É importante ressaltar que o Palácio de Sal não é uma opção de hospedagem econômica, portanto, é essencial planejar e reservar com antecedência para garantir a sua estadia.</p>
 
 <p>Dada a natureza flutuante dos preços e da disponibilidade, recomendo verificar constantemente os sites de reserva e agendar sua estadia com antecedência para evitar surpresas desagradáveis durante sua viagem.<br/><br/>Por fim, indicamos se hospedar no Palácio de Sal. Tivemos uma experiência maravilhosa e você também pode viver isso! Para ver disponibilidade de reserva e fazer a sua é só<a href="https://www.booking.com/Share-FP8EWM"> seguir por esse link!</a></p>
+
+<p>Se você está montando um roteiro pela Bolívia, veja também <a href="/blog/o-que-fazer-em-santa-cruz-de-la-sierra">o que fazer em Santa Cruz de la Sierra</a>. E, para quem procura um lugar especial para viajar a dois, o Palácio de Sal aparece na nossa lista de <a href="/blog/melhores-destinos-na-america-do-sul-para-lua-de-mel-os-9-mais-romanticos">destinos para lua de mel na América do Sul</a>.</p>

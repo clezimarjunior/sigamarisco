@@ -9,7 +9,7 @@ thumb: "/images/blog/o-que-fazer-em-santa-cruz-de-la-sierra/02-thumb.webp"
 author: "Marina Petrovich"
 ---
 
-<p>Na nossa última viagem para a Bolívia desbravamos lugares encantadores e um deles foi Santa Cruz. Por isso, resolvemos construir esse artigo para te explicar o que fazer em Santa Cruz de la Sierra e tudo o que você precisa saber antes de chegar nesse destino.</p>
+<p>Na nossa última viagem para a <a href="/categoria/bolivia">Bolívia</a> desbravamos lugares encantadores e um deles foi Santa Cruz. Por isso, resolvemos construir esse artigo para te explicar o que fazer em Santa Cruz de la Sierra e tudo o que você precisa saber antes de chegar nesse destino.</p>
 
 <h2>Conheça um pouco da História de Santa Cruz de La Sierra</h2>
 
@@ -178,5 +178,7 @@ author: "Marina Petrovich"
 <p>Outra forma, e uma das mais populares e baratas entre os brasileiros, é pelo trem da morte. O percurso é da fronteira com Corumbá, no Mato Grosso do Sul, até Santa Cruz de la Sierra. </p>
 
 <p>O trem mais famoso é o Expresso Oriental, que demora cerca de 17 horas e custa em média BOB 100.</p>
+
+<p>Se a sua viagem pela Bolívia incluir o sudoeste do país, confira o nosso <a href="/blog/passeio-salar-do-uyuni-bolivia">roteiro de 3 dias pelo Salar do Uyuni</a> e como foi dormir no <a href="/blog/hotel-palacio-de-sal-nossa-experiencia-no-primeiro-hotel-de-sal-do-mundo">Hotel Palacio de Sal</a>, o primeiro hotel de sal do mundo.</p>
 
 <p>Por fim, espero que esse blog tenha te ajudado a entender um pouco mais sobre Santa Cruz de La Sierra, se precisar de qualquer ajuda, é só entrar em contato conosco que vamos ter o prazer de responder!</p>

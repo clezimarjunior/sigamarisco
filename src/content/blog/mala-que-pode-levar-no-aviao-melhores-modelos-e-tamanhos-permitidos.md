@@ -147,6 +147,8 @@ author: "Marina Petrovich"
 
 <p>Azul: As informações de bagagem estão <a href="https://www.voeazul.com.br/br/pt/sua-viagem/planeje/bagagem?topic=Voos+no+Brasil&amp;content=11%40Tarifa+Azul">nesta página</a>.</p>
 
+<p>Se você vai para o frio, como o altiplano boliviano, confira também a lista do <a href="/blog/passeio-salar-do-uyuni-bolivia">que levar para o passeio no Salar do Uyuni</a>. E, se o destino é <a href="/blog/como-chegar-em-machu-picchu">Machu Picchu</a>, lembre que algumas formas de chegar envolvem longas caminhadas, então vale pensar bem no peso da bagagem. Outras <a href="/categoria/informacao">dicas de planejamento de viagem</a> estão reunidas no blog.</p>
+
 <p>Espero que este conteúdo possa ter te ajudado a escolher a melhor bagagem para a sua viagem. Caso ainda tenha alguma dúvida, pode entrar em contato conosco que vamos fazer de tudo para responder o mais rápido possível.</p>
 
 <p>Boa viagem!</p>
