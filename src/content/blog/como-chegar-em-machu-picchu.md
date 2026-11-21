@@ -150,6 +150,6 @@ author: "Marina Petrovich"
 
 <p>Pelos Andes, outra aventura em altitude que fizemos foi o <a href="/blog/passeio-salar-do-uyuni-bolivia">passeio de 3 dias pelo Salar do Uyuni</a>, na Bolívia. E, se a viagem até o Peru for de avião, confira <a href="/blog/mala-que-pode-levar-no-aviao-melhores-modelos-e-tamanhos-permitidos">o tamanho de mala que pode levar no avião</a> antes de arrumar a bagagem. Machu Picchu também está na nossa lista de <a href="/blog/melhores-destinos-na-america-do-sul-para-lua-de-mel-os-9-mais-romanticos">destinos mais românticos da América do Sul para lua de mel</a>.</p>
 
-<p>Se vai viajar para Machu Picchu e ainda ficou com dúvida é só entrar em contato conosco pelo e-mail (<a href="mailto:contato@sigamarisco.com.br">contato@sigamarisco.com.br</a>) ou pelo <a href="https://www.instagram.com/sigamarisco/">nosso instagram </a>que te ajudamos! </p>
+<p>Se vai viajar para Machu Picchu e ainda ficou com dúvida é só entrar em contato conosco pelo e-mail (<a href="mailto:sigamarisco@gmail.com">sigamarisco@gmail.com</a>) ou pelo <a href="https://www.instagram.com/sigamarisco/">nosso instagram </a>que te ajudamos! </p>
 
 <p>Boa viagem!</p>

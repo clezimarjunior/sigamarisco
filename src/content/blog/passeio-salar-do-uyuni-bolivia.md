@@ -250,4 +250,4 @@ author: "Marina Petrovich"
 
 <p>Também contamos <a href="/blog/o-que-fazer-em-santa-cruz-de-la-sierra">o que fazer em Santa Cruz de la Sierra</a>, outra cidade que conhecemos na Bolívia. E, como o pedido de casamento aconteceu aqui, o Salar não podia faltar na nossa lista de <a href="/blog/melhores-destinos-na-america-do-sul-para-lua-de-mel-os-9-mais-romanticos">destinos para lua de mel na América do Sul</a>.</p>
 
-<p>Se você ainda tem alguma dúvida sobre o Salar de Uyuni, é só entrar em contato pelo nosso e-mail (<a href="mailto:contato@sigamarisco.com.br">contato@sigamarisco.com.br</a>) que teremos o prazer em te ajudar! </p>
+<p>Se você ainda tem alguma dúvida sobre o Salar de Uyuni, é só entrar em contato pelo nosso e-mail (<a href="mailto:sigamarisco@gmail.com">sigamarisco@gmail.com</a>) que teremos o prazer em te ajudar! </p>

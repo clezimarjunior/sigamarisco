@@ -184,7 +184,7 @@ author: "Marina Petrovich"
 
 <p>‍</p>
 
-<p>Tem alguma dúvida ou quer saber mais detalhes sobre algo específico de Medellín? Entre em contato conosco pelo: <a href="mailto:contato@sigamarisco.com.br">contato@sigamarisco.com.br</a>.</p>
+<p>Tem alguma dúvida ou quer saber mais detalhes sobre algo específico de Medellín? Entre em contato conosco pelo: <a href="mailto:sigamarisco@gmail.com">sigamarisco@gmail.com</a>.</p>
 
 <p>Aproveite e confira a nossa lista de <a href="/blog/melhores-destinos-na-america-do-sul-para-lua-de-mel-os-9-mais-romanticos">destinos na América do Sul para viajar a dois</a>, que inclui Cartagena e San Andrés, e veja <a href="/blog/mala-que-pode-levar-no-aviao-melhores-modelos-e-tamanhos-permitidos">o que pode levar na mala de mão</a> antes de embarcar. Tem muito mais em <a href="/blog">todos os roteiros do blog</a>!</p>
 
