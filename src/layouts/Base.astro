@@ -14,7 +14,7 @@ interface Props {
 }
 const { title, description = SITE.description, image, type = 'website', jsonLd, noindex = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname.replace(/\/$/, '') || '/', SITE.url).href;
-const ogImage = image ?? new URL('/brand/marisco.webp', SITE.url).href;
+const ogImage = image ?? new URL('https://cdn.prod.website-files.com/64f5f8ead351decb8d4c0ada/650077e74f6bb1963e72980d_marisco2.webp', SITE.url).href;
 const lds = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 ---
 <!doctype html>
