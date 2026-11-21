@@ -4,7 +4,7 @@ import PostCard from '../../components/PostCard.astro';
 import SocialBand from '../../components/SocialBand.astro';
 import Img from '../../components/Img.astro';
 import { getCollection } from 'astro:content';
-import { SITE, slugify, readingTime, fmtDate, RELATED } from '../../site';
+import { SITE, slugify, readingTime, fmtDate, RELATED, ORG_ID, organizationSchema, personSchema } from '../../site';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', (p) => !p.data.draft);
@@ -43,9 +43,9 @@ const jsonLd = [
     description: d.description,
     image: [new URL(d.cover, SITE.url).href],
     datePublished: d.date.toISOString(),
-    dateModified: (d.updated ?? d.date).toISOString(),
-    author: { '@type': 'Person', name: d.author, url: `${SITE.url}/sobre` },
-    publisher: { '@type': 'Organization', name: SITE.name, logo: { '@type': 'ImageObject', url: `${SITE.url}/brand/logo.svg` } },
+    dateModified: (d.updatedDate ?? d.date).toISOString(),
+    author: personSchema(d.author),
+    publisher: { '@type': 'Organization', '@id': ORG_ID, name: SITE.name, logo: organizationSchema.logo },
     mainEntityOfPage: url,
     inLanguage: 'pt-BR',
     articleSection: d.category,
@@ -75,7 +75,9 @@ const shareText = encodeURIComponent(`${d.title} ${url}`);
         <div class="meta">
           <Img src="/images/brand/marina-thumb.webp" alt={d.author} class="avatar" width="40" height="40" />
           <span><strong style="color:var(--navy)">{d.author}</strong><br />
-            <time datetime={d.date.toISOString()}>{fmtDate(d.date)}</time> · {minutes} min de leitura</span>
+            <time datetime={d.date.toISOString()}>{fmtDate(d.date)}</time>
+            {d.updatedDate && <> · Atualizado em <time datetime={d.updatedDate.toISOString()}>{fmtDate(d.updatedDate)}</time></>}
+            · {minutes} min de leitura</span>
         </div>
         <div class="article-cover">
           <Img src={d.cover} alt={d.title} layout="article" priority />

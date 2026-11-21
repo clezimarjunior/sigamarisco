@@ -11,7 +11,8 @@ const blog = defineCollection({
     seoDescription: z.string().optional(),
     category: z.string(),
     date: z.coerce.date(),
-    updated: z.coerce.date().optional(),
+    /** Data de uma revisão REAL do conteúdo. Não preencher sem atualização de fato. */
+    updatedDate: z.coerce.date().optional(),
     cover: z.string(),
     thumb: z.string().optional(),
     author: z.string().default('Marina Petrovich'),

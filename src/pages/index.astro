@@ -3,20 +3,24 @@ import Base from '../layouts/Base.astro';
 import PostCard from '../components/PostCard.astro';
 import SocialBand from '../components/SocialBand.astro';
 import { getCollection } from 'astro:content';
-import { SITE, slugify } from '../site';
+import { SITE, slugify, ORG_ID, organizationSchema } from '../site';
 
 const posts = (await getCollection('blog', (p) => !p.data.draft)).sort((a, b) => +b.data.date - +a.data.date);
 const [first, ...rest] = posts;
 const cats = [...new Set(posts.map((p) => p.data.category))].sort();
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: SITE.name,
-  url: SITE.url,
-  description: SITE.description,
-  inLanguage: 'pt-BR',
-  publisher: { '@type': 'Organization', name: SITE.name, logo: `${SITE.url}/brand/logo.svg`, sameAs: [SITE.instagram, SITE.youtube] },
-};
+const jsonLd = [
+  organizationSchema,
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${SITE.url}/#website`,
+    name: SITE.name,
+    url: SITE.url,
+    description: SITE.description,
+    inLanguage: 'pt-BR',
+    publisher: { '@id': ORG_ID },
+  },
+];
 ---
 <Base title="Siga Marisco — Blog de viagem: roteiros, dicas e o que fazer" jsonLd={jsonLd}>
   <section class="hero">

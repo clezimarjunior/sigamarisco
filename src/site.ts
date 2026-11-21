@@ -78,3 +78,31 @@ export const CATEGORY_INTRO: Record<string, string[]> = {
     "Também mostramos como subir de Aguas Calientes até a cidadela, de ônibus ou pela trilha, e reunimos cinco dicas para aproveitar melhor a visita, como comprar o ingresso com antecedência e dormir em Aguas Calientes. Se você vai combinar o Peru com a Bolívia, vale ver também os nossos roteiros bolivianos.",
   ],
 };
+
+// ---- Schema.org compartilhado ----
+export const ORG_ID = `${SITE.url}/#organization`;
+export const SOCIAL = [SITE.youtube, SITE.instagram];
+
+export const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': ORG_ID,
+  name: SITE.name,
+  url: SITE.url,
+  logo: { '@type': 'ImageObject', url: `${SITE.url}/brand/logo.svg` },
+  email: SITE.email,
+  sameAs: SOCIAL,
+};
+
+/** Autores conhecidos. A âncora aponta para o bloco da pessoa em /sobre. */
+export const AUTHORS: Record<string, { id: string; url: string }> = {
+  'Marina Petrovich': { id: `${SITE.url}/sobre#marina`, url: `${SITE.url}/sobre#marina` },
+};
+
+export const personSchema = (name: string) => ({
+  '@type': 'Person',
+  '@id': AUTHORS[name]?.id,
+  name,
+  url: AUTHORS[name]?.url ?? `${SITE.url}/sobre`,
+  sameAs: SOCIAL,
+});
