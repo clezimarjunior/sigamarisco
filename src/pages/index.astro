@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import PostCard from '../components/PostCard.astro';
-import CommunityBand from '../components/CommunityBand.astro';
+import SocialBand from '../components/SocialBand.astro';
 import { getCollection } from 'astro:content';
 import { SITE, slugify } from '../site';
 
@@ -15,7 +15,7 @@ const jsonLd = {
   url: SITE.url,
   description: SITE.description,
   inLanguage: 'pt-BR',
-  publisher: { '@type': 'Organization', name: SITE.name, logo: `${SITE.url}/brand/logo.svg`, sameAs: [SITE.instagram] },
+  publisher: { '@type': 'Organization', name: SITE.name, logo: `${SITE.url}/brand/logo.svg`, sameAs: [SITE.instagram, SITE.youtube] },
 };
 ---
 <Base title="Siga Marisco — Blog de viagem: roteiros, dicas e o que fazer" jsonLd={jsonLd}>
@@ -28,7 +28,7 @@ const jsonLd = {
           <p>Roteiros reais, quanto custa e o que vale a pena — do litoral potiguar ao Salar de Uyuni.</p>
           <div class="hero-actions">
             <a class="btn btn-orange" href="#artigos">Ver artigos</a>
-            <a class="btn btn-ghost" href={SITE.whatsapp} target="_blank" rel="noopener">Comunidade no WhatsApp</a>
+            <a class="btn btn-ghost" href={SITE.youtube} target="_blank" rel="noopener">Assista no YouTube</a>
           </div>
         </div>
       </div>
@@ -51,7 +51,7 @@ const jsonLd = {
     </div>
   </section>
 
-  <div class="wrap"><CommunityBand /></div>
+  <div class="wrap"><SocialBand /></div>
 
   <section class="section" id="sobre">
     <div class="wrap">

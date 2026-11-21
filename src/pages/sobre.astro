@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import CommunityBand from '../components/CommunityBand.astro';
+import SocialBand from '../components/SocialBand.astro';
 import { SITE } from '../site';
 const jsonLd = { '@context': 'https://schema.org', '@type': 'AboutPage', name: 'Sobre o Siga Marisco', url: `${SITE.url}/sobre` };
 ---
@@ -19,5 +19,5 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'AboutPage', name: '
       </div>
     </div>
   </section>
-  <div class="wrap"><CommunityBand /></div>
+  <div class="wrap"><SocialBand /></div>
 </Base>

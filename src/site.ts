@@ -6,7 +6,7 @@ export const SITE = {
     'Blog de viagem do casal Marina e Francisco: roteiros, dicas e experiências reais pelo Brasil e América do Sul — de Natal/RN ao Salar de Uyuni.',
   email: 'sigamarisco@gmail.com',
   instagram: 'https://www.instagram.com/sigamarisco/',
-  whatsapp: 'https://chat.whatsapp.com/IFDWQNzlWg2F3QT3vjpsrT',
+  youtube: 'https://www.youtube.com/@sigamarisco',
 };
 
 export const slugify = (s: string) =>

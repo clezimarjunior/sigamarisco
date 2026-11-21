@@ -4,8 +4,8 @@ seoTitle: "Restaurante Abrasado Mendoza: Review Completo"
 description: "Entre as muitas opções de restaurantes da cidade, o Restaurante Abrasado Mendoza é um dos mais populares, oferecendo uma experiência gastronômica de alta qualidade em um ambiente elegante."
 category: "Argentina"
 date: "2024-01-10"
-cover: "/images/blog/restaurante-abrasado-mendoza-review-completo/whatsapp-image-2023-11-22-at-09-54-16-1.webp"
-thumb: "/images/blog/restaurante-abrasado-mendoza-review-completo/whatsapp-image-2023-11-22-at-09-54-16-1-thumb.webp"
+cover: "/images/blog/restaurante-abrasado-mendoza-review-completo/restaurante-abrasado-mendoza-review-completo-1.webp"
+thumb: "/images/blog/restaurante-abrasado-mendoza-review-completo/restaurante-abrasado-mendoza-review-completo-1-thumb.webp"
 author: "Marina Petrovich"
 ---
 
@@ -35,17 +35,17 @@ author: "Marina Petrovich"
 
 <p>Logo quando chegamos eles já deixaram na mesa pães artesanais, um azeite especial e um balsâmico. </p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/restaurante-abrasado-mendoza-review-completo/whatsapp-image-2023-11-22-at-09-54-45-1.webp"/></div><figcaption>Cortesia no restaurante Abrasado - Los Toneles | Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/restaurante-abrasado-mendoza-review-completo/restaurante-abrasado-mendoza-review-completo-6.webp"/></div><figcaption>Cortesia no restaurante Abrasado - Los Toneles | Foto: Siga Marisco.</figcaption></figure>
 
 <p>Em seguida, já deixaram em nossa mesa, uma pedra quente com 3 pequenos cortes diferentes de carne. O objetivo dessa parte era experimentar a carne e também avaliarmos em qual ponto queríamos a que viesse em nosso prato principal.</p>
 
 <p>Depois, nos serviram o prato principal. E que prato! 400g de carne com uma porção de batata frita bem temperada. Pedimos a carne ao ponto e veio no ponto perfeito.Ficamos bem satisfeitos. </p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/restaurante-abrasado-mendoza-review-completo/whatsapp-image-2023-11-22-at-09-54-25-2.webp"/></div><figcaption>Prato Principal, Restaurante Abrasado | Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/restaurante-abrasado-mendoza-review-completo/restaurante-abrasado-mendoza-review-completo-5.webp"/></div><figcaption>Prato Principal, Restaurante Abrasado | Foto: Siga Marisco.</figcaption></figure>
 
 <p>Por fim, já estávamos muito cheios, eles trouxeram uma sobremesa bem grande com pudim, doce de leite, espuma de baunilha e farofa de amêndoas. </p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/restaurante-abrasado-mendoza-review-completo/whatsapp-image-2023-11-22-at-09-54-19-1.webp"/></div><figcaption>Sobremesa do Restaurante Abrasado | Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/restaurante-abrasado-mendoza-review-completo/restaurante-abrasado-mendoza-review-completo-3.webp"/></div><figcaption>Sobremesa do Restaurante Abrasado | Foto: Siga Marisco.</figcaption></figure>
 
 <h3>Vinhos</h3>
 
@@ -53,11 +53,11 @@ author: "Marina Petrovich"
 
 <p>O que mais me impressionou foi a liberdade de beber quantas taças de vinho você quisesse. Eles nos serviram 3 opções, uma delas foi em lata. Mas sendo bem sincera, se você quiser você sai cambaleando de lá.</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/restaurante-abrasado-mendoza-review-completo/whatsapp-image-2023-11-22-at-09-54-25-1-1.webp"/></div><figcaption>Vinho Los Toneles - Restaurante Abarasado | Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/restaurante-abrasado-mendoza-review-completo/restaurante-abrasado-mendoza-review-completo-4.webp"/></div><figcaption>Vinho Los Toneles - Restaurante Abarasado | Foto: Siga Marisco.</figcaption></figure>
 
 <p>Os garçons passam a todo instante, se a sua taça estiver meio vazia já repõe e mantém essa rotina sem deixar você terminar uma taça. Impressionante.</p>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/restaurante-abrasado-mendoza-review-completo/whatsapp-image-2023-11-22-at-09-54-18-1.webp"/></div><figcaption>Vinho em Lata - Restaurante Abarasado | Foto: Siga Marisco.</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/restaurante-abrasado-mendoza-review-completo/restaurante-abrasado-mendoza-review-completo-2.webp"/></div><figcaption>Vinho em Lata - Restaurante Abarasado | Foto: Siga Marisco.</figcaption></figure>
 
 <h3><a href="https://drive.google.com/file/d/1wzdLVFnOrLKWc63_U17ZXCeU7mZYH8wU/view?usp=drive_link">‍</a>Atendimento</h3>
 

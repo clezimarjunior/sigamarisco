@@ -83,7 +83,7 @@ author: "Marina Petrovich"
 
 <h4>Parque lage</h4>
 
-<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/whatsapp-image-2024-01-02-at-18-10-47.webp"/></div><figcaption>Parque Lage, Rio de Janeiro | Foto: Siga Marisco</figcaption></figure>
+<figure class="img"><div><img loading="lazy" alt="" src="/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias-1.webp"/></div><figcaption>Parque Lage, Rio de Janeiro | Foto: Siga Marisco</figcaption></figure>
 
 <p>A primeira parada no seu quarto dia na cidade maravilhosa é no Parque Lage.</p>
 
