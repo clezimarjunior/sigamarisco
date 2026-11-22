@@ -10,6 +10,8 @@ const blog = defineCollection({
     /** Meta description (120-158 caracteres). Se vazio, usa description. */
     seoDescription: z.string().optional(),
     category: z.string(),
+    /** Estado (só para posts de Brasil), ex.: "Pará". Gera /categoria/brasil/<estado>. */
+    state: z.string().optional(),
     date: z.coerce.date(),
     /** Data de uma revisão REAL do conteúdo. Não preencher sem atualização de fato. */
     updatedDate: z.coerce.date().optional(),

@@ -12,6 +12,9 @@ export const SITE = {
 export const slugify = (s: string) =>
   s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
+/** URL da subcategoria de estado: /categoria/brasil/para */
+export const stateUrl = (state: string) => `/categoria/brasil/${slugify(state)}`;
+
 export const readingTime = (html: string) =>
   Math.max(1, Math.round(html.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length / 200));
 
@@ -45,6 +48,15 @@ export const CATEGORY_META: Record<string, { title: string; description: string 
   "Peru": { title: "Peru: roteiros e dicas de viagem | Siga Marisco", description: "Como chegar em Machu Picchu pelo trem, pela Hidrelétrica ou pelo Trekking Salkantay, com dicas de ingresso e da visita. Tudo para sua viagem ao Peru." },
 };
 
+// Subcategorias de Brasil (estados). Só ganham página os estados que têm posts.
+// Se um estado não estiver aqui, a página usa um título/descrição padrão.
+export const STATE_META: Record<string, { title: string; description: string }> = {
+  "Pará": { title: "Pará: roteiros e dicas de viagem | Siga Marisco", description: "Belém, Ilha do Marajó e Alter do Chão: Círio de Nazaré, Ver-o-Peso, Praia do Céu e Pindobal, com preços e dicas de quem foi. Veja os posts do Pará." },
+  "Paraná": { title: "Paraná: roteiros e dicas de viagem | Siga Marisco", description: "O que fazer em Curitiba, no Paraná: Feira do Largo da Ordem, quanto gastamos e o que visitar a pé por perto. Confira os posts do Paraná." },
+  "Rio Grande do Norte": { title: "Rio Grande do Norte: passeios e dicas | Siga Marisco", description: "Passeios perto de Natal, no RN: Trilha do Vale Encantado, Ruínas de São João Lostau e Lagoa da Juventude, em Pium e Nísia Floresta. Confira." },
+  "Rio de Janeiro": { title: "Rio de Janeiro: roteiros e dicas de viagem | Siga Marisco", description: "Roteiro completo para o Rio de Janeiro em 4, 5 ou 7 dias: pontos turísticos, trilhas, praias, onde comer e onde ficar. Veja o post do Rio." },
+};
+
 export const PAGE_META = {
   "blog": { title: "Blog de viagem: todos os artigos | Siga Marisco", description: "Todos os roteiros, guias e reviews do Siga Marisco: Brasil, Bolívia, Peru, Colômbia, Argentina e dicas de viagem, com custos e experiências reais." },
   "contato": { title: "Contato | Siga Marisco", description: "Fale com o Siga Marisco por e-mail, Instagram ou YouTube: dúvidas sobre roteiros, sugestões de destinos e propostas de parceria. Vamos adorar conversar!" },
@@ -76,6 +88,23 @@ export const CATEGORY_INTRO: Record<string, string[]> = {
   "Peru": [
     "Machu Picchu é um daqueles lugares que todo mundo quer conhecer, mas chegar até lá exige planejamento. No nosso guia explicamos como funcionam os ingressos e os circuitos de visita, e comparamos as três formas mais conhecidas de chegar: o Trekking Salkantay, o caminho da Hidrelétrica, que é a opção mais barata, e o trem.",
     "Também mostramos como subir de Aguas Calientes até a cidadela, de ônibus ou pela trilha, e reunimos cinco dicas para aproveitar melhor a visita, como comprar o ingresso com antecedência e dormir em Aguas Calientes. Se você vai combinar o Peru com a Bolívia, vale ver também os nossos roteiros bolivianos.",
+  ],
+};
+
+// Introdução curta de cada estado (baseada nos posts publicados).
+export const STATE_INTRO: Record<string, string[]> = {
+  "Pará": [
+    "Passamos um tempo no Pará em outubro de 2026 e os posts daqui saíram da estrada: Belém, a Ilha do Marajó e Alter do Chão, no oeste do estado. Em Belém, contamos como foi assistir ao Círio de Nazaré da arquibancada e visitar o Mercado de Carne, ao lado do Ver-o-Peso.",
+    "No Marajó, mostramos a Praia do Céu, em Soure, e em Alter do Chão, um dia inteiro na Praia do Pindobal, com quanto gastamos e se dá para trabalhar por lá.",
+  ],
+  "Paraná": [
+    "Do Paraná, por enquanto, temos Curitiba: a Feira do Largo da Ordem, que só acontece aos domingos, com quanto gastamos comendo e um roteiro a pé pelos museus, a mesquita, o Memorial e a Catedral que ficam por perto.",
+  ],
+  "Rio Grande do Norte": [
+    "O Rio Grande do Norte é a nossa casa, então estes são os passeios que fazemos perto de Natal. Em Pium, mostramos a Trilha do Vale Encantado e as Ruínas de São João Lostau, e em Nísia Floresta, a Lagoa da Juventude, que fomos conhecer de 4x4.",
+  ],
+  "Rio de Janeiro": [
+    "O Rio de Janeiro ganhou um roteiro completo de 4, 5 ou 7 dias, com pontos turísticos, trilhas, praias, onde comer e onde se hospedar.",
   ],
 };
 

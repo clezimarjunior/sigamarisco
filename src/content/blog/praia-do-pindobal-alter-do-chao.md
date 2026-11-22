@@ -4,6 +4,7 @@ seoTitle: "Praia do Pindobal, Alter do Chão: como chegar e preços"
 description: "Passamos um dia de semana na Praia do Pindobal, em Alter do Chão: quanto pagamos de táxi, como é o rio, o Restaurante Miralha e se dá para trabalhar lá."
 seoDescription: "Praia do Pindobal, em Alter do Chão: como chegar de táxi (R$ 180 ida e volta), como é a praia, o Restaurante Miralha e se o Wi-Fi dá para trabalhar."
 category: "Brasil"
+state: "Pará"
 date: 2026-11-21
 cover: "/images/blog/praia-do-pindobal-alter-do-chao/01-cabana-de-palha-e-vista-do-rio-tapajos-praia-do-pindobal.webp"
 thumb: "/images/blog/praia-do-pindobal-alter-do-chao/01-cabana-de-palha-e-vista-do-rio-tapajos-praia-do-pindobal-thumb.webp"

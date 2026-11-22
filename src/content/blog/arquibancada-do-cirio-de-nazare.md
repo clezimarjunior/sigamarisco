@@ -4,6 +4,7 @@ seoTitle: "Arquibancada do Círio de Nazaré: preço e se vale a pena"
 description: "Fomos de arquibancada no Círio de Nazaré 2026: R$ 250, setor coberto, banheiro e vista da procissão inteira. Veja preços, setores e se vale a pena."
 seoDescription: "Arquibancada do Círio de Nazaré 2026: preço pago (R$ 250), diferença entre os setores, que horas chegar e se vale a pena, contado por quem foi."
 category: "Brasil"
+state: "Pará"
 date: 2026-11-21
 cover: "/images/blog/arquibancada-do-cirio-de-nazare/01-casal-na-arquibancada-do-cirio-de-nazare-com-a-multidao-ao-fundo.webp"
 thumb: "/images/blog/arquibancada-do-cirio-de-nazare/01-casal-na-arquibancada-do-cirio-de-nazare-com-a-multidao-ao-fundo-thumb.webp"

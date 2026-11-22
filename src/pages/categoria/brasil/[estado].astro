@@ -1,0 +1,44 @@
+---
+import Base from '../../../layouts/Base.astro';
+import PostCard from '../../../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+import { SITE, slugify, stateUrl, STATE_META, STATE_INTRO } from '../../../site';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', (p) => !p.data.draft && p.data.category === 'Brasil' && p.data.state);
+  const states = [...new Set(posts.map((p) => p.data.state as string))];
+  return states.map((s) => ({
+    params: { estado: slugify(s) },
+    props: { name: s, posts: posts.filter((p) => p.data.state === s).sort((a, b) => +b.data.date - +a.data.date) },
+  }));
+}
+const { name, posts } = Astro.props;
+const all = await getCollection('blog', (p) => !p.data.draft && p.data.category === 'Brasil' && p.data.state);
+const states = [...new Set(all.map((p) => p.data.state as string))].sort((a, b) => a.localeCompare(b, 'pt-BR'));
+const intro = STATE_INTRO[name] ?? [];
+const meta = STATE_META[name] ?? { title: `${name}: roteiros e dicas de viagem | Siga Marisco`, description: `Artigos do Siga Marisco sobre ${name}: o que fazer, quanto custa e dicas de quem já foi.` };
+const jsonLd = [{
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
+    { '@type': 'ListItem', position: 2, name: 'Brasil', item: `${SITE.url}/categoria/brasil` },
+    { '@type': 'ListItem', position: 3, name, item: `${SITE.url}${stateUrl(name)}` },
+  ],
+}];
+---
+<Base title={meta.title} description={meta.description} jsonLd={jsonLd}>
+  <section class="section">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/categoria/brasil">Brasil</a> / {name}</nav>
+      <div class="section-head"><h1 style="font-size:clamp(32px,4.4vw,46px)">{name}: roteiros e dicas de viagem</h1></div>
+      {intro.length > 0 && <div class="cat-intro">{intro.map((p) => <p>{p}</p>)}</div>}
+      <nav class="chips" aria-label="Estados do Brasil">
+        <a class="chip" href="/categoria/brasil">Todo o Brasil</a>
+        {states.map((s) => <a class="chip" href={stateUrl(s)} aria-current={s === name ? 'page' : undefined}>{s}</a>)}
+      </nav>
+      <h2 class="list-title">{posts.length === 1 ? 'Post' : `Os ${posts.length} posts`} sobre {name}</h2>
+      <div class="grid">{posts.map((p) => <PostCard post={p} />)}</div>
+    </div>
+  </section>
+</Base>

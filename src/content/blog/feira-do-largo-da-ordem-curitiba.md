@@ -4,6 +4,7 @@ seoTitle: "Feira do Largo da Ordem: preços, o que comer e o que fazer"
 description: "A Feira do Largo da Ordem, em Curitiba, só acontece aos domingos. Veja quanto a gente gastou comendo e o roteiro a pé com mesquita, museus, Memorial e Catedral."
 seoDescription: "Feira do Largo da Ordem em Curitiba: horário, quanto gastamos comendo pastel de capivara e o roteiro a pé com mesquita, museus, Memorial e Catedral."
 category: "Brasil"
+state: "Paraná"
 date: 2026-11-22
 cover: "/images/blog/feira-do-largo-da-ordem-curitiba/01-feira-do-largo-da-ordem-curitiba-barracas-laranja-e-mesquita.webp"
 thumb: "/images/blog/feira-do-largo-da-ordem-curitiba/01-feira-do-largo-da-ordem-curitiba-barracas-laranja-e-mesquita-thumb.webp"

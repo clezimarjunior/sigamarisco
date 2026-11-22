@@ -4,6 +4,7 @@ seoTitle: "Mercado de Carne de Belém: o que ver e como visitar"
 description: "O Mercado de Carne de Belém é uma joia de ferro ao lado do Ver-o-Peso: entrada gratuita, escadaria em espiral para fotos e dicas de quem foi em outubro de 2026."
 seoDescription: "Mercado de Carne de Belém, no Ver-o-Peso: entrada gratuita, escadaria de ferro para fotos, um pouco de história e dicas de quem visitou em outubro de 2026."
 category: "Brasil"
+state: "Pará"
 date: 2026-11-21
 cover: "/images/blog/mercado-de-carne-belem/01-escadaria-de-ferro-em-espiral-mercado-de-carne-belem.webp"
 thumb: "/images/blog/mercado-de-carne-belem/01-escadaria-de-ferro-em-espiral-mercado-de-carne-belem-thumb.webp"

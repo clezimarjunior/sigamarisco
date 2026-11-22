@@ -3,6 +3,7 @@ title: "Praia do Céu, Marajó: como chegar, o que fazer e onde almoçar"
 seoTitle: "Praia do Céu, Marajó: como chegar e onde almoçar"
 description: "Praia do Céu, em Soure (Marajó): como chegar, o que fazer na vila de casas coloridas sobre palafitas e como foi nosso almoço no Brisa do Céu."
 category: "Brasil"
+state: "Pará"
 date: 2026-11-21
 cover: "/images/blog/praia-do-ceu-marajo/01-casa-de-palafita-amarela-e-roxa-praia-do-ceu-marajo.webp"
 thumb: "/images/blog/praia-do-ceu-marajo/01-casa-de-palafita-amarela-e-roxa-praia-do-ceu-marajo-thumb.webp"
