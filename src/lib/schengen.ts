@@ -10,7 +10,9 @@ const DAY = 86_400_000;
 
 export type Trip = { entry: string; exit: string }; // AAAA-MM-DD
 
-export const isValidIso = (s: string) => /^\d{4}-\d{2}-\d{2}$/.test(s) && !Number.isNaN(Date.parse(s));
+// Aceita só anos plausíveis: o campo de data do navegador dispara valores como 0002 ou 0199 enquanto o ano é digitado.
+export const isValidIso = (s: string) =>
+  /^\d{4}-\d{2}-\d{2}$/.test(s) && !Number.isNaN(Date.parse(s)) && +s.slice(0, 4) >= 2000 && +s.slice(0, 4) <= 2100;
 export const toDay = (iso: string): number => Math.floor(Date.parse(`${iso}T00:00:00Z`) / DAY);
 export const toIso = (n: number): string => new Date(n * DAY).toISOString().slice(0, 10);
 export const todayDay = (): number => {

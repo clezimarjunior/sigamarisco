@@ -131,10 +131,11 @@ const related = [
           <div class="ref-row">
             <label class="field">
               <span>Data da entrada (ou hoje)</span>
-              <input type="date" id="sc-ref" />
+              <input type="date" id="sc-ref" min="2000-01-01" max="2100-12-31" />
             </label>
             <button type="button" class="chip" id="sc-today">Hoje</button>
           </div>
+          <p class="ref-note" id="sc-ref-note"></p>
         </div>
 
         <div class="step">
@@ -347,8 +348,8 @@ const related = [
       const li = document.createElement('li');
       li.className = 'trip';
       li.innerHTML = `
-        <label class="field"><span>Entrada</span><input type="date" data-k="entry" value="${t.entry}" aria-label="Data de entrada da viagem ${i + 1}" /></label>
-        <label class="field"><span>Saída</span><input type="date" data-k="exit" value="${t.exit}" aria-label="Data de saída da viagem ${i + 1}" /></label>
+        <label class="field"><span>Entrada</span><input type="date" min="2000-01-01" max="2100-12-31" data-k="entry" value="${t.entry}" aria-label="Data de entrada da viagem ${i + 1}" /></label>
+        <label class="field"><span>Saída</span><input type="date" min="2000-01-01" max="2100-12-31" data-k="exit" value="${t.exit}" aria-label="Data de saída da viagem ${i + 1}" /></label>
         <span class="trip-days" data-days></span>
         <button type="button" class="trip-del" aria-label="Remover viagem ${i + 1}" title="Remover">×</button>`;
       li.querySelectorAll('input').forEach((inp) => inp.addEventListener('change', () => {
@@ -356,10 +357,10 @@ const related = [
         state.trips[i][k] = inp.value;
         // facilita: ao preencher a entrada, a saída não pode ficar antes dela
         const exitInp = li.querySelector<HTMLInputElement>('[data-k="exit"]')!;
-        if (k === 'entry') exitInp.min = inp.value;
+        if (k === 'entry') exitInp.min = isValidIso(inp.value) ? inp.value : '2000-01-01';
         update();
       }));
-      li.querySelector<HTMLInputElement>('[data-k="exit"]')!.min = t.entry;
+      li.querySelector<HTMLInputElement>('[data-k="exit"]')!.min = isValidIso(t.entry) ? t.entry : '2000-01-01';
       li.querySelector('.trip-del')!.addEventListener('click', () => {
         state.trips.splice(i, 1);
         if (!state.trips.length) state.trips.push({ entry: '', exit: '' });
@@ -374,6 +375,8 @@ const related = [
       const t = state.trips[i];
       const el = li.querySelector<HTMLElement>('[data-days]')!;
       li.classList.remove('invalid');
+      const bad = (v: string) => v !== '' && !isValidIso(v);
+      if (bad(t.entry) || bad(t.exit)) { el.textContent = 'Data inválida'; li.classList.add('invalid'); return; }
       if (!isValidIso(t.entry) || !isValidIso(t.exit)) { el.textContent = ''; return; }
       const n = toDay(t.exit) - toDay(t.entry) + 1;
       if (n < 1) { el.textContent = 'Saída antes da entrada'; li.classList.add('invalid'); return; }
@@ -384,9 +387,18 @@ const related = [
   // ---- resultado
   function update() {
     tripBadges();
-    const ref = state.ref && isValidIso(state.ref) ? toDay(state.ref) : todayDay();
-    refInput.value = toIso(ref);
     const valid = state.trips.filter((t) => isValidIso(t.entry) && isValidIso(t.exit) && t.exit >= t.entry);
+    // Sem data escolhida, calcula no dia que faz mais sentido: hoje ou, se houver viagem futura, o fim da última viagem.
+    const today = todayDay();
+    const lastExit = valid.reduce((m, t) => Math.max(m, toDay(t.exit)), -Infinity);
+    const manual = !!state.ref && isValidIso(state.ref);
+    const ref = manual ? toDay(state.ref!) : Math.max(today, lastExit);
+    if (document.activeElement !== refInput) refInput.value = toIso(ref);
+    const note = $('sc-ref-note');
+    if (manual) note.innerHTML = `Calculando em ${fmtLong(ref)}. <button type="button" class="btn-link" data-auto>Usar data automática</button>`;
+    else if (ref > today) note.textContent = `Calculando no fim da sua última viagem (${fmtLong(ref)}). Troque a data se for entrar em outro dia.`;
+    else note.textContent = '';
+    note.querySelector('[data-auto]')?.addEventListener('click', () => { state.ref = null; update(); });
     const days = stayDays(valid);
     const s = summarize(valid, ref);
 
@@ -405,17 +417,28 @@ const related = [
       st = 'over';
       msg = `⚠️ Atenção: em ${fmtLong(s.overstay.day)} você chegaria a ${s.overstay.used} dias, acima do limite de 90. Revise as datas.`;
     } else if (!valid.length) msg = 'Sem viagens ao Schengen nos últimos 180 dias, você pode ficar até 90 dias seguidos.';
-    else if (s.left === 0) msg = `Em ${fmtLong(ref)} os 90 dias já estão usados. Não dá para entrar nesta data.`;
-    else msg = `Em ${fmtLong(ref)}, você tem ${plural(s.left, 'dia livre', 'dias livres')}.`;
+    else if (s.left === 0) msg = `Em ${fmtLong(ref)}, os 90 dias ${ref > today ? 'estarão' : 'já estão'} usados.`;
+    else msg = ref > today
+      ? `Em ${fmtLong(ref)}, você terá usado ${plural(s.used, 'dia', 'dias')} e terá ${plural(s.left, 'dia livre', 'dias livres')}.`
+      : `Hoje você tem ${plural(s.left, 'dia livre', 'dias livres')}.`;
+    if (ref < today && !s.overstay && valid.length) msg = `Em ${fmtLong(ref)}, você tinha ${plural(s.left, 'dia livre', 'dias livres')}.`;
     card.dataset.state = st;
     $('sc-status').textContent = msg;
 
     const inside = days.has(ref);
-    $('sc-until-label').textContent = inside ? `Você já está no Schengen em ${fmt(ref)}. Pode ficar até` : `Entrando em ${fmt(ref)}, pode ficar até`;
+    $('sc-until-label').textContent = inside
+      ? (ref === lastExit ? 'Se quiser esticar essa viagem, pode ficar até' : `Você estará no Schengen em ${fmt(ref)}. Pode ficar até`)
+      : `Entrando em ${fmt(ref)}, pode ficar até`;
     if (s.stayFromRef > 0) {
       const extra = s.stayFromRef > s.left
-        ? `<small>São mais que os ${s.left} dias livres porque, durante a viagem, dias antigos vão saindo da conta dos 180 dias.</small>` : '';
-      $('sc-until').innerHTML = `<strong>${fmtLong(ref + s.stayFromRef - 1)}</strong> <span>(${plural(s.stayFromRef, 'dia', 'dias')} seguidos)</span>${extra}`;
+        ? `<small>São mais que os ${s.left} dias livres porque, durante a viagem, dias antigos vão saindo da conta dos 180 dias.</small>`
+        : s.stayFromRef < s.left
+          ? `<small>São menos que os ${s.left} dias livres porque a viagem que você já tem planejada depois também precisa caber nos 90 dias.</small>`
+          : '';
+      const sub = inside && ref === lastExit
+        ? (s.stayFromRef > 1 ? `mais ${plural(s.stayFromRef - 1, 'dia', 'dias')} depois de ${fmt(ref)}` : 'sem dias extras')
+        : `${plural(s.stayFromRef, 'dia', 'dias')} seguidos`;
+      $('sc-until').innerHTML = `<strong>${fmtLong(ref + s.stayFromRef - 1)}</strong> <span>(${sub})</span>${inside ? '' : extra}`;
     } else {
       const next = nextDateFor(days, ref + 1, 1);
       $('sc-until').innerHTML = next ? `Não dá para entrar nesta data. Próxima entrada possível: <strong>${fmtLong(next)}</strong>` : 'Sem data disponível.';
@@ -477,8 +500,10 @@ const related = [
     state.ref = null;
     renderTrips(); update();
   });
-  refInput.addEventListener('change', () => { state.ref = refInput.value || null; update(); });
-  $('sc-today').addEventListener('click', () => { state.ref = null; update(); });
+  // Só aceita a data quando ela é válida (enquanto o ano é digitado, o navegador manda valores parciais).
+  refInput.addEventListener('change', () => { if (isValidIso(refInput.value)) { state.ref = refInput.value; update(); } });
+  refInput.addEventListener('blur', () => { if (!isValidIso(refInput.value)) state.ref = null; update(); });
+  $('sc-today').addEventListener('click', () => { state.ref = toIso(todayDay()); update(); });
   wantInput.addEventListener('input', update);
   $('sc-copy').addEventListener('click', async (e) => {
     const btn = e.currentTarget as HTMLButtonElement;
@@ -542,6 +567,9 @@ const related = [
   .ref-row .chip { margin: 0; min-height: 44px; cursor: pointer; font: inherit; font-size: 14px; font-weight: 500; }
   .field-inline { flex-direction: row !important; flex-wrap: wrap; align-items: center; gap: 10px !important; font-size: 16px !important; font-weight: 500 !important; }
   .field-inline input { width: 84px !important; text-align: center; }
+  .ref-note { font-size: 14px; color: var(--muted); margin: 10px 0 0; }
+  .ref-note:empty { display: none; }
+  .ref-note .btn-link { font-size: 14px; }
   .plan-out { margin: 14px 0 0; padding: 14px 16px; border-radius: 12px; background: #eef5fc; color: var(--navy); font-size: 16px; }
   .plan-out:empty { display: none; }
 
