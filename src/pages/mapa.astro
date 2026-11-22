@@ -3,7 +3,6 @@ import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import SocialBand from '../components/SocialBand.astro';
 import { SITE, ORG_ID, fmtDate } from '../site';
-import { TRIPS, TRANSPORT_LABEL } from '../data/viagens';
 import { imageInfo, variantPath } from '../lib/images.mjs';
 
 const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort((a, b) => +b.data.date - +a.data.date);
@@ -11,7 +10,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort((a, 
 /** Versão pequena (480px) da imagem, se existir. */
 const small = (src: string) => (imageInfo(src)?.widths.includes(480) ? variantPath(src, 480) : src);
 
-// País do pin: a categoria do post (Brasil, Bolívia...). "Informação" não é país.
+// País do pin = categoria do post (Brasil, Bolívia...).
 const pins = posts.flatMap((p) => {
   const d = p.data;
   const photos = [...(p.body ?? '').matchAll(/<img[^>]+src="([^"]+)"/g)]
@@ -35,22 +34,12 @@ const pins = posts.flatMap((p) => {
 
 const countries = [...new Set(pins.map((p) => p.country))].sort((a, b) => a.localeCompare(b, 'pt-BR'));
 const postsOnMap = new Set(pins.map((p) => p.slug)).size;
-const tripStops = TRIPS.flatMap((t) => t.stops.map((s) => s.name));
-const allPlaces = new Set([...pins.map((p) => p.place), ...tripStops]).size;
 
 // Lista em HTML (para leitores de tela e buscadores), agrupada por país.
-const byCountry = countries.map((c) => ({
-  country: c,
-  items: pins.filter((p) => p.country === c),
-}));
-
-const trips = TRIPS.map((t) => ({
-  ...t,
-  stops: t.stops.map((s) => ({ ...s, byLabel: s.by ? TRANSPORT_LABEL[s.by] : undefined })),
-}));
+const byCountry = countries.map((c) => ({ country: c, items: pins.filter((p) => p.country === c) }));
 
 const title = 'Mapa das nossas viagens | Siga Marisco';
-const description = 'Mapa interativo com todos os lugares por onde o Siga Marisco passou: clique nos pins para ver fotos e ler os posts, e veja as rotas das nossas viagens.';
+const description = 'Mapa interativo com todos os lugares por onde o Siga Marisco passou: clique nos pins para ver as fotos e ler o post de cada destino.';
 const url = `${SITE.url}/mapa`;
 const jsonLd = [
   {
@@ -87,51 +76,30 @@ const jsonLd = [
 ];
 ---
 <Base title={title} description={description} jsonLd={jsonLd}>
-  <div class="wrap map-page">
-    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Mapa</nav>
-    <span class="eyebrow eyebrow-dark">Por onde a gente já passou</span>
-    <h1>Mapa das nossas viagens</h1>
-    <p class="map-lead">Clique num pin para ver as fotos e abrir o post daquele lugar. As linhas mostram as rotas que fizemos, parada por parada.</p>
+  <section class="map-hero">
+    <div id="map" class="map" role="region" aria-label="Mapa interativo das viagens"></div>
 
-    <ul class="map-stats" aria-label="Números do mapa">
-      <li><strong>{countries.filter((c) => c !== 'Informação').length}</strong> países</li>
-      <li><strong>{allPlaces}</strong> lugares</li>
-      <li><strong>{postsOnMap}</strong> posts no mapa</li>
-      <li><strong>{TRIPS.length}</strong> {TRIPS.length === 1 ? 'rota' : 'rotas'}</li>
-    </ul>
-
-    <div class="map-controls">
-      <div class="chips map-filter" role="group" aria-label="Filtrar por país">
+    <div class="map-panel">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Mapa</nav>
+      <h1>Mapa das nossas viagens</h1>
+      <p class="map-lead">Clique num pin para ver as fotos e abrir o post daquele lugar.</p>
+      <ul class="map-stats" aria-label="Números do mapa">
+        <li><strong>{countries.filter((c) => c !== 'Informação').length}</strong> países</li>
+        <li><strong>{pins.length}</strong> lugares</li>
+        <li><strong>{postsOnMap}</strong> posts</li>
+      </ul>
+      <div class="map-filter" role="group" aria-label="Filtrar por país">
         <button type="button" class="chip" data-country="" aria-pressed="true">Todos</button>
         {countries.map((c) => <button type="button" class="chip" data-country={c} aria-pressed="false">{c}</button>)}
       </div>
-      {trips.length > 0 && (
-        <div class="map-trips" role="group" aria-label="Rotas">
-          {trips.map((t) => (
-            <button type="button" class="trip-btn" data-trip={t.slug} aria-pressed="true" style={`--trip:${t.color}`}>
-              <span class="trip-swatch" aria-hidden="true"></span>
-              <span>{t.name}{t.when && <small> · {t.when}</small>}</span>
-            </button>
-          ))}
-        </div>
-      )}
     </div>
 
-    <div class="map-shell">
-      <div id="map" class="map" role="region" aria-label="Mapa interativo das viagens"></div>
-      <noscript><p class="map-noscript">O mapa precisa de JavaScript. A lista completa de lugares está logo abaixo.</p></noscript>
-    </div>
+    <a href="#lugares" class="map-down">Ver lista de lugares ↓</a>
+    <noscript><p class="map-noscript">O mapa precisa de JavaScript. A lista completa de lugares está logo abaixo.</p></noscript>
+  </section>
 
-    <div class="map-legend" aria-hidden="true">
-      <span><i class="lg-photo"></i> post do blog</span>
-      <span><i class="lg-stop"></i> parada de rota</span>
-      <span><i class="lg-line"></i> estrada</span>
-      <span><i class="lg-dash"></i> avião</span>
-      <span><i class="lg-dot"></i> barco</span>
-      <span><i class="lg-pending"></i> trecho a detalhar</span>
-    </div>
-
-    <section class="map-list">
+  <div class="wrap">
+    <section class="map-list" id="lugares">
       <h2>Todos os lugares do mapa</h2>
       <div class="map-list-grid">
         {byCountry.map((g) => (
@@ -147,15 +115,6 @@ const jsonLd = [
             </ul>
           </div>
         ))}
-        {trips.map((t) => (
-          <div>
-            <h3>{t.name}{t.when && ` (${t.when})`}</h3>
-            {t.summary && <p class="trip-summary">{t.summary}</p>}
-            <ol class="trip-stops">
-              {t.stops.map((s) => <li>{s.post ? <a href={`/blog/${s.post}`}>{s.name}</a> : s.name}</li>)}
-            </ol>
-          </div>
-        ))}
       </div>
     </section>
   </div>
@@ -169,7 +128,7 @@ const jsonLd = [
 
   <div class="wrap" style="margin-top:56px"><SocialBand /></div>
 
-  <script type="application/json" id="map-data" set:html={JSON.stringify({ pins, trips })} />
+  <script type="application/json" id="map-data" set:html={JSON.stringify(pins)} />
 </Base>
 
 <script>
@@ -180,13 +139,12 @@ const jsonLd = [
 
   type Photo = { thumb: string; full: string };
   type Pin = { id: string; slug: string; place: string; lat: number; lng: number; title: string; country: string; state?: string; date: string; thumb: string; photos: Photo[] };
-  type Stop = { name: string; lat: number; lng: number; by?: string; byLabel?: string; pending?: boolean; post?: string };
-  type Trip = { slug: string; name: string; when?: string; color: string; stops: Stop[] };
 
-  const { pins, trips } = JSON.parse(document.getElementById('map-data')!.textContent!) as { pins: Pin[]; trips: Trip[] };
+  const pins = JSON.parse(document.getElementById('map-data')!.textContent!) as Pin[];
   const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
 
-  const map = L.map('map', { minZoom: 2, scrollWheelZoom: false, worldCopyJump: true, zoomSnap: 0.5 });
+  const map = L.map('map', { minZoom: 2, zoomControl: false, scrollWheelZoom: false, worldCopyJump: true, zoomSnap: 0.5 });
+  L.control.zoom({ position: 'bottomright' }).addTo(map);
   // Tiles do OpenStreetMap: grátis, sem chave (pede atribuição e uso moderado).
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
@@ -195,62 +153,10 @@ const jsonLd = [
   // Zoom com a roda só depois de clicar no mapa (não "prende" a rolagem da página).
   map.once('focus', () => map.scrollWheelZoom.enable());
 
-  // ---------- Rotas ----------
-  /** Arco suave entre dois pontos (para trechos de avião). */
-  const arc = (a: L.LatLngTuple, b: L.LatLngTuple, n = 32): L.LatLngTuple[] => {
-    const [x1, y1] = [a[1], a[0]], [x2, y2] = [b[1], b[0]];
-    const [mx, my] = [(x1 + x2) / 2, (y1 + y2) / 2];
-    const [dx, dy] = [x2 - x1, y2 - y1];
-    const [cx, cy] = [mx - dy * 0.2, my + dx * 0.2];
-    return Array.from({ length: n + 1 }, (_, i) => {
-      const t = i / n;
-      const x = (1 - t) ** 2 * x1 + 2 * (1 - t) * t * cx + t ** 2 * x2;
-      const y = (1 - t) ** 2 * y1 + 2 * (1 - t) * t * cy + t ** 2 * y2;
-      return [y, x];
-    });
-  };
-
-  const tripLayers = new Map<string, L.LayerGroup>();
-  const tripBounds = new Map<string, L.LatLngBounds>();
-  for (const t of trips) {
-    const g = L.layerGroup();
-    const pts = t.stops.map((s) => [s.lat, s.lng] as L.LatLngTuple);
-    t.stops.forEach((s, i) => {
-      if (i === 0) return;
-      const a = pts[i - 1], b = pts[i];
-      const style: L.PolylineOptions = s.pending
-        ? { color: '#8a99a8', weight: 3, dashArray: '4 8', opacity: 0.9 }
-        : s.by === 'aviao'
-          ? { color: t.color, weight: 3, dashArray: '10 8' }
-          : s.by === 'barco'
-            ? { color: t.color, weight: 3, dashArray: '1 7', lineCap: 'round' }
-            : { color: t.color, weight: 4 };
-      const line = L.polyline(s.by === 'aviao' ? arc(a, b) : [a, b], { ...style, interactive: true });
-      const how = s.pending ? 'trecho ainda sem detalhes' : s.byLabel ? `de ${s.byLabel}` : '';
-      line.bindTooltip(`<strong>${esc(t.stops[i - 1].name)} → ${esc(s.name)}</strong>${how ? `<br>${how}` : ''}`, { sticky: true });
-      g.addLayer(line);
-    });
-    t.stops.forEach((s, i) => {
-      const m = L.circleMarker([s.lat, s.lng], { radius: i === 0 || i === t.stops.length - 1 ? 7 : 5, color: '#fff', weight: 2, fillColor: t.color, fillOpacity: 1 });
-      m.bindTooltip(`${i + 1}. ${esc(s.name)}`, { direction: 'top', offset: [0, -6] });
-      m.bindPopup(
-        `<div class="stop-pop"><span class="pop-cat" style="color:${t.color}">${esc(t.name)}${t.when ? ` · ${esc(t.when)}` : ''}</span>` +
-          `<strong>Parada ${i + 1}: ${esc(s.name)}</strong>` +
-          (s.post ? `<a class="link-arrow" href="/blog/${s.post}">Ler o post →</a>` : '') +
-          `</div>`,
-      );
-      g.addLayer(m);
-    });
-    g.addTo(map);
-    tripLayers.set(t.slug, g);
-    tripBounds.set(t.slug, L.latLngBounds(pts));
-  }
-
-  // ---------- Pins dos posts ----------
   const cluster = L.markerClusterGroup({
     showCoverageOnHover: false,
     maxClusterRadius: 44,
-    iconCreateFunction: (c) => L.divIcon({ html: `<span>${c.getChildCount()}</span>`, className: 'pin-cluster', iconSize: [42, 42] }),
+    iconCreateFunction: (c) => L.divIcon({ html: `<span>${c.getChildCount()}</span>`, className: 'pin-cluster', iconSize: [44, 44] }),
   });
 
   const popupHtml = (p: Pin) => `
@@ -274,18 +180,24 @@ const jsonLd = [
     const icon = L.divIcon({
       className: 'pin',
       html: `<span class="pin-img" style="background-image:url('${p.thumb}')"></span>`,
-      iconSize: [46, 54],
-      iconAnchor: [23, 54],
-      popupAnchor: [0, -50],
+      iconSize: [52, 62],
+      iconAnchor: [26, 62],
+      popupAnchor: [0, -58],
     });
     const m = L.marker([p.lat, p.lng], { icon, title: p.place, alt: p.place, riseOnHover: true });
-    m.bindPopup(popupHtml(p), { maxWidth: 320, minWidth: 260, className: 'pop-wrap', autoPanPadding: [20, 90] });
+    m.bindPopup(popupHtml(p), { maxWidth: 320, minWidth: 260, className: 'pop-wrap', autoPanPaddingTopLeft: L.point(panelPad(), 90), autoPanPaddingBottomRight: L.point(20, 20) });
     m.on('popupopen', () => history.replaceState(null, '', `#${p.id}`));
     m.on('popupclose', () => history.replaceState(null, '', location.pathname));
     markers.set(p.id, m);
   }
 
-  // ---------- Filtros ----------
+  /** Espaço à esquerda ocupado pelo painel do título (só no desktop). */
+  function panelPad() {
+    const panel = document.querySelector('.map-panel') as HTMLElement;
+    return window.matchMedia('(min-width: 900px)').matches ? panel.offsetWidth + 48 : 20;
+  }
+
+  // ---------- Filtro por país ----------
   let country = '';
   const visiblePins = () => pins.filter((p) => !country || p.country === country);
   const renderPins = () => {
@@ -297,8 +209,7 @@ const jsonLd = [
 
   const fitAll = () => {
     const b = L.latLngBounds(visiblePins().map((p) => [p.lat, p.lng] as L.LatLngTuple));
-    if (!country) for (const [slug, tb] of tripBounds) if (map.hasLayer(tripLayers.get(slug)!)) b.extend(tb);
-    if (b.isValid()) map.fitBounds(b, { padding: [40, 40], maxZoom: 10 });
+    if (b.isValid()) map.fitBounds(b, { paddingTopLeft: [panelPad(), 60], paddingBottomRight: [60, 100], maxZoom: 10 });
     else map.setView([-12, -55], 3);
   };
 
@@ -312,31 +223,18 @@ const jsonLd = [
     }),
   );
 
-  document.querySelectorAll<HTMLButtonElement>('.trip-btn').forEach((btn) =>
-    btn.addEventListener('click', () => {
-      const slug = btn.dataset.trip!;
-      const layer = tripLayers.get(slug)!;
-      const on = btn.getAttribute('aria-pressed') !== 'true';
-      btn.setAttribute('aria-pressed', String(on));
-      if (on) {
-        layer.addTo(map);
-        map.fitBounds(tripBounds.get(slug)!, { padding: [40, 40] });
-      } else layer.remove();
-    }),
-  );
-
   // ---------- Abrir um pin (lista, #hash) ----------
   const openPin = (id: string, scroll = false) => {
     const m = markers.get(id);
     if (!m) return;
     if (country && byId.get(id)!.country !== country) (document.querySelector('.map-filter .chip[data-country=""]') as HTMLButtonElement).click();
-    if (scroll) document.getElementById('map')!.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    if (scroll) window.scrollTo({ top: 0, behavior: 'smooth' });
     cluster.zoomToShowLayer(m, () => m.openPopup());
   };
   document.querySelectorAll<HTMLButtonElement>('.show-on-map').forEach((b) => b.addEventListener('click', () => openPin(b.dataset.pin!, true)));
 
   fitAll();
-  const fromHash = () => location.hash && openPin(decodeURIComponent(location.hash.slice(1)), true);
+  const fromHash = () => location.hash && location.hash !== '#lugares' && openPin(decodeURIComponent(location.hash.slice(1)), true);
   fromHash();
   window.addEventListener('hashchange', fromHash);
 
@@ -372,56 +270,53 @@ const jsonLd = [
 </script>
 
 <style>
-  .map-page { padding-top: 40px; }
-  .map-page h1 { font-size: clamp(34px, 4.6vw, 50px); margin: 10px 0 14px; }
-  .eyebrow-dark { color: var(--orange); }
-  .map-lead { font-size: 19px; color: var(--muted); max-width: 680px; margin: 0 0 22px; }
+  /* Mapa em tela cheia, logo abaixo do header (72px) */
+  .map-hero { position: relative; height: calc(100svh - 72px); min-height: 560px; }
+  .map { position: absolute; inset: 0; background: #aad3df; z-index: 0; }
 
-  .map-stats { list-style: none; padding: 0; margin: 0 0 26px; display: flex; flex-wrap: wrap; gap: 10px 28px; color: var(--muted); font-size: 15px; }
-  .map-stats strong { color: var(--navy); font-size: 26px; margin-right: 4px; }
-
-  .map-controls { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; margin-bottom: 14px; }
-  .map-filter { margin: 0; }
-  .map-filter .chip { cursor: pointer; font: inherit; font-size: 14px; font-weight: 500; }
+  .map-panel {
+    position: absolute; z-index: 500; top: 24px; left: max(20px, calc((100vw - var(--max)) / 2 + 20px));
+    width: 380px; padding: 22px 24px 20px; border-radius: var(--radius);
+    background: rgba(255, 255, 255, .94); backdrop-filter: blur(10px); box-shadow: 0 10px 40px rgba(2, 48, 71, .22);
+  }
+  .map-panel .crumbs { margin-bottom: 8px; font-size: 13px; }
+  .map-panel h1 { font-size: 32px; margin: 0 0 6px; }
+  .map-lead { font-size: 16px; color: var(--muted); margin: 0 0 14px; line-height: 1.45; }
+  .map-stats { list-style: none; padding: 0; margin: 0 0 14px; display: flex; gap: 18px; color: var(--muted); font-size: 14px; }
+  .map-stats strong { color: var(--orange); font-size: 22px; margin-right: 3px; }
+  .map-filter { display: flex; flex-wrap: wrap; gap: 6px; }
+  .map-filter .chip { cursor: pointer; font: inherit; font-size: 13px; font-weight: 500; padding: 6px 12px; }
   .map-filter .chip[aria-pressed="true"] { background: var(--navy); color: #fff; border-color: var(--navy); }
-  .map-trips { display: flex; gap: 8px; flex-wrap: wrap; }
-  .trip-btn { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 999px; border: 1px solid var(--line); background: #fff; font: inherit; font-size: 14px; font-weight: 500; color: var(--navy); cursor: pointer; }
-  .trip-btn small { color: var(--muted); font-size: 13px; }
-  .trip-swatch { width: 22px; height: 4px; border-radius: 2px; background: var(--trip); }
-  .trip-btn[aria-pressed="false"] { opacity: .55; }
-  .trip-btn[aria-pressed="false"] .trip-swatch { background: var(--line); }
 
-  @media (max-width: 640px) {
-    .map-page { padding-top: 24px; }
-    .map-lead { font-size: 17px; margin-bottom: 16px; }
-    .map-stats { gap: 4px 18px; margin-bottom: 18px; font-size: 14px; }
-    .map-stats strong { font-size: 20px; }
+  .map-down {
+    position: absolute; z-index: 500; left: 50%; bottom: 22px; transform: translateX(-50%);
+    padding: 9px 18px; border-radius: 999px; background: var(--navy); color: #fff; font-size: 14px; font-weight: 700;
+    text-decoration: none; box-shadow: 0 6px 20px rgba(2, 48, 71, .3);
+  }
+  .map-down:hover { background: var(--blue-dark); }
+  .map-noscript { position: absolute; z-index: 600; bottom: 70px; left: 20px; right: 20px; padding: 14px; background: #fff; border-radius: 12px; }
+
+  /* Celular: painel compacto em cima, mapa ocupando o resto */
+  @media (max-width: 899px) {
+    .map-hero { display: flex; flex-direction: column; height: auto; min-height: 0; }
+    .map-panel { position: relative; inset: auto; width: auto; order: -1; border-radius: 0; box-shadow: none; padding: 16px 20px 12px; background: #fff; backdrop-filter: none; }
+    .map-panel .crumbs { display: none; }
+    .map-panel h1 { font-size: 26px; }
+    .map-lead { font-size: 15px; margin-bottom: 10px; }
+    .map-stats { margin-bottom: 10px; }
     .map-filter { flex-wrap: nowrap; overflow-x: auto; margin: 0 -20px; padding: 0 20px 4px; scrollbar-width: none; }
     .map-filter .chip { flex: none; }
+    .map { position: relative; inset: auto; height: 72svh; min-height: 420px; }
   }
-  .map-shell { position: relative; }
-  .map { height: min(72vh, 680px); min-height: 420px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); background: #e8eef2; z-index: 0; }
-  .map-noscript { padding: 16px; }
 
-  .map-legend { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 14px 0 0; font-size: 13px; color: var(--muted); }
-  .map-legend span { display: inline-flex; align-items: center; gap: 7px; }
-  .map-legend i { display: inline-block; }
-  .lg-photo { width: 14px; height: 14px; border-radius: 50%; border: 3px solid var(--orange); background: var(--bg-soft); }
-  .lg-stop { width: 10px; height: 10px; border-radius: 50%; background: var(--orange); box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--line); }
-  .lg-line, .lg-dash, .lg-dot, .lg-pending { width: 26px; height: 0; border-top: 3px solid var(--orange); }
-  .lg-dash { border-top-style: dashed; }
-  .lg-dot { border-top-style: dotted; }
-  .lg-pending { border-top: 3px dashed #8a99a8; }
-
-  .map-list { margin-top: 48px; }
+  .map-list { margin-top: 56px; scroll-margin-top: 90px; }
   .map-list h2 { font-size: clamp(24px, 3vw, 30px); margin-bottom: 20px; }
   .map-list-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px 32px; }
   .map-list h3 { font-size: 18px; margin-bottom: 8px; }
-  .map-list ul, .map-list ol { margin: 0; padding-left: 20px; }
+  .map-list ul { margin: 0; padding-left: 20px; }
   .map-list li { margin: 4px 0; }
   .show-on-map { margin-left: 6px; border: 0; background: none; padding: 0; color: var(--muted); font: inherit; font-size: 13px; text-decoration: underline; cursor: pointer; }
   .show-on-map:hover { color: var(--blue); }
-  .trip-summary { margin: 0 0 6px; color: var(--muted); font-size: 15px; }
 
   /* Lightbox */
   .lightbox { border: 0; padding: 0; background: transparent; max-width: 96vw; max-height: 94vh; overflow: visible; }
@@ -439,10 +334,10 @@ const jsonLd = [
 <style is:global>
   /* Leaflet: pins, clusters e popups (conteúdo criado pelo JS) */
   .pin { background: none; border: 0; }
-  .pin-img { position: relative; display: block; width: 46px; height: 46px; border-radius: 50%; border: 3px solid var(--orange); background: var(--bg-soft) center/cover; box-shadow: 0 4px 12px rgba(2,48,71,.3); transition: transform .15s ease; }
-  .pin-img::after { content: ''; position: absolute; left: 50%; bottom: -10px; transform: translateX(-50%); border: 6px solid transparent; border-top: 7px solid var(--orange); }
+  .pin-img { position: relative; display: block; width: 52px; height: 52px; border-radius: 50%; border: 3px solid #fff; outline: 3px solid var(--orange); background: var(--bg-soft) center/cover; box-shadow: 0 6px 16px rgba(2,48,71,.35); transition: transform .15s ease; }
+  .pin-img::after { content: ''; position: absolute; left: 50%; bottom: -13px; transform: translateX(-50%); border: 7px solid transparent; border-top: 8px solid var(--orange); }
   .pin:hover .pin-img { transform: scale(1.12); }
-  .pin-cluster { display: grid; place-items: center; border-radius: 50%; background: var(--navy); color: #fff; font-weight: 700; font-size: 15px; box-shadow: 0 0 0 5px rgba(2,48,71,.22), 0 4px 12px rgba(2,48,71,.3); }
+  .pin-cluster { display: grid; place-items: center; border-radius: 50%; background: var(--orange); color: #fff; font-weight: 700; font-size: 16px; border: 3px solid #fff; box-shadow: 0 0 0 6px rgba(251,133,0,.28), 0 6px 16px rgba(2,48,71,.3); }
 
   .pop-wrap .leaflet-popup-content-wrapper { padding: 0; border-radius: 14px; overflow: hidden; }
   .pop-wrap .leaflet-popup-content { margin: 0; width: 280px !important; font-family: 'DM Sans', system-ui, sans-serif; }
@@ -459,6 +354,4 @@ const jsonLd = [
   .pop-photos img { width: 100%; height: 100%; object-fit: cover; }
   .pop-photos .more { font: inherit; font-weight: 700; font-size: 13px; color: var(--navy); }
   .pop-btn { justify-content: center; margin-top: 6px; padding: 10px 16px; font-size: 14px; color: #fff !important; }
-  .stop-pop { display: flex; flex-direction: column; gap: 4px; font-family: 'DM Sans', system-ui, sans-serif; }
-  .stop-pop strong { color: var(--navy); font-size: 15px; }
 </style>

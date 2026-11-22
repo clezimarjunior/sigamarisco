@@ -37,8 +37,5 @@ places:
 Dica: no Google Maps, clique com o botão direito no lugar e copie as coordenadas.
 O card do pin usa a capa/thumb e as primeiras fotos do post automaticamente.
 
-As rotas ficam em `src/data/viagens.ts`: uma lista de paradas na ordem da viagem, com o meio de
-transporte de cada trecho (`carro`, `aviao`, `barco`...). Use `pending: true` num trecho ainda sem detalhes.
-
 O push para `main` publica sozinho na Vercel. Sitemap, RSS, schema (BlogPosting/Breadcrumb),
 índice do artigo e posts relacionados são gerados automaticamente.
