@@ -126,11 +126,11 @@ const related = [
         </div>
 
         <div class="step">
-          <h2 class="step-title"><span class="num">2</span> Calcular para qual data?</h2>
-          <p class="hint">Use a data da sua próxima entrada para saber até quando pode ficar, ou deixe hoje para ver o saldo atual.</p>
+          <h2 class="step-title"><span class="num">2</span> Quando você vai entrar na Europa?</h2>
+          <p class="hint">Coloque o dia da próxima entrada para saber até quando pode ficar. Se já está lá ou só quer ver o saldo de hoje, deixe a data de hoje.</p>
           <div class="ref-row">
             <label class="field">
-              <span>Data de referência</span>
+              <span>Data da entrada (ou hoje)</span>
               <input type="date" id="sc-ref" />
             </label>
             <button type="button" class="chip" id="sc-today">Hoje</button>
@@ -138,11 +138,12 @@ const related = [
         </div>
 
         <div class="step">
-          <h2 class="step-title"><span class="num">3</span> Planejar uma nova viagem <span class="opt">(opcional)</span></h2>
+          <h2 class="step-title"><span class="num">3</span> Ainda não tem data? <span class="opt">(opcional)</span></h2>
+          <p class="hint">Diga quantos dias quer ficar e a calculadora encontra a primeira data possível.</p>
           <label class="field field-inline">
             <span>Quero ficar</span>
             <input type="number" id="sc-want" min="1" max="90" value="30" inputmode="numeric" />
-            <span>dias seguidos. Quando posso entrar?</span>
+            <span>dias seguidos</span>
           </label>
           <p class="plan-out" id="sc-plan" aria-live="polite"></p>
         </div>
@@ -158,19 +159,22 @@ const related = [
             <div class="gauge-num"><strong id="sc-left">90</strong><span>dias livres</span></div>
           </div>
           <p class="status" id="sc-status">Você tem os 90 dias disponíveis.</p>
+          <p class="empty" id="sc-empty">Adicione suas viagens dos últimos 6 meses ao lado, ou clique em <b>Ver exemplo</b>, para ver até quando pode ficar e quando os dias voltam.</p>
+          <div id="sc-details">
           <dl class="facts">
-            <div><dt>Dias usados</dt><dd><strong id="sc-used">0</strong> de 90</dd></div>
-            <div><dt>Janela de 180 dias</dt><dd id="sc-window">–</dd></div>
-            <div class="fact-wide"><dt id="sc-until-label">Entrando na data de referência, pode ficar até</dt><dd id="sc-until">–</dd></div>
+            <div class="fact-wide"><dt id="sc-until-label">Pode ficar até</dt><dd id="sc-until">–</dd></div>
+            <div><dt>Dias já usados</dt><dd><strong id="sc-used">0</strong> de 90</dd></div>
+            <div><dt>Período que conta</dt><dd id="sc-window">–</dd></div>
           </dl>
 
           <div class="timeline">
-            <div class="tl-head"><span>Últimos 180 dias</span><span class="tl-legend"><i class="lg-in"></i>no Schengen <i class="lg-over"></i>acima de 90</span></div>
+            <div class="tl-head"><span>Os 180 dias que contam</span><span class="tl-legend"><i class="lg-in"></i>no Schengen <i class="lg-over"></i>acima de 90</span></div>
             <div class="tl-bar" id="sc-tl" role="img" aria-label="Linha do tempo dos últimos 180 dias"></div>
             <div class="tl-foot"><span id="sc-tl-start"></span><span id="sc-tl-end"></span></div>
           </div>
 
           <div class="recover" id="sc-recover"></div>
+          </div>
 
           <div class="share-row">
             <button type="button" class="btn btn-white btn-sm" id="sc-copy">Copiar link do cálculo</button>
@@ -392,21 +396,26 @@ const related = [
     $('sc-window').textContent = `${fmt(s.windowStart)} a ${fmt(ref)}`;
 
     const card = $('sc-result');
+    $('sc-details').hidden = !valid.length;
+    $('sc-empty').hidden = !!valid.length;
+    $('sc-copy').parentElement!.hidden = !valid.length;
     let st: 'ok' | 'warn' | 'over' = s.left === 0 ? 'over' : s.left <= 15 ? 'warn' : 'ok';
     let msg: string;
     if (s.overstay) {
       st = 'over';
       msg = `⚠️ Atenção: em ${fmtLong(s.overstay.day)} você chegaria a ${s.overstay.used} dias, acima do limite de 90. Revise as datas.`;
-    } else if (!valid.length) msg = 'Adicione suas viagens para ver o cálculo. Sem viagens, os 90 dias estão livres.';
-    else if (s.left === 0) msg = 'Você já usou os 90 dias da janela. Não dá para entrar nesta data.';
-    else msg = `Você ainda tem ${plural(s.left, 'dia livre', 'dias livres')} na janela de 180 dias que termina em ${fmtLong(ref)}.`;
+    } else if (!valid.length) msg = 'Sem viagens ao Schengen nos últimos 180 dias, você pode ficar até 90 dias seguidos.';
+    else if (s.left === 0) msg = `Em ${fmtLong(ref)} os 90 dias já estão usados. Não dá para entrar nesta data.`;
+    else msg = `Em ${fmtLong(ref)}, você tem ${plural(s.left, 'dia livre', 'dias livres')}.`;
     card.dataset.state = st;
     $('sc-status').textContent = msg;
 
     const inside = days.has(ref);
-    $('sc-until-label').textContent = inside ? 'Você está no Schengen nesta data. Pode ficar até' : 'Entrando na data de referência, pode ficar até';
+    $('sc-until-label').textContent = inside ? `Você já está no Schengen em ${fmt(ref)}. Pode ficar até` : `Entrando em ${fmt(ref)}, pode ficar até`;
     if (s.stayFromRef > 0) {
-      $('sc-until').innerHTML = `<strong>${fmtLong(ref + s.stayFromRef - 1)}</strong> <span>(${plural(s.stayFromRef, 'dia', 'dias')} seguidos)</span>`;
+      const extra = s.stayFromRef > s.left
+        ? `<small>São mais que os ${s.left} dias livres porque, durante a viagem, dias antigos vão saindo da conta dos 180 dias.</small>` : '';
+      $('sc-until').innerHTML = `<strong>${fmtLong(ref + s.stayFromRef - 1)}</strong> <span>(${plural(s.stayFromRef, 'dia', 'dias')} seguidos)</span>${extra}`;
     } else {
       const next = nextDateFor(days, ref + 1, 1);
       $('sc-until').innerHTML = next ? `Não dá para entrar nesta data. Próxima entrada possível: <strong>${fmtLong(next)}</strong>` : 'Sem data disponível.';
@@ -440,7 +449,7 @@ const related = [
     state.want = want;
     const when = nextDateFor(days, todayDay(), want);
     $('sc-plan').innerHTML = when !== null
-      ? `${when === todayDay() ? 'Já hoje' : 'A partir de'} <strong>${fmtLong(when)}</strong>, saindo até <strong>${fmtLong(when + want - 1)}</strong>.`
+      ? `${when === todayDay() ? 'Pode entrar <strong>hoje mesmo</strong>' : `A primeira data possível é <strong>${fmtLong(when)}</strong>`} e ficar até <strong>${fmtLong(when + want - 1)}</strong>.`
       : 'Não encontramos uma data nos próximos 12 meses com as viagens atuais.';
 
     ($('sc-wa') as HTMLAnchorElement).href = `https://wa.me/?text=${encodeURIComponent(`Meu cálculo de dias Schengen (regra 90/180): ${shareUrl()}`)}`;
@@ -549,7 +558,11 @@ const related = [
   .gauge-num { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; }
   .gauge-num strong { font-size: 52px; line-height: 1; color: var(--accent); font-variant-numeric: tabular-nums; }
   .gauge-num span { font-size: 14px; opacity: .8; margin-top: 4px; }
-  .status { text-align: center; margin: 0 0 20px; font-size: 16px; }
+  .status { text-align: center; margin: 0 0 20px; font-size: 17px; font-weight: 500; }
+  .empty { text-align: center; margin: -6px 0 22px; font-size: 15px; opacity: .8; }
+  .empty b { color: var(--yellow); }
+  [hidden] { display: none !important; }
+  .facts dd :global(small) { display: block; margin-top: 6px; font-size: 13px; opacity: .75; }
   .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 0 0 20px; }
   .facts > div { background: rgba(255,255,255,.07); border-radius: 12px; padding: 12px 14px; }
   .facts .fact-wide { grid-column: 1 / -1; }
