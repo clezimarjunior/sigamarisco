@@ -11,6 +11,8 @@ thumb: "/images/blog/mercado-de-carne-belem/01-escadaria-de-ferro-em-espiral-mer
 author: "Marina Petrovich"
 coauthors: ["Francisco Oliveira"]
 draft: false
+places:
+  - { name: "Mercado de Carne, Belém", lat: -1.4521, lng: -48.5035 }
 ---
 
 <p>O <strong>Mercado de Carne de Belém</strong> é um daqueles lugares em que você entra para ver açougue e sai com o celular cheio de foto de arquitetura. Ele fica no complexo do <strong>Ver-o-Peso</strong>, é aberto a todo mundo, não cobra entrada e tem uma escadaria de ferro em espiral que dá para subir e fotografar o mercado lá de cima. A gente passou por lá em outubro de 2026 e foi uma das paradas mais bonitas (e mais simples) da nossa ida a Belém.</p>

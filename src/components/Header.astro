@@ -3,9 +3,10 @@ const path = Astro.url.pathname;
 const links = [
   { href: '/', label: 'Home', cls: 'hide-sm' },
   { href: '/blog', label: 'Blog' },
+  { href: '/mapa', label: 'Mapa' },
   { href: '/ferramentas', label: 'Ferramentas' },
   { href: '/sobre', label: 'Sobre', cls: 'hide-sm' },
-  { href: '/contato', label: 'Contato' },
+  { href: '/contato', label: 'Contato', cls: 'hide-sm' },
 ];
 const isActive = (h: string) => (h === '/' ? path === '/' : path.startsWith(h));
 ---

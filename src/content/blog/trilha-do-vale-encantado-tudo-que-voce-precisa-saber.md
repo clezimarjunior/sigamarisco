@@ -9,6 +9,8 @@ date: "2024-09-03"
 cover: "/images/blog/trilha-do-vale-encantado-tudo-que-voce-precisa-saber/img-9853.webp"
 thumb: "/images/blog/trilha-do-vale-encantado-tudo-que-voce-precisa-saber/img-9853-thumb.webp"
 author: "Marina Petrovich"
+places:
+  - { name: "Trilha do Vale Encantado, Pium", lat: -5.965, lng: -35.17 }
 ---
 
 <p>A apenas 30 minutos de carro de Natal, cerca de 20 km, há um paraíso para os amantes de trilha e banho de rio. Localizado em Pium, o Vale Encantado tem ganhado destaque entre os aventureiros locais. A Trilha do Vale Encantado é simples e ideal para iniciantes, oferecendo uma imersão na exuberância da natureza.</p>

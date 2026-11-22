@@ -10,6 +10,8 @@ thumb: "/images/blog/flona-tapajos-alter-do-chao/01-casal-no-igarape-da-trilha-d
 author: "Marina Petrovich"
 coauthors: ["Francisco Oliveira"]
 draft: false
+places:
+  - { name: "Flona Tapajós (Jamaraquá)", lat: -2.7953, lng: -55.0378 }
 ---
 
 <p>O passeio à <strong>Flona Tapajós</strong>, saindo de Alter do Chão, foi o dia em que a gente trocou a praia pela floresta de verdade: barco pelo rio, trilha de 11 km dentro da mata fechada, banho num igarapé de água gelada e almoço na comunidade. Fomos pela <strong>comunidade Jamaraquá</strong>, que é a base mais usada por quem sai de Alter.</p>

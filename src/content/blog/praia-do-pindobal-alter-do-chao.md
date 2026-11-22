@@ -11,6 +11,8 @@ thumb: "/images/blog/praia-do-pindobal-alter-do-chao/01-cabana-de-palha-e-vista-
 author: "Marina Petrovich"
 coauthors: ["Francisco Oliveira"]
 draft: false
+places:
+  - { name: "Praia do Pindobal", lat: -2.553, lng: -54.993 }
 ---
 
 <p>A <strong>Praia do Pindobal</strong> é uma das praias de rio mais famosas de Alter do Chão, e a gente passou um dia de semana inteiro lá: entrou no Tapajós, comeu camarão, tomou cerveja e ainda trabalhou de notebook aberto, debaixo de uma cabana de palha, com Wi-Fi perfeito.</p>

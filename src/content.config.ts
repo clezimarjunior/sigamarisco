@@ -21,6 +21,10 @@ const blog = defineCollection({
     /** Coautores do post (ex.: Francisco Oliveira, a partir de nov/2026). */
     coauthors: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
+    /** Lugares do post no mapa (/mapa). Sem places, o post não vira pin. */
+    places: z
+      .array(z.object({ name: z.string(), lat: z.number().min(-90).max(90), lng: z.number().min(-180).max(180) }))
+      .default([]),
   }),
 });
 

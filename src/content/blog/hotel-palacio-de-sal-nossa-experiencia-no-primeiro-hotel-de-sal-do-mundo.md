@@ -8,6 +8,8 @@ date: "2024-02-15"
 cover: "/images/blog/hotel-palacio-de-sal-nossa-experiencia-no-primeiro-hotel-de-sal-do-mundo/100660847.webp"
 thumb: "/images/blog/hotel-palacio-de-sal-nossa-experiencia-no-primeiro-hotel-de-sal-do-mundo/100660847-thumb.webp"
 author: "Marina Petrovich"
+places:
+  - { name: "Hotel Palacio de Sal", lat: -20.3417, lng: -66.9325 }
 ---
 
 <p>Descubra conosco a fascinante jornada em um dos destinos mais únicos do mundo: o Hotel Palácio de Sal, o primeiro hotel inteiramente construído com sal. </p>

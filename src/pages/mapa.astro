@@ -1,0 +1,464 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import SocialBand from '../components/SocialBand.astro';
+import { SITE, ORG_ID, fmtDate } from '../site';
+import { TRIPS, TRANSPORT_LABEL } from '../data/viagens';
+import { imageInfo, variantPath } from '../lib/images.mjs';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort((a, b) => +b.data.date - +a.data.date);
+
+/** Versão pequena (480px) da imagem, se existir. */
+const small = (src: string) => (imageInfo(src)?.widths.includes(480) ? variantPath(src, 480) : src);
+
+// País do pin: a categoria do post (Brasil, Bolívia...). "Informação" não é país.
+const pins = posts.flatMap((p) => {
+  const d = p.data;
+  const photos = [...(p.body ?? '').matchAll(/<img[^>]+src="([^"]+)"/g)]
+    .map((m) => m[1])
+    .filter((src, i, all) => src.startsWith('/images/') && src !== d.cover && all.indexOf(src) === i)
+    .slice(0, 8);
+  return d.places.map((pl, i) => ({
+    id: d.places.length > 1 ? `${p.id}--${i}` : p.id,
+    slug: p.id,
+    place: pl.name,
+    lat: pl.lat,
+    lng: pl.lng,
+    title: d.title,
+    country: d.category,
+    state: d.state,
+    date: fmtDate(d.date),
+    thumb: d.thumb ?? d.cover,
+    photos: photos.map((src) => ({ thumb: small(src), full: src })),
+  }));
+});
+
+const countries = [...new Set(pins.map((p) => p.country))].sort((a, b) => a.localeCompare(b, 'pt-BR'));
+const postsOnMap = new Set(pins.map((p) => p.slug)).size;
+const tripStops = TRIPS.flatMap((t) => t.stops.map((s) => s.name));
+const allPlaces = new Set([...pins.map((p) => p.place), ...tripStops]).size;
+
+// Lista em HTML (para leitores de tela e buscadores), agrupada por país.
+const byCountry = countries.map((c) => ({
+  country: c,
+  items: pins.filter((p) => p.country === c),
+}));
+
+const trips = TRIPS.map((t) => ({
+  ...t,
+  stops: t.stops.map((s) => ({ ...s, byLabel: s.by ? TRANSPORT_LABEL[s.by] : undefined })),
+}));
+
+const title = 'Mapa das nossas viagens | Siga Marisco';
+const description = 'Mapa interativo com todos os lugares por onde o Siga Marisco passou: clique nos pins para ver fotos e ler os posts, e veja as rotas das nossas viagens.';
+const url = `${SITE.url}/mapa`;
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Mapa das nossas viagens',
+    description,
+    url,
+    inLanguage: 'pt-BR',
+    isPartOf: { '@id': `${SITE.url}/#website`, '@type': 'WebSite', name: SITE.name, url: SITE.url },
+    publisher: { '@id': ORG_ID },
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: pins.map((p, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        item: {
+          '@type': 'Place',
+          name: p.place,
+          geo: { '@type': 'GeoCoordinates', latitude: p.lat, longitude: p.lng },
+          url: `${SITE.url}/blog/${p.slug}`,
+        },
+      })),
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
+      { '@type': 'ListItem', position: 2, name: 'Mapa', item: url },
+    ],
+  },
+];
+---
+<Base title={title} description={description} jsonLd={jsonLd}>
+  <div class="wrap map-page">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Mapa</nav>
+    <span class="eyebrow eyebrow-dark">Por onde a gente já passou</span>
+    <h1>Mapa das nossas viagens</h1>
+    <p class="map-lead">Clique num pin para ver as fotos e abrir o post daquele lugar. As linhas mostram as rotas que fizemos, parada por parada.</p>
+
+    <ul class="map-stats" aria-label="Números do mapa">
+      <li><strong>{countries.filter((c) => c !== 'Informação').length}</strong> países</li>
+      <li><strong>{allPlaces}</strong> lugares</li>
+      <li><strong>{postsOnMap}</strong> posts no mapa</li>
+      <li><strong>{TRIPS.length}</strong> {TRIPS.length === 1 ? 'rota' : 'rotas'}</li>
+    </ul>
+
+    <div class="map-controls">
+      <div class="chips map-filter" role="group" aria-label="Filtrar por país">
+        <button type="button" class="chip" data-country="" aria-pressed="true">Todos</button>
+        {countries.map((c) => <button type="button" class="chip" data-country={c} aria-pressed="false">{c}</button>)}
+      </div>
+      {trips.length > 0 && (
+        <div class="map-trips" role="group" aria-label="Rotas">
+          {trips.map((t) => (
+            <button type="button" class="trip-btn" data-trip={t.slug} aria-pressed="true" style={`--trip:${t.color}`}>
+              <span class="trip-swatch" aria-hidden="true"></span>
+              <span>{t.name}{t.when && <small> · {t.when}</small>}</span>
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+
+    <div class="map-shell">
+      <div id="map" class="map" role="region" aria-label="Mapa interativo das viagens"></div>
+      <noscript><p class="map-noscript">O mapa precisa de JavaScript. A lista completa de lugares está logo abaixo.</p></noscript>
+    </div>
+
+    <div class="map-legend" aria-hidden="true">
+      <span><i class="lg-photo"></i> post do blog</span>
+      <span><i class="lg-stop"></i> parada de rota</span>
+      <span><i class="lg-line"></i> estrada</span>
+      <span><i class="lg-dash"></i> avião</span>
+      <span><i class="lg-dot"></i> barco</span>
+      <span><i class="lg-pending"></i> trecho a detalhar</span>
+    </div>
+
+    <section class="map-list">
+      <h2>Todos os lugares do mapa</h2>
+      <div class="map-list-grid">
+        {byCountry.map((g) => (
+          <div>
+            <h3>{g.country}</h3>
+            <ul>
+              {g.items.map((p) => (
+                <li>
+                  <a href={`/blog/${p.slug}`}>{p.place}</a>
+                  <button type="button" class="show-on-map" data-pin={p.id}>ver no mapa</button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+        {trips.map((t) => (
+          <div>
+            <h3>{t.name}{t.when && ` (${t.when})`}</h3>
+            {t.summary && <p class="trip-summary">{t.summary}</p>}
+            <ol class="trip-stops">
+              {t.stops.map((s) => <li>{s.post ? <a href={`/blog/${s.post}`}>{s.name}</a> : s.name}</li>)}
+            </ol>
+          </div>
+        ))}
+      </div>
+    </section>
+  </div>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Fotos">
+    <button type="button" class="lb-close" aria-label="Fechar">×</button>
+    <button type="button" class="lb-nav lb-prev" aria-label="Foto anterior">‹</button>
+    <button type="button" class="lb-nav lb-next" aria-label="Próxima foto">›</button>
+    <a class="lb-post btn btn-orange" href="#">Ler o post →</a>
+  </dialog>
+
+  <div class="wrap" style="margin-top:56px"><SocialBand /></div>
+
+  <script type="application/json" id="map-data" set:html={JSON.stringify({ pins, trips })} />
+</Base>
+
+<script>
+  import L from 'leaflet';
+  import 'leaflet/dist/leaflet.css';
+  import 'leaflet.markercluster';
+  import 'leaflet.markercluster/dist/MarkerCluster.css';
+
+  type Photo = { thumb: string; full: string };
+  type Pin = { id: string; slug: string; place: string; lat: number; lng: number; title: string; country: string; state?: string; date: string; thumb: string; photos: Photo[] };
+  type Stop = { name: string; lat: number; lng: number; by?: string; byLabel?: string; pending?: boolean; post?: string };
+  type Trip = { slug: string; name: string; when?: string; color: string; stops: Stop[] };
+
+  const { pins, trips } = JSON.parse(document.getElementById('map-data')!.textContent!) as { pins: Pin[]; trips: Trip[] };
+  const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
+
+  const map = L.map('map', { scrollWheelZoom: false, worldCopyJump: true, zoomSnap: 0.5 });
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    maxZoom: 18,
+    subdomains: 'abcd',
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+  }).addTo(map);
+  // Zoom com a roda só depois de clicar no mapa (não "prende" a rolagem da página).
+  map.once('focus', () => map.scrollWheelZoom.enable());
+
+  // ---------- Rotas ----------
+  /** Arco suave entre dois pontos (para trechos de avião). */
+  const arc = (a: L.LatLngTuple, b: L.LatLngTuple, n = 32): L.LatLngTuple[] => {
+    const [x1, y1] = [a[1], a[0]], [x2, y2] = [b[1], b[0]];
+    const [mx, my] = [(x1 + x2) / 2, (y1 + y2) / 2];
+    const [dx, dy] = [x2 - x1, y2 - y1];
+    const [cx, cy] = [mx - dy * 0.2, my + dx * 0.2];
+    return Array.from({ length: n + 1 }, (_, i) => {
+      const t = i / n;
+      const x = (1 - t) ** 2 * x1 + 2 * (1 - t) * t * cx + t ** 2 * x2;
+      const y = (1 - t) ** 2 * y1 + 2 * (1 - t) * t * cy + t ** 2 * y2;
+      return [y, x];
+    });
+  };
+
+  const tripLayers = new Map<string, L.LayerGroup>();
+  const tripBounds = new Map<string, L.LatLngBounds>();
+  for (const t of trips) {
+    const g = L.layerGroup();
+    const pts = t.stops.map((s) => [s.lat, s.lng] as L.LatLngTuple);
+    t.stops.forEach((s, i) => {
+      if (i === 0) return;
+      const a = pts[i - 1], b = pts[i];
+      const style: L.PolylineOptions = s.pending
+        ? { color: '#8a99a8', weight: 3, dashArray: '4 8', opacity: 0.9 }
+        : s.by === 'aviao'
+          ? { color: t.color, weight: 3, dashArray: '10 8' }
+          : s.by === 'barco'
+            ? { color: t.color, weight: 3, dashArray: '1 7', lineCap: 'round' }
+            : { color: t.color, weight: 4 };
+      const line = L.polyline(s.by === 'aviao' ? arc(a, b) : [a, b], { ...style, interactive: true });
+      const how = s.pending ? 'trecho ainda sem detalhes' : s.byLabel ? `de ${s.byLabel}` : '';
+      line.bindTooltip(`<strong>${esc(t.stops[i - 1].name)} → ${esc(s.name)}</strong>${how ? `<br>${how}` : ''}`, { sticky: true });
+      g.addLayer(line);
+    });
+    t.stops.forEach((s, i) => {
+      const m = L.circleMarker([s.lat, s.lng], { radius: i === 0 || i === t.stops.length - 1 ? 7 : 5, color: '#fff', weight: 2, fillColor: t.color, fillOpacity: 1 });
+      m.bindTooltip(`${i + 1}. ${esc(s.name)}`, { direction: 'top', offset: [0, -6] });
+      m.bindPopup(
+        `<div class="stop-pop"><span class="pop-cat" style="color:${t.color}">${esc(t.name)}${t.when ? ` · ${esc(t.when)}` : ''}</span>` +
+          `<strong>Parada ${i + 1}: ${esc(s.name)}</strong>` +
+          (s.post ? `<a class="link-arrow" href="/blog/${s.post}">Ler o post →</a>` : '') +
+          `</div>`,
+      );
+      g.addLayer(m);
+    });
+    g.addTo(map);
+    tripLayers.set(t.slug, g);
+    tripBounds.set(t.slug, L.latLngBounds(pts));
+  }
+
+  // ---------- Pins dos posts ----------
+  const cluster = L.markerClusterGroup({
+    showCoverageOnHover: false,
+    maxClusterRadius: 44,
+    iconCreateFunction: (c) => L.divIcon({ html: `<span>${c.getChildCount()}</span>`, className: 'pin-cluster', iconSize: [42, 42] }),
+  });
+
+  const popupHtml = (p: Pin) => `
+    <article class="pop">
+      <a href="/blog/${p.slug}" class="pop-cover"><img src="${p.thumb}" alt="${esc(p.title)}" loading="lazy"></a>
+      <div class="pop-body">
+        <span class="pop-cat">${esc(p.state ? `${p.country} · ${p.state}` : p.country)}</span>
+        <h3 class="pop-place">${esc(p.place)}</h3>
+        <a class="pop-title" href="/blog/${p.slug}">${esc(p.title)}</a>
+        <span class="pop-date">${esc(p.date)}</span>
+        ${p.photos.length ? `<div class="pop-photos">${p.photos.slice(0, 4).map((ph, i) =>
+          `<button type="button" data-pin="${p.id}" data-i="${i}" aria-label="Abrir foto ${i + 1}"><img src="${ph.thumb}" alt="" loading="lazy"></button>`).join('')}
+          ${p.photos.length > 4 ? `<button type="button" class="more" data-pin="${p.id}" data-i="4">+${p.photos.length - 4}</button>` : ''}</div>` : ''}
+        <a class="btn btn-orange pop-btn" href="/blog/${p.slug}">Ler o post →</a>
+      </div>
+    </article>`;
+
+  const markers = new Map<string, L.Marker>();
+  const byId = new Map(pins.map((p) => [p.id, p]));
+  for (const p of pins) {
+    const icon = L.divIcon({
+      className: 'pin',
+      html: `<span class="pin-img" style="background-image:url('${p.thumb}')"></span>`,
+      iconSize: [46, 54],
+      iconAnchor: [23, 54],
+      popupAnchor: [0, -50],
+    });
+    const m = L.marker([p.lat, p.lng], { icon, title: p.place, alt: p.place, riseOnHover: true });
+    m.bindPopup(popupHtml(p), { maxWidth: 320, minWidth: 260, className: 'pop-wrap', autoPanPadding: [20, 90] });
+    m.on('popupopen', () => history.replaceState(null, '', `#${p.id}`));
+    m.on('popupclose', () => history.replaceState(null, '', location.pathname));
+    markers.set(p.id, m);
+  }
+
+  // ---------- Filtros ----------
+  let country = '';
+  const visiblePins = () => pins.filter((p) => !country || p.country === country);
+  const renderPins = () => {
+    cluster.clearLayers();
+    cluster.addLayers(visiblePins().map((p) => markers.get(p.id)!));
+  };
+  renderPins();
+  cluster.addTo(map);
+
+  const fitAll = () => {
+    const b = L.latLngBounds(visiblePins().map((p) => [p.lat, p.lng] as L.LatLngTuple));
+    if (!country) for (const [slug, tb] of tripBounds) if (map.hasLayer(tripLayers.get(slug)!)) b.extend(tb);
+    if (b.isValid()) map.fitBounds(b, { padding: [40, 40], maxZoom: 10 });
+    else map.setView([-12, -55], 3);
+  };
+
+  document.querySelectorAll<HTMLButtonElement>('.map-filter .chip').forEach((btn) =>
+    btn.addEventListener('click', () => {
+      country = btn.dataset.country ?? '';
+      document.querySelectorAll('.map-filter .chip').forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+      map.closePopup();
+      renderPins();
+      fitAll();
+    }),
+  );
+
+  document.querySelectorAll<HTMLButtonElement>('.trip-btn').forEach((btn) =>
+    btn.addEventListener('click', () => {
+      const slug = btn.dataset.trip!;
+      const layer = tripLayers.get(slug)!;
+      const on = btn.getAttribute('aria-pressed') !== 'true';
+      btn.setAttribute('aria-pressed', String(on));
+      if (on) {
+        layer.addTo(map);
+        map.fitBounds(tripBounds.get(slug)!, { padding: [40, 40] });
+      } else layer.remove();
+    }),
+  );
+
+  // ---------- Abrir um pin (lista, #hash) ----------
+  const openPin = (id: string, scroll = false) => {
+    const m = markers.get(id);
+    if (!m) return;
+    if (country && byId.get(id)!.country !== country) (document.querySelector('.map-filter .chip[data-country=""]') as HTMLButtonElement).click();
+    if (scroll) document.getElementById('map')!.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    cluster.zoomToShowLayer(m, () => m.openPopup());
+  };
+  document.querySelectorAll<HTMLButtonElement>('.show-on-map').forEach((b) => b.addEventListener('click', () => openPin(b.dataset.pin!, true)));
+
+  fitAll();
+  const fromHash = () => location.hash && openPin(decodeURIComponent(location.hash.slice(1)), true);
+  fromHash();
+  window.addEventListener('hashchange', fromHash);
+
+  // ---------- Lightbox das fotos ----------
+  const lb = document.getElementById('lightbox') as HTMLDialogElement;
+  const lbImg = document.createElement('img');
+  lb.querySelector('.lb-prev')!.after(lbImg);
+  const lbPost = lb.querySelector('.lb-post') as HTMLAnchorElement;
+  let cur: Pin | null = null, idx = 0;
+  const show = () => {
+    if (!cur) return;
+    idx = (idx + cur.photos.length) % cur.photos.length;
+    lbImg.src = cur.photos[idx].full;
+    lbImg.alt = `${cur.place}: foto ${idx + 1} de ${cur.photos.length}`;
+  };
+  document.getElementById('map')!.addEventListener('click', (e) => {
+    const b = (e.target as HTMLElement).closest<HTMLButtonElement>('.pop-photos button');
+    if (!b) return;
+    cur = byId.get(b.dataset.pin!)!;
+    idx = Number(b.dataset.i);
+    lbPost.href = `/blog/${cur.slug}`;
+    show();
+    lb.showModal();
+  });
+  lb.querySelector('.lb-prev')!.addEventListener('click', () => { idx--; show(); });
+  lb.querySelector('.lb-next')!.addEventListener('click', () => { idx++; show(); });
+  lb.querySelector('.lb-close')!.addEventListener('click', () => lb.close());
+  lb.addEventListener('click', (e) => { if (e.target === lb) lb.close(); });
+  lb.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') { idx--; show(); }
+    if (e.key === 'ArrowRight') { idx++; show(); }
+  });
+</script>
+
+<style>
+  .map-page { padding-top: 40px; }
+  .map-page h1 { font-size: clamp(34px, 4.6vw, 50px); margin: 10px 0 14px; }
+  .eyebrow-dark { color: var(--orange); }
+  .map-lead { font-size: 19px; color: var(--muted); max-width: 680px; margin: 0 0 22px; }
+
+  .map-stats { list-style: none; padding: 0; margin: 0 0 26px; display: flex; flex-wrap: wrap; gap: 10px 28px; color: var(--muted); font-size: 15px; }
+  .map-stats strong { color: var(--navy); font-size: 26px; margin-right: 4px; }
+
+  .map-controls { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; margin-bottom: 14px; }
+  .map-filter { margin: 0; }
+  .map-filter .chip { cursor: pointer; font: inherit; font-size: 14px; font-weight: 500; }
+  .map-filter .chip[aria-pressed="true"] { background: var(--navy); color: #fff; border-color: var(--navy); }
+  .map-trips { display: flex; gap: 8px; flex-wrap: wrap; }
+  .trip-btn { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 999px; border: 1px solid var(--line); background: #fff; font: inherit; font-size: 14px; font-weight: 500; color: var(--navy); cursor: pointer; }
+  .trip-btn small { color: var(--muted); font-size: 13px; }
+  .trip-swatch { width: 22px; height: 4px; border-radius: 2px; background: var(--trip); }
+  .trip-btn[aria-pressed="false"] { opacity: .55; }
+  .trip-btn[aria-pressed="false"] .trip-swatch { background: var(--line); }
+
+  @media (max-width: 640px) {
+    .map-page { padding-top: 24px; }
+    .map-lead { font-size: 17px; margin-bottom: 16px; }
+    .map-stats { gap: 4px 18px; margin-bottom: 18px; font-size: 14px; }
+    .map-stats strong { font-size: 20px; }
+    .map-filter { flex-wrap: nowrap; overflow-x: auto; margin: 0 -20px; padding: 0 20px 4px; scrollbar-width: none; }
+    .map-filter .chip { flex: none; }
+  }
+  .map-shell { position: relative; }
+  .map { height: min(72vh, 680px); min-height: 420px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); background: #e8eef2; z-index: 0; }
+  .map-noscript { padding: 16px; }
+
+  .map-legend { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 14px 0 0; font-size: 13px; color: var(--muted); }
+  .map-legend span { display: inline-flex; align-items: center; gap: 7px; }
+  .map-legend i { display: inline-block; }
+  .lg-photo { width: 14px; height: 14px; border-radius: 50%; border: 3px solid var(--orange); background: var(--bg-soft); }
+  .lg-stop { width: 10px; height: 10px; border-radius: 50%; background: var(--orange); box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--line); }
+  .lg-line, .lg-dash, .lg-dot, .lg-pending { width: 26px; height: 0; border-top: 3px solid var(--orange); }
+  .lg-dash { border-top-style: dashed; }
+  .lg-dot { border-top-style: dotted; }
+  .lg-pending { border-top: 3px dashed #8a99a8; }
+
+  .map-list { margin-top: 48px; }
+  .map-list h2 { font-size: clamp(24px, 3vw, 30px); margin-bottom: 20px; }
+  .map-list-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px 32px; }
+  .map-list h3 { font-size: 18px; margin-bottom: 8px; }
+  .map-list ul, .map-list ol { margin: 0; padding-left: 20px; }
+  .map-list li { margin: 4px 0; }
+  .show-on-map { margin-left: 6px; border: 0; background: none; padding: 0; color: var(--muted); font: inherit; font-size: 13px; text-decoration: underline; cursor: pointer; }
+  .show-on-map:hover { color: var(--blue); }
+  .trip-summary { margin: 0 0 6px; color: var(--muted); font-size: 15px; }
+
+  /* Lightbox */
+  .lightbox { border: 0; padding: 0; background: transparent; max-width: 96vw; max-height: 94vh; overflow: visible; }
+  .lightbox::backdrop { background: rgba(2, 20, 32, .88); }
+  .lightbox img { max-width: 92vw; max-height: 80vh; border-radius: 10px; margin: 0 auto; }
+  .lb-close, .lb-nav { position: fixed; border: 0; background: rgba(255,255,255,.14); color: #fff; width: 48px; height: 48px; border-radius: 50%; font-size: 30px; line-height: 1; cursor: pointer; }
+  .lb-close:hover, .lb-nav:hover { background: rgba(255,255,255,.28); }
+  .lb-close { top: 16px; right: 16px; }
+  .lb-prev { left: 16px; top: 50%; transform: translateY(-50%); }
+  .lb-next { right: 16px; top: 50%; transform: translateY(-50%); }
+  .lb-post { display: table; margin: 16px auto 0; }
+  @media (max-width: 640px) { .lb-nav { top: auto; bottom: 20px; transform: none; } .lb-post { margin-bottom: 70px; } }
+</style>
+
+<style is:global>
+  /* Leaflet: pins, clusters e popups (conteúdo criado pelo JS) */
+  .pin { background: none; border: 0; }
+  .pin-img { position: relative; display: block; width: 46px; height: 46px; border-radius: 50%; border: 3px solid var(--orange); background: var(--bg-soft) center/cover; box-shadow: 0 4px 12px rgba(2,48,71,.3); transition: transform .15s ease; }
+  .pin-img::after { content: ''; position: absolute; left: 50%; bottom: -10px; transform: translateX(-50%); border: 6px solid transparent; border-top: 7px solid var(--orange); }
+  .pin:hover .pin-img { transform: scale(1.12); }
+  .pin-cluster { display: grid; place-items: center; border-radius: 50%; background: var(--navy); color: #fff; font-weight: 700; font-size: 15px; box-shadow: 0 0 0 5px rgba(2,48,71,.22), 0 4px 12px rgba(2,48,71,.3); }
+
+  .pop-wrap .leaflet-popup-content-wrapper { padding: 0; border-radius: 14px; overflow: hidden; }
+  .pop-wrap .leaflet-popup-content { margin: 0; width: 280px !important; font-family: 'DM Sans', system-ui, sans-serif; }
+  .pop-wrap a.leaflet-popup-close-button { color: #fff; text-shadow: 0 1px 4px rgba(0,0,0,.6); font-size: 22px; width: 30px; height: 30px; }
+  .pop-cover img { width: 100%; height: 150px; object-fit: cover; }
+  .pop-body { padding: 12px 16px 16px; display: flex; flex-direction: column; gap: 4px; }
+  .pop-cat { text-transform: uppercase; letter-spacing: .08em; font-size: 11px; font-weight: 700; color: var(--blue); }
+  .pop-place { font-size: 18px; margin: 0; }
+  .pop-title { color: var(--ink) !important; font-size: 14px; line-height: 1.35; text-decoration: none; }
+  .pop-title:hover { text-decoration: underline; }
+  .pop-date { font-size: 12px; color: var(--muted); }
+  .pop-photos { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; margin: 8px 0 4px; }
+  .pop-photos button { padding: 0; border: 0; border-radius: 6px; overflow: hidden; aspect-ratio: 1; cursor: zoom-in; background: var(--bg-soft); }
+  .pop-photos img { width: 100%; height: 100%; object-fit: cover; }
+  .pop-photos .more { font: inherit; font-weight: 700; font-size: 13px; color: var(--navy); }
+  .pop-btn { justify-content: center; margin-top: 6px; padding: 10px 16px; font-size: 14px; color: #fff !important; }
+  .stop-pop { display: flex; flex-direction: column; gap: 4px; font-family: 'DM Sans', system-ui, sans-serif; }
+  .stop-pop strong { color: var(--navy); font-size: 15px; }
+</style>

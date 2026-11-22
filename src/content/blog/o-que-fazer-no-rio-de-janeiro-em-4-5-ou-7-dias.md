@@ -9,6 +9,8 @@ date: "2024-01-02"
 cover: "/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/img-0470-1.webp"
 thumb: "/images/blog/o-que-fazer-no-rio-de-janeiro-em-4-5-ou-7-dias/img-0470-1-thumb.webp"
 author: "Marina Petrovich"
+places:
+  - { name: "Rio de Janeiro", lat: -22.9068, lng: -43.1729 }
 ---
 
 <p>A capital carioca é um dos lugares mais lindos do Brasil. Porém, para aproveitar tudo que ela tem a oferecer é importante se planejar e, principalmente, saber o que fazer no Rio de Janeiro. Por isso, coloquei todas as minhas dicas nesse blog.</p>

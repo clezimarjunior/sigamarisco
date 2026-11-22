@@ -8,6 +8,9 @@ date: "2023-09-30"
 cover: "/images/blog/passeio-salar-do-uyuni-bolivia/12-grupo-salar-do-yuni.webp"
 thumb: "/images/blog/passeio-salar-do-uyuni-bolivia/12-grupo-salar-do-yuni-thumb.webp"
 author: "Marina Petrovich"
+places:
+  - { name: "Salar do Uyuni", lat: -20.1338, lng: -67.4891 }
+  - { name: "Laguna Colorada", lat: -22.2, lng: -67.7833 }
 ---
 
 <p>Vamos conhecer o  lugar mais turístico da <a href="/categoria/bolivia">Bolívia</a>? Conhecemos através do passeio Salar de Uyuni e foi muito especial, não apenas por suas paisagens deslumbrantes e cenários surreais, mas também por ser o palco de uma experiência que transformou nossas vidas para sempre: o pedido de casamento que aconteceu neste cenário de tirar o fôlego. </p>
