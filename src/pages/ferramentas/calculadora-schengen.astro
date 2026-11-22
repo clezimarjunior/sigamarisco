@@ -1,0 +1,646 @@
+---
+import Base from '../../layouts/Base.astro';
+import PostCard from '../../components/PostCard.astro';
+import SocialBand from '../../components/SocialBand.astro';
+import Img from '../../components/Img.astro';
+import { getCollection } from 'astro:content';
+import { SITE, TOOLS, ORG_ID, organizationSchema, personSchema, fmtDate } from '../../site';
+
+const tool = TOOLS.find((t) => t.slug === 'calculadora-schengen')!;
+const url = `${SITE.url}/ferramentas/${tool.slug}`;
+const title = 'Calculadora Schengen 90/180: quantos dias posso ficar?';
+const description = 'Calculadora Schengen grátis: some suas viagens e veja quantos dos 90 dias ainda restam na Europa, até quando pode ficar e quando os dias voltam.';
+const published = new Date(tool.published);
+const updated = new Date(tool.updated);
+const author = 'Francisco Oliveira';
+
+// Membros do Espaço Schengen (29 em 2026). Bulgária e Romênia completas desde 1º/01/2025.
+const MEMBERS = [
+  'Alemanha', 'Áustria', 'Bélgica', 'Bulgária', 'Croácia', 'Dinamarca', 'Eslováquia', 'Eslovênia', 'Espanha', 'Estônia',
+  'Finlândia', 'França', 'Grécia', 'Holanda (Países Baixos)', 'Hungria', 'Islândia', 'Itália', 'Letônia', 'Liechtenstein',
+  'Lituânia', 'Luxemburgo', 'Malta', 'Noruega', 'Polônia', 'Portugal', 'Romênia', 'Suécia', 'Suíça', 'República Tcheca',
+];
+
+const FAQ = [
+  {
+    q: 'Como funciona a regra dos 90 dias no Espaço Schengen?',
+    a: 'Em qualquer dia em que você estiver no Espaço Schengen, olhe para os 180 dias que terminam nesse dia (ele incluído). Dentro desse período, a soma dos dias que você passou na área Schengen não pode passar de 90. A janela "anda" um dia por vez, por isso é chamada de janela móvel.',
+  },
+  {
+    q: 'O dia da chegada e o dia da saída contam?',
+    a: 'Sim. O dia de entrada e o dia de saída contam como dias inteiros, mesmo que você chegue às 23h ou saia às 6h da manhã. Quem entra em 1º de março e sai em 10 de março usou 10 dias.',
+  },
+  {
+    q: 'Brasileiro precisa de visto para ir à Europa?',
+    a: 'Não para turismo, negócios ou visitas curtas de até 90 dias em cada período de 180 dias no Espaço Schengen. Basta o passaporte válido, e a imigração pode pedir passagem de volta, reserva de hospedagem, comprovante de dinheiro e seguro-viagem. O ETIAS, uma autorização eletrônica, está previsto para começar no último trimestre de 2026, mas a data ainda depende de anúncio oficial da Comissão Europeia.',
+  },
+  {
+    q: 'Os 90 dias valem por país ou para toda a área Schengen?',
+    a: 'Para toda a área. Os 29 países do Espaço Schengen funcionam como um só território nessa conta: 30 dias na Itália, 30 na França e 30 em Portugal somam 90 dias.',
+  },
+  {
+    q: 'Depois de 90 dias, quanto tempo preciso ficar fora para voltar?',
+    a: 'Depende de como os dias foram usados. Se você ficou 90 dias seguidos, só recupera dias quando o primeiro dia daquela viagem sair da janela, ou seja, 180 dias depois da sua entrada. Na prática, 90 dias dentro pedem 90 dias fora. Com viagens picadas, os dias voltam aos poucos: a calculadora mostra exatamente quando.',
+  },
+  {
+    q: 'Reino Unido, Irlanda e Chipre entram na conta dos 90 dias?',
+    a: 'Não. Reino Unido e Irlanda não fazem parte do Espaço Schengen e têm regras próprias, e o Chipre, apesar de ser da União Europeia, ainda não aplica o Schengen por completo. Dias nesses países não entram na conta. Já Bulgária e Romênia entram desde 1º de janeiro de 2025.',
+  },
+  {
+    q: 'Quem tem cidadania europeia precisa contar os dias?',
+    a: 'Não, se entrar e sair com o passaporte de um país da União Europeia ou do Espaço Schengen. A regra 90/180 vale para quem entra como visitante de fora da UE, como com o passaporte brasileiro.',
+  },
+  {
+    q: 'O que acontece se eu passar dos 90 dias?',
+    a: 'Ficar além do permitido é permanência irregular. Dependendo do país, pode haver multa, deportação, registro no sistema e proibição de voltar ao Espaço Schengen por um período. Com o EES, o sistema digital de entradas e saídas, a contagem é automática na fronteira, então fica mais fácil de ser identificado.',
+  },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: 'Calculadora Schengen 90/180',
+    alternateName: ['Calculadora de dias Schengen', 'Calculadora da regra 90/180'],
+    url,
+    description,
+    applicationCategory: 'TravelApplication',
+    operatingSystem: 'Any',
+    browserRequirements: 'Requer JavaScript',
+    inLanguage: 'pt-BR',
+    isAccessibleForFree: true,
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' },
+    datePublished: published.toISOString(),
+    dateModified: updated.toISOString(),
+    author: personSchema(author),
+    publisher: { '@type': 'Organization', '@id': ORG_ID, name: SITE.name, logo: organizationSchema.logo },
+    image: `${SITE.url}/images/brand/marisco2.webp`,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: FAQ.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
+      { '@type': 'ListItem', position: 2, name: 'Ferramentas', item: `${SITE.url}/ferramentas` },
+      { '@type': 'ListItem', position: 3, name: tool.name, item: url },
+    ],
+  },
+];
+
+// Posts relacionados: planejamento de viagem primeiro, depois os mais recentes.
+const posts = (await getCollection('blog', (p) => !p.data.draft)).sort((a, b) => +b.data.date - +a.data.date);
+const related = [
+  ...posts.filter((p) => p.id === 'mala-que-pode-levar-no-aviao-melhores-modelos-e-tamanhos-permitidos'),
+  ...posts.filter((p) => p.id !== 'mala-que-pode-levar-no-aviao-melhores-modelos-e-tamanhos-permitidos'),
+].slice(0, 3);
+---
+<Base title={title} description={description} jsonLd={jsonLd}>
+  <div class="wrap sc">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/ferramentas">Ferramentas</a> / Calculadora Schengen</nav>
+
+    <header class="sc-head">
+      <span class="eyebrow sc-eyebrow">Ferramenta grátis · regra 90/180</span>
+      <h1>Calculadora Schengen: quantos dias ainda posso ficar na Europa?</h1>
+      <p class="sc-lead">Coloque as datas de entrada e saída das suas viagens ao Espaço Schengen e veja na hora quantos dos <strong>90 dias</strong> você já usou nos últimos 180, até quando pode ficar e em que dia os dias voltam a ficar livres.</p>
+    </header>
+
+    <!-- ============ APP ============ -->
+    <section class="app" id="calculadora" aria-label="Calculadora de dias Schengen">
+      <div class="app-input">
+        <div class="step">
+          <div class="step-head">
+            <h2 class="step-title"><span class="num">1</span> Suas viagens ao Espaço Schengen</h2>
+            <button type="button" class="btn-link" id="sc-example">Ver exemplo</button>
+          </div>
+          <p class="hint">Inclua viagens passadas (dos últimos 6 meses) e as que você já tem planejadas. Entrada e saída contam como dias inteiros.</p>
+          <ol class="trips" id="sc-trips"></ol>
+          <div class="trip-actions">
+            <button type="button" class="btn btn-orange btn-sm" id="sc-add">+ Adicionar viagem</button>
+            <button type="button" class="btn-link muted" id="sc-clear">Limpar tudo</button>
+          </div>
+        </div>
+
+        <div class="step">
+          <h2 class="step-title"><span class="num">2</span> Quando você vai entrar na Europa?</h2>
+          <p class="hint">Coloque o dia da próxima entrada para saber até quando pode ficar. Se já está lá ou só quer ver o saldo de hoje, deixe a data de hoje.</p>
+          <div class="ref-row">
+            <label class="field">
+              <span>Data da entrada (ou hoje)</span>
+              <input type="date" id="sc-ref" min="2000-01-01" max="2100-12-31" />
+            </label>
+            <button type="button" class="chip" id="sc-today">Hoje</button>
+          </div>
+          <p class="ref-note" id="sc-ref-note"></p>
+        </div>
+
+        <div class="step">
+          <h2 class="step-title"><span class="num">3</span> Ainda não tem data? <span class="opt">(opcional)</span></h2>
+          <p class="hint">Diga quantos dias quer ficar e a calculadora encontra a primeira data possível.</p>
+          <label class="field field-inline">
+            <span>Quero ficar</span>
+            <input type="number" id="sc-want" min="1" max="90" value="30" inputmode="numeric" />
+            <span>dias seguidos</span>
+          </label>
+          <p class="plan-out" id="sc-plan" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <aside class="app-result" aria-live="polite">
+        <div class="result-card" id="sc-result" data-state="ok">
+          <div class="gauge">
+            <svg viewBox="0 0 120 120" aria-hidden="true">
+              <circle cx="60" cy="60" r="52" class="g-track" />
+              <circle cx="60" cy="60" r="52" class="g-bar" id="sc-ring" pathLength="90" />
+            </svg>
+            <div class="gauge-num"><strong id="sc-left">90</strong><span>dias livres</span></div>
+          </div>
+          <p class="status" id="sc-status">Você tem os 90 dias disponíveis.</p>
+          <p class="empty" id="sc-empty">Adicione suas viagens dos últimos 6 meses ao lado, ou clique em <b>Ver exemplo</b>, para ver até quando pode ficar e quando os dias voltam.</p>
+          <div id="sc-details">
+          <dl class="facts">
+            <div class="fact-wide"><dt id="sc-until-label">Pode ficar até</dt><dd id="sc-until">–</dd></div>
+            <div><dt>Dias já usados</dt><dd><strong id="sc-used">0</strong> de 90</dd></div>
+            <div><dt>Período que conta</dt><dd id="sc-window">–</dd></div>
+          </dl>
+
+          <div class="timeline">
+            <div class="tl-head"><span>Os 180 dias que contam</span><span class="tl-legend"><i class="lg-in"></i>no Schengen <i class="lg-over"></i>acima de 90</span></div>
+            <div class="tl-bar" id="sc-tl" role="img" aria-label="Linha do tempo dos últimos 180 dias"></div>
+            <div class="tl-foot"><span id="sc-tl-start"></span><span id="sc-tl-end"></span></div>
+          </div>
+
+          <div class="recover" id="sc-recover"></div>
+          </div>
+
+          <div class="share-row">
+            <button type="button" class="btn btn-white btn-sm" id="sc-copy">Copiar link do cálculo</button>
+            <a class="btn btn-ghost btn-sm" id="sc-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+          <p class="privacy">🔒 Os dados ficam salvos só no seu navegador.</p>
+        </div>
+      </aside>
+      <noscript><p class="hint">A calculadora precisa de JavaScript ativado. Mais abaixo explicamos como fazer a conta à mão.</p></noscript>
+    </section>
+
+    <p class="disclaimer">A calculadora segue a regra do art. 6.º do Código de Fronteiras Schengen e serve para planejamento. Quem decide a entrada é sempre o agente de fronteira, que pode pedir comprovantes. Se você tem visto de longa duração ou autorização de residência em um país Schengen, os dias com esse documento não entram na conta.</p>
+
+    <!-- ============ CONTEÚDO ============ -->
+    <div class="sc-body">
+      <article class="prose sc-prose">
+        <div class="byline">
+          <Img src="/images/brand/francisco-thumb.webp" alt={author} class="avatar" width="40" height="40" />
+          <span>Por <a href="/sobre#francisco"><strong>{author}</strong></a> · Atualizado em <time datetime={updated.toISOString()}>{fmtDate(updated)}</time></span>
+        </div>
+
+        <h2 id="regra-90-180">Como funciona a regra 90/180</h2>
+        <p>Brasileiros não precisam de visto para viagens curtas à Europa, mas existe um limite: <strong>no máximo 90 dias dentro de qualquer período de 180 dias</strong> no Espaço Schengen. Esse limite vale para os 29 países juntos, não para cada país.</p>
+        <p>O detalhe que confunde muita gente é que os 180 dias não são um semestre fixo, de janeiro a junho, por exemplo. É uma <strong>janela móvel</strong>: em cada dia em que você está lá, a imigração olha para trás e soma os dias passados no Schengen nos 180 dias que terminam naquele dia. Se a soma passar de 90, a permanência fica irregular.</p>
+        <p>Por isso não basta "sair e voltar": sair da Europa por uma semana não zera nada. Os dias só voltam quando a viagem antiga sai da janela de 180 dias, e é isso que a calculadora acima faz por você.</p>
+
+        <h2 id="como-usar">Como usar a calculadora Schengen</h2>
+        <ol>
+          <li><strong>Adicione cada viagem</strong> com a data de entrada e a de saída do Espaço Schengen. Conexões dentro da área (Lisboa → Paris, por exemplo) fazem parte da mesma viagem.</li>
+          <li><strong>Escolha a data de referência.</strong> Para saber o saldo de hoje, deixe a data atual. Para planejar, coloque o dia em que pretende entrar de novo.</li>
+          <li><strong>Leia o resultado:</strong> quantos dias livres você tem, até quando pode ficar entrando naquela data e em que dias os dias usados voltam a ficar disponíveis.</li>
+          <li><strong>Teste o planejamento:</strong> no passo 3, diga quantos dias seguidos quer ficar e veja a primeira data em que isso é possível.</li>
+        </ol>
+        <p>Você pode copiar o link do cálculo para mandar para quem viaja com você. As viagens vão no próprio link, sem passar por nenhum servidor.</p>
+
+        <h2 id="exemplos">Exemplos práticos da regra dos 90 dias</h2>
+        <h3>1. Mochilão de 90 dias seguidos</h3>
+        <p>Entrada em 1º de janeiro e saída em 31 de março: são exatamente 90 dias, o limite. A partir de 1º de abril, a pessoa precisa ficar fora. O primeiro dia que sai da janela é 1º de janeiro, então só dá para entrar de novo em <strong>30 de junho</strong>, e a partir dessa data é possível ficar mais 90 dias seguidos, porque a cada dia novo um dia antigo sai da conta.</p>
+        <h3>2. Duas viagens no mesmo semestre</h3>
+        <p>Uma viagem de 20 dias em fevereiro e outra de 40 dias em abril somam 60 dias. Quem planeja voltar em junho tem, no máximo, os 30 dias restantes, e esse número vai aumentando à medida que os dias de fevereiro saem da janela, no fim de julho e começo de agosto.</p>
+        <h3>3. Viagem futura que limita a de agora</h3>
+        <p>Se você já tem 60 dias marcados para maio e junho, uma viagem em fevereiro não pode passar de 30 dias, senão a de maio estoura o limite lá na frente. A calculadora considera as viagens futuras que você colocar na lista e avisa quando alguma passa de 90.</p>
+
+        <h2 id="entrada-e-saida">O dia de entrada e o de saída contam?</h2>
+        <p>Contam. Para a regra Schengen, <strong>o dia da chegada e o dia da partida são dias inteiros</strong>, mesmo que você tenha pousado à noite ou embarcado de madrugada. Um erro comum é calcular "noites" como se fosse hotel: quem entra no dia 1 e sai no dia 10 usou 10 dias, e não 9.</p>
+        <p>Já a conexão em aeroporto sem passar pela imigração, ficando na área de trânsito internacional, não conta como entrada no Espaço Schengen.</p>
+
+        <h2 id="paises">Quais países fazem parte do Espaço Schengen em 2026</h2>
+        <p>São 29 países, que contam juntos para os 90 dias. A maioria é da União Europeia, mais Islândia, Liechtenstein, Noruega e Suíça, que não são da UE mas fazem parte do Schengen.</p>
+        <ul class="countries">{MEMBERS.map((m) => <li>{m}</li>)}</ul>
+        <p><strong>Não entram na conta:</strong> Reino Unido, Irlanda e Chipre (este é da União Europeia, mas ainda não aplica o Schengen por completo), além de países como Albânia, Sérvia, Montenegro e Turquia, que têm regras próprias. Os territórios ultramarinos, como a Guiana Francesa, também ficam fora do Espaço Schengen.</p>
+        <p>Mônaco, San Marino e o Vaticano não são membros oficiais, mas não têm controle de fronteira com os vizinhos. Na prática, considere os dias passados lá na sua conta.</p>
+
+        <h2 id="visto-etias-ees">Brasileiro precisa de visto? ETIAS e EES</h2>
+        <p>Não. Para turismo, visitas e negócios de curta duração, o brasileiro entra no Espaço Schengen só com o passaporte, válido por pelo menos 3 meses depois da data prevista de saída. Na imigração, podem pedir passagem de volta, reserva de hospedagem, comprovação de dinheiro para a viagem e seguro-viagem.</p>
+        <p>Duas mudanças afetam quem viaja agora:</p>
+        <ul>
+          <li><strong>EES (Entry/Exit System):</strong> o sistema digital de entradas e saídas, que registra digitais e foto do rosto na fronteira e substitui o carimbo no passaporte. Com ele, a contagem dos 90 dias passa a ser automática, então errar na conta ficou mais arriscado.</li>
+          <li><strong>ETIAS:</strong> uma autorização eletrônica de viagem, pedida online antes de embarcar, que vai valer para quem não precisa de visto, incluindo brasileiros. Segundo o <a href="https://travel-europe.europa.eu/etias_en" target="_blank" rel="noopener">site oficial da UE</a>, o início está previsto para o último trimestre de 2026, com data a ser anunciada pela Comissão Europeia. O ETIAS não muda a regra 90/180.</li>
+        </ul>
+
+        <h2 id="passar-dos-90">O que acontece se passar dos 90 dias</h2>
+        <p>Ficar mais tempo do que o permitido é permanência irregular, o famoso <em>overstay</em>. As consequências variam de país para país e podem incluir multa, deportação, registro no sistema e proibição de entrar no Espaço Schengen por um tempo. Mesmo um ou dois dias a mais podem dar problema na próxima viagem.</p>
+        <p>Se precisar ficar mais, a saída é pedir um visto nacional de longa duração (de estudo, trabalho ou residência, por exemplo) no país de destino, antes de viajar. Prorrogar a estadia de turista só é possível em casos excepcionais, como doença ou força maior.</p>
+
+        <h2 id="dicas">Dicas para não errar na conta</h2>
+        <ul>
+          <li>Guarde os cartões de embarque e confira as datas de entrada e saída. Elas são a base de tudo.</li>
+          <li>Planeje com folga de alguns dias, para o caso de voo cancelado ou atrasado.</li>
+          <li>Quer ficar mais tempo na Europa? Intercale com países fora do Schengen, como Reino Unido, Irlanda, Albânia ou Turquia, para "descansar" os dias.</li>
+          <li>Use a <a href="https://home-affairs.ec.europa.eu/policies/schengen-borders-and-visa/border-crossing_en" target="_blank" rel="noopener">calculadora oficial da Comissão Europeia</a> para conferir o resultado antes de uma viagem longa.</li>
+          <li>Antes de fazer a mala, veja também o nosso guia de <a href="/blog/mala-que-pode-levar-no-aviao-melhores-modelos-e-tamanhos-permitidos">tamanhos de mala permitidos no avião</a>.</li>
+        </ul>
+
+        <h2 id="perguntas-frequentes">Perguntas frequentes</h2>
+        <div class="faq">
+          {FAQ.map((f) => (
+            <details>
+              <summary>{f.q}</summary>
+              <p>{f.a}</p>
+            </details>
+          ))}
+        </div>
+
+        <h2 id="fontes">Fontes oficiais</h2>
+        <ul class="sources">
+          <li><a href="https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32016R0399" target="_blank" rel="noopener">Regulamento (UE) 2016/399, Código de Fronteiras Schengen</a> (art. 6.º, condições de entrada e regra 90/180)</li>
+          <li><a href="https://home-affairs.ec.europa.eu/policies/schengen-borders-and-visa/border-crossing_en" target="_blank" rel="noopener">Comissão Europeia: travessia de fronteiras e calculadora de estadias curtas</a></li>
+          <li><a href="https://travel-europe.europa.eu/ees_en" target="_blank" rel="noopener">Travel to Europe: EES, o Sistema de Entrada/Saída</a></li>
+          <li><a href="https://travel-europe.europa.eu/etias_en" target="_blank" rel="noopener">Travel to Europe: ETIAS</a></li>
+        </ul>
+        <p class="small">Regras de entrada mudam. Antes de viajar, confira as informações no site oficial da União Europeia e no consulado do país de destino.</p>
+      </article>
+
+      <aside class="sidebar sc-side">
+        <nav class="box toc" aria-label="Nesta página">
+          <h3>Nesta página</h3>
+          <ol>
+            <li><a href="#calculadora">Calculadora</a></li>
+            <li><a href="#regra-90-180">Como funciona a regra 90/180</a></li>
+            <li><a href="#como-usar">Como usar</a></li>
+            <li><a href="#exemplos">Exemplos práticos</a></li>
+            <li><a href="#entrada-e-saida">Entrada e saída contam?</a></li>
+            <li><a href="#paises">Países do Schengen</a></li>
+            <li><a href="#visto-etias-ees">Visto, ETIAS e EES</a></li>
+            <li><a href="#passar-dos-90">Se passar dos 90 dias</a></li>
+            <li><a href="#perguntas-frequentes">Perguntas frequentes</a></li>
+          </ol>
+        </nav>
+        <div class="box box-blue">
+          <h3>Mais ferramentas</h3>
+          <p>Apps grátis para planejar a viagem, sem cadastro.</p>
+          <a class="btn btn-white" href="/ferramentas">Ver ferramentas →</a>
+          <Img class="star" src="/brand/star.svg" alt="" decorative width="110" height="110" />
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <section class="section" style="background:var(--bg-soft);margin-top:64px">
+    <div class="wrap">
+      <div class="section-head"><h2>Para planejar a viagem</h2><a class="link-arrow" href="/blog">Todos os posts →</a></div>
+      <div class="grid">{related.map((p) => <PostCard post={p} />)}</div>
+    </div>
+  </section>
+  <div class="wrap" style="margin-top:56px"><SocialBand /></div>
+</Base>
+
+<script>
+  import { LIMIT, WINDOW, toDay, toIso, todayDay, isValidIso, stayDays, usedOn, summarize, recoveries, nextDateFor, type Trip } from '../../lib/schengen';
+
+  const KEY = 'sm-schengen-v1';
+  const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
+  const list = $<HTMLOListElement>('sc-trips');
+  const refInput = $<HTMLInputElement>('sc-ref');
+  const wantInput = $<HTMLInputElement>('sc-want');
+
+  const fmt = (n: number, opts: Intl.DateTimeFormatOptions = { day: '2-digit', month: 'short', year: 'numeric' }) =>
+    new Date(n * 86_400_000).toLocaleDateString('pt-BR', { ...opts, timeZone: 'UTC' }).replace(/ de /g, ' ').replace('.', '');
+  const fmtLong = (n: number) => new Date(n * 86_400_000).toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+  const plural = (n: number, s: string, p: string) => `${n} ${n === 1 ? s : p}`;
+
+  type State = { trips: Trip[]; ref: string | null; want: number };
+  let state: State = { trips: [], ref: null, want: 30 };
+
+  // ---- estado: link compartilhado (#v=) > navegador > vazio
+  const fromHash = (): State | null => {
+    const m = location.hash.match(/v=([^&]+)/);
+    if (!m) return null;
+    const [tripsPart, ref] = decodeURIComponent(m[1]).split('@');
+    const trips = tripsPart.split(',').map((p) => { const [entry, exit] = p.split('~'); return { entry, exit }; })
+      .filter((t) => isValidIso(t.entry) && isValidIso(t.exit));
+    return { trips, ref: ref && isValidIso(ref) ? ref : null, want: 30 };
+  };
+  try {
+    state = fromHash() ?? { ...state, ...JSON.parse(localStorage.getItem(KEY) ?? '{}') };
+  } catch { /* storage indisponível */ }
+  if (!state.trips?.length) state.trips = [{ entry: '', exit: '' }];
+
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch { /* ignora */ } };
+  const shareUrl = () => {
+    const v = state.trips.filter((t) => isValidIso(t.entry) && isValidIso(t.exit)).map((t) => `${t.entry}~${t.exit}`).join(',');
+    return `${location.origin}${location.pathname}#v=${v}${state.ref ? '@' + state.ref : ''}`;
+  };
+
+  // ---- lista de viagens
+  function renderTrips() {
+    list.innerHTML = '';
+    state.trips.forEach((t, i) => {
+      const li = document.createElement('li');
+      li.className = 'trip';
+      li.innerHTML = `
+        <label class="field"><span>Entrada</span><input type="date" min="2000-01-01" max="2100-12-31" data-k="entry" value="${t.entry}" aria-label="Data de entrada da viagem ${i + 1}" /></label>
+        <label class="field"><span>Saída</span><input type="date" min="2000-01-01" max="2100-12-31" data-k="exit" value="${t.exit}" aria-label="Data de saída da viagem ${i + 1}" /></label>
+        <span class="trip-days" data-days></span>
+        <button type="button" class="trip-del" aria-label="Remover viagem ${i + 1}" title="Remover">×</button>`;
+      li.querySelectorAll('input').forEach((inp) => inp.addEventListener('change', () => {
+        const k = inp.dataset.k as 'entry' | 'exit';
+        state.trips[i][k] = inp.value;
+        // facilita: ao preencher a entrada, a saída não pode ficar antes dela
+        const exitInp = li.querySelector<HTMLInputElement>('[data-k="exit"]')!;
+        if (k === 'entry') exitInp.min = isValidIso(inp.value) ? inp.value : '2000-01-01';
+        update();
+      }));
+      li.querySelector<HTMLInputElement>('[data-k="exit"]')!.min = isValidIso(t.entry) ? t.entry : '2000-01-01';
+      li.querySelector('.trip-del')!.addEventListener('click', () => {
+        state.trips.splice(i, 1);
+        if (!state.trips.length) state.trips.push({ entry: '', exit: '' });
+        renderTrips(); update();
+      });
+      list.appendChild(li);
+    });
+  }
+
+  function tripBadges() {
+    list.querySelectorAll<HTMLLIElement>('.trip').forEach((li, i) => {
+      const t = state.trips[i];
+      const el = li.querySelector<HTMLElement>('[data-days]')!;
+      li.classList.remove('invalid');
+      const bad = (v: string) => v !== '' && !isValidIso(v);
+      if (bad(t.entry) || bad(t.exit)) { el.textContent = 'Data inválida'; li.classList.add('invalid'); return; }
+      if (!isValidIso(t.entry) || !isValidIso(t.exit)) { el.textContent = ''; return; }
+      const n = toDay(t.exit) - toDay(t.entry) + 1;
+      if (n < 1) { el.textContent = 'Saída antes da entrada'; li.classList.add('invalid'); return; }
+      el.textContent = plural(n, 'dia', 'dias');
+    });
+  }
+
+  // ---- resultado
+  function update() {
+    tripBadges();
+    const valid = state.trips.filter((t) => isValidIso(t.entry) && isValidIso(t.exit) && t.exit >= t.entry);
+    // Sem data escolhida, calcula no dia que faz mais sentido: hoje ou, se houver viagem futura, o fim da última viagem.
+    const today = todayDay();
+    const lastExit = valid.reduce((m, t) => Math.max(m, toDay(t.exit)), -Infinity);
+    const manual = !!state.ref && isValidIso(state.ref);
+    const ref = manual ? toDay(state.ref!) : Math.max(today, lastExit);
+    if (document.activeElement !== refInput) refInput.value = toIso(ref);
+    const note = $('sc-ref-note');
+    if (manual) note.innerHTML = `Calculando em ${fmtLong(ref)}. <button type="button" class="btn-link" data-auto>Usar data automática</button>`;
+    else if (ref > today) note.textContent = `Calculando no fim da sua última viagem (${fmtLong(ref)}). Troque a data se for entrar em outro dia.`;
+    else note.textContent = '';
+    note.querySelector('[data-auto]')?.addEventListener('click', () => { state.ref = null; update(); });
+    const days = stayDays(valid);
+    const s = summarize(valid, ref);
+
+    $('sc-left').textContent = String(s.left);
+    $('sc-used').textContent = String(s.used);
+    $('sc-ring').style.strokeDasharray = `${s.left} 90`;
+    $('sc-window').textContent = `${fmt(s.windowStart)} a ${fmt(ref)}`;
+
+    const card = $('sc-result');
+    $('sc-details').hidden = !valid.length;
+    $('sc-empty').hidden = !!valid.length;
+    $('sc-copy').parentElement!.hidden = !valid.length;
+    let st: 'ok' | 'warn' | 'over' = s.left === 0 ? 'over' : s.left <= 15 ? 'warn' : 'ok';
+    let msg: string;
+    if (s.overstay) {
+      st = 'over';
+      msg = `⚠️ Atenção: em ${fmtLong(s.overstay.day)} você chegaria a ${s.overstay.used} dias, acima do limite de 90. Revise as datas.`;
+    } else if (!valid.length) msg = 'Sem viagens ao Schengen nos últimos 180 dias, você pode ficar até 90 dias seguidos.';
+    else if (s.left === 0) msg = `Em ${fmtLong(ref)}, os 90 dias ${ref > today ? 'estarão' : 'já estão'} usados.`;
+    else msg = ref > today
+      ? `Em ${fmtLong(ref)}, você terá usado ${plural(s.used, 'dia', 'dias')} e terá ${plural(s.left, 'dia livre', 'dias livres')}.`
+      : `Hoje você tem ${plural(s.left, 'dia livre', 'dias livres')}.`;
+    if (ref < today && !s.overstay && valid.length) msg = `Em ${fmtLong(ref)}, você tinha ${plural(s.left, 'dia livre', 'dias livres')}.`;
+    card.dataset.state = st;
+    $('sc-status').textContent = msg;
+
+    const inside = days.has(ref);
+    $('sc-until-label').textContent = inside
+      ? (ref === lastExit ? 'Se quiser esticar essa viagem, pode ficar até' : `Você estará no Schengen em ${fmt(ref)}. Pode ficar até`)
+      : `Entrando em ${fmt(ref)}, pode ficar até`;
+    if (s.stayFromRef > 0) {
+      const extra = s.stayFromRef > s.left
+        ? `<small>São mais que os ${s.left} dias livres porque, durante a viagem, dias antigos vão saindo da conta dos 180 dias.</small>`
+        : s.stayFromRef < s.left
+          ? `<small>São menos que os ${s.left} dias livres porque a viagem que você já tem planejada depois também precisa caber nos 90 dias.</small>`
+          : '';
+      const sub = inside && ref === lastExit
+        ? (s.stayFromRef > 1 ? `mais ${plural(s.stayFromRef - 1, 'dia', 'dias')} depois de ${fmt(ref)}` : 'sem dias extras')
+        : `${plural(s.stayFromRef, 'dia', 'dias')} seguidos`;
+      $('sc-until').innerHTML = `<strong>${fmtLong(ref + s.stayFromRef - 1)}</strong> <span>(${sub})</span>${inside ? '' : extra}`;
+    } else {
+      const next = nextDateFor(days, ref + 1, 1);
+      $('sc-until').innerHTML = next ? `Não dá para entrar nesta data. Próxima entrada possível: <strong>${fmtLong(next)}</strong>` : 'Sem data disponível.';
+    }
+
+    // linha do tempo: 180 dias até a referência
+    const tl = $('sc-tl');
+    tl.innerHTML = '';
+    const frag = document.createDocumentFragment();
+    for (let d = ref - WINDOW + 1; d <= ref; d++) {
+      const c = document.createElement('i');
+      if (days.has(d)) c.className = usedOn(days, d) > LIMIT ? 'over' : 'in';
+      frag.appendChild(c);
+    }
+    tl.appendChild(frag);
+    tl.setAttribute('aria-label', `Linha do tempo: ${s.used} dias no Espaço Schengen entre ${fmtLong(s.windowStart)} e ${fmtLong(ref)}`);
+    $('sc-tl-start').textContent = fmt(s.windowStart);
+    $('sc-tl-end').textContent = fmt(ref);
+
+    // quando os dias voltam
+    const rec = recoveries(days, ref);
+    const full = s.left < LIMIT ? nextDateFor(days, ref, LIMIT) : null;
+    const recEl = $('sc-recover');
+    recEl.innerHTML = rec.length
+      ? `<h3>Quando os dias voltam</h3><ul>${rec.map((r) => `<li><span>${fmt(r.day)}${r.regained > 1 ? ' a ' + fmt(r.day + r.regained - 1) : ''}</span><b>+${plural(r.regained, 'dia', 'dias')}</b></li>`).join('')}</ul>`
+        + (full ? `<p>Para ficar <b>90 dias seguidos</b>, entre a partir de <b>${fmtLong(full)}</b>.</p>` : '')
+      : '';
+
+    // planejar
+    const want = Math.min(90, Math.max(1, Number(wantInput.value) || 1));
+    state.want = want;
+    const when = nextDateFor(days, todayDay(), want);
+    $('sc-plan').innerHTML = when !== null
+      ? `${when === todayDay() ? 'Pode entrar <strong>hoje mesmo</strong>' : `A primeira data possível é <strong>${fmtLong(when)}</strong>`} e ficar até <strong>${fmtLong(when + want - 1)}</strong>.`
+      : 'Não encontramos uma data nos próximos 12 meses com as viagens atuais.';
+
+    ($('sc-wa') as HTMLAnchorElement).href = `https://wa.me/?text=${encodeURIComponent(`Meu cálculo de dias Schengen (regra 90/180): ${shareUrl()}`)}`;
+    save();
+  }
+
+  // ---- eventos
+  $('sc-add').addEventListener('click', () => {
+    state.trips.push({ entry: '', exit: '' });
+    renderTrips(); update();
+    list.querySelector<HTMLInputElement>('.trip:last-child input')?.focus();
+  });
+  $('sc-clear').addEventListener('click', () => {
+    state = { trips: [{ entry: '', exit: '' }], ref: null, want: 30 };
+    wantInput.value = '30';
+    history.replaceState(null, '', location.pathname);
+    renderTrips(); update();
+  });
+  $('sc-example').addEventListener('click', () => {
+    const t = todayDay();
+    state.trips = [
+      { entry: toIso(t - 150), exit: toIso(t - 121) }, // 30 dias
+      { entry: toIso(t - 60), exit: toIso(t - 36) }, // 25 dias
+    ];
+    state.ref = null;
+    renderTrips(); update();
+  });
+  // Só aceita a data quando ela é válida (enquanto o ano é digitado, o navegador manda valores parciais).
+  refInput.addEventListener('change', () => { if (isValidIso(refInput.value)) { state.ref = refInput.value; update(); } });
+  refInput.addEventListener('blur', () => { if (!isValidIso(refInput.value)) state.ref = null; update(); });
+  $('sc-today').addEventListener('click', () => { state.ref = toIso(todayDay()); update(); });
+  wantInput.addEventListener('input', update);
+  $('sc-copy').addEventListener('click', async (e) => {
+    const btn = e.currentTarget as HTMLButtonElement;
+    const link = shareUrl();
+    try { await navigator.clipboard.writeText(link); btn.textContent = 'Link copiado ✓'; }
+    catch { prompt('Copie o link:', link); }
+    setTimeout(() => (btn.textContent = 'Copiar link do cálculo'), 2000);
+  });
+
+  wantInput.value = String(state.want ?? 30);
+  renderTrips();
+  update();
+</script>
+
+<style>
+  .sc { padding-top: 40px; }
+  .sc-head { max-width: 860px; }
+  .sc-eyebrow { color: var(--orange); }
+  .sc-head h1 { font-size: clamp(30px, 4.4vw, 48px); margin: 10px 0 14px; }
+  .sc-lead { font-size: 19px; color: var(--muted); margin: 0 0 32px; }
+
+  /* App */
+  .app { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+  @media (max-width: 900px) { .app { grid-template-columns: 1fr; } }
+  .app-input { background: #fff; border-radius: 24px; box-shadow: var(--shadow); padding: 8px 28px; }
+  .step { padding: 22px 0; }
+  .step + .step { border-top: 1px solid var(--line); }
+  .step-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .step-title { font-size: 19px; display: flex; align-items: center; gap: 10px; }
+  .num { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--navy); color: #fff; font-size: 14px; flex-shrink: 0; }
+  .opt { color: var(--muted); font-weight: 400; font-size: 15px; }
+  .hint { color: var(--muted); font-size: 15px; margin: 8px 0 16px; }
+  .btn-sm { padding: 10px 18px; font-size: 15px; }
+  .btn-link { background: none; border: 0; padding: 4px 0; color: var(--blue); font: inherit; font-weight: 700; font-size: 15px; cursor: pointer; }
+  .btn-link:hover { text-decoration: underline; }
+  .btn-link.muted { color: var(--muted); font-weight: 500; }
+
+  .trips { list-style: none; margin: 0 0 14px; padding: 0; display: flex; flex-direction: column; gap: 10px; counter-reset: trip; }
+  :global(.trip) { display: grid; grid-template-columns: 1fr 1fr auto auto; gap: 10px; align-items: end; padding: 12px; border-radius: 14px; background: var(--bg-soft); border: 1px solid var(--line); }
+  :global(.trip.invalid) { border-color: #e5484d; background: #fff5f5; }
+  :global(.trip-days) { font-size: 14px; font-weight: 700; color: var(--navy); white-space: nowrap; min-width: 58px; padding-bottom: 12px; }
+  :global(.trip.invalid .trip-days) { color: #c4282d; white-space: normal; }
+  :global(.trip-del) { width: 38px; height: 44px; border: 0; border-radius: 10px; background: transparent; color: var(--muted); font-size: 24px; cursor: pointer; }
+  :global(.trip-del:hover) { background: #fff; color: #c4282d; }
+  @media (max-width: 520px) {
+    :global(.trip) { grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px; }
+    :global(.trip-days) { grid-column: 1; grid-row: 2; padding: 0; align-self: center; }
+    :global(.trip-del) { grid-row: 2; grid-column: 2; justify-self: end; height: 32px; font-size: 14px; width: auto; padding: 0 8px; }
+    :global(.trip-del)::after { content: ' remover'; }
+    :global(.app input[type="date"]) { padding: 10px 8px; }
+    .app-input { padding: 4px 18px; }
+  }
+  :global(.app .field) { display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 700; color: var(--navy); min-width: 0; }
+  :global(.app input[type="date"]), :global(.app input[type="number"]) {
+    font: inherit; font-size: 16px; font-weight: 500; color: var(--ink); background: #fff; border: 1px solid #cfd8e0; border-radius: 10px; padding: 10px 12px; min-height: 44px; width: 100%; min-width: 0;
+  }
+  :global(.app input:focus) { outline: 3px solid rgba(19,107,197,.25); border-color: var(--blue); }
+  .trip-actions { display: flex; align-items: center; gap: 16px; }
+  .ref-row { display: flex; align-items: end; gap: 10px; }
+  .ref-row .field { flex: 1; max-width: 260px; }
+  .ref-row .chip { margin: 0; min-height: 44px; cursor: pointer; font: inherit; font-size: 14px; font-weight: 500; }
+  .field-inline { flex-direction: row !important; flex-wrap: wrap; align-items: center; gap: 10px !important; font-size: 16px !important; font-weight: 500 !important; }
+  .field-inline input { width: 84px !important; text-align: center; }
+  .ref-note { font-size: 14px; color: var(--muted); margin: 10px 0 0; }
+  .ref-note:empty { display: none; }
+  .ref-note .btn-link { font-size: 14px; }
+  .plan-out { margin: 14px 0 0; padding: 14px 16px; border-radius: 12px; background: #eef5fc; color: var(--navy); font-size: 16px; }
+  .plan-out:empty { display: none; }
+
+  /* Resultado */
+  .app-result { position: sticky; top: 92px; }
+  @media (max-width: 900px) { .app-result { position: static; } }
+  .result-card { --accent: #2fbf71; background: var(--navy); color: #fff; border-radius: 24px; padding: 28px; box-shadow: var(--shadow); }
+  .result-card[data-state="warn"] { --accent: var(--yellow); }
+  .result-card[data-state="over"] { --accent: #ff5c5c; }
+  .gauge { position: relative; width: 168px; height: 168px; margin: 0 auto 10px; }
+  .gauge svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+  .g-track { fill: none; stroke: rgba(255,255,255,.12); stroke-width: 10; }
+  .g-bar { fill: none; stroke: var(--accent); stroke-width: 10; stroke-linecap: round; stroke-dasharray: 90 90; transition: stroke-dasharray .5s ease, stroke .3s; }
+  .gauge-num { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; }
+  .gauge-num strong { font-size: 52px; line-height: 1; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .gauge-num span { font-size: 14px; opacity: .8; margin-top: 4px; }
+  .status { text-align: center; margin: 0 0 20px; font-size: 17px; font-weight: 500; }
+  .empty { text-align: center; margin: -6px 0 22px; font-size: 15px; opacity: .8; }
+  .empty b { color: var(--yellow); }
+  [hidden] { display: none !important; }
+  .facts dd :global(small) { display: block; margin-top: 6px; font-size: 13px; opacity: .75; }
+  .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 0 0 20px; }
+  .facts > div { background: rgba(255,255,255,.07); border-radius: 12px; padding: 12px 14px; }
+  .facts .fact-wide { grid-column: 1 / -1; }
+  .facts dt { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; opacity: .7; margin-bottom: 4px; }
+  .facts dd { margin: 0; font-size: 16px; }
+  .facts dd :global(strong) { color: var(--yellow); }
+  .facts dd :global(span) { opacity: .75; font-size: 14px; }
+
+  .timeline { margin-bottom: 18px; }
+  .tl-head, .tl-foot { display: flex; justify-content: space-between; gap: 8px; font-size: 12px; opacity: .75; }
+  .tl-head { margin-bottom: 6px; flex-wrap: wrap; }
+  .tl-legend { display: inline-flex; align-items: center; gap: 6px; }
+  .tl-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; }
+  .lg-in { background: var(--yellow); } .lg-over { background: #ff5c5c; margin-left: 6px; }
+  .tl-bar { display: grid; grid-template-columns: repeat(180, 1fr); height: 34px; border-radius: 8px; overflow: hidden; background: rgba(255,255,255,.1); gap: 0; }
+  .tl-bar :global(i) { display: block; }
+  .tl-bar :global(i.in) { background: var(--yellow); }
+  .tl-bar :global(i.over) { background: #ff5c5c; }
+  .tl-foot { margin-top: 4px; }
+
+  .recover :global(h3) { color: #fff; font-size: 15px; margin: 0 0 8px; }
+  .recover :global(ul) { list-style: none; margin: 0; padding: 0; font-size: 15px; }
+  .recover :global(li) { display: flex; justify-content: space-between; gap: 10px; padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,.1); }
+  .recover :global(li b) { color: #7ee2a8; }
+  .recover :global(p) { font-size: 15px; margin: 12px 0 0; }
+  .recover :global(p b) { color: var(--yellow); }
+  .share-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+  .privacy { font-size: 13px; opacity: .7; margin: 14px 0 0; }
+
+  .disclaimer { font-size: 14px; color: var(--muted); max-width: 860px; margin: 20px 0 0; }
+
+  /* Conteúdo */
+  .sc-body { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 56px; margin-top: 56px; }
+  @media (max-width: 960px) { .sc-body { grid-template-columns: 1fr; gap: 32px; } }
+  .sc-prose { max-width: 780px; }
+  .sc-prose h2 { scroll-margin-top: 90px; }
+  .byline { display: flex; align-items: center; gap: 10px; font-size: 15px; color: var(--muted); }
+  .byline a { text-decoration: none; }
+  .sc-prose .countries { columns: 3 160px; padding-left: 1.2em; }
+  .sc-prose .countries li { break-inside: avoid; }
+  .faq { display: flex; flex-direction: column; gap: 10px; }
+  .faq details { border: 1px solid var(--line); border-radius: 12px; padding: 0 18px; background: #fff; }
+  .faq details[open] { background: var(--bg-soft); }
+  .faq summary { cursor: pointer; font-weight: 700; color: var(--navy); padding: 16px 0; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: '+'; font-size: 22px; line-height: 1; color: var(--orange); }
+  .faq details[open] summary::after { content: '–'; }
+  .faq details p { margin: 0 0 16px; }
+  .sources { font-size: 16px; }
+  .small { font-size: 15px; color: var(--muted); }
+  .sc-side .toc { display: block; }
+  @media (max-width: 960px) { .sc-side .toc { display: none; } }
+</style>
