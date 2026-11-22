@@ -186,11 +186,11 @@ const jsonLd = [
   const { pins, trips } = JSON.parse(document.getElementById('map-data')!.textContent!) as { pins: Pin[]; trips: Trip[] };
   const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
 
-  const map = L.map('map', { scrollWheelZoom: false, worldCopyJump: true, zoomSnap: 0.5 });
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-    maxZoom: 18,
-    subdomains: 'abcd',
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+  const map = L.map('map', { minZoom: 2, scrollWheelZoom: false, worldCopyJump: true, zoomSnap: 0.5 });
+  // Tiles do OpenStreetMap: grátis, sem chave (pede atribuição e uso moderado).
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
   }).addTo(map);
   // Zoom com a roda só depois de clicar no mapa (não "prende" a rolagem da página).
   map.once('focus', () => map.scrollWheelZoom.enable());
