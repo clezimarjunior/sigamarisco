@@ -147,3 +147,17 @@ export const authorNames = (d: { author: string; coauthors?: string[] }) => {
 /** Autores do post com avatar, na ordem de assinatura. */
 export const postAuthors = (d: { author: string; coauthors?: string[] }) =>
   [d.author, ...(d.coauthors ?? [])].map((name) => ({ name, avatar: AUTHORS[name]?.avatar ?? '/images/brand/marina-thumb.webp' }));
+
+// ---- Ferramentas (micro apps de SEO) ----
+// Cada ferramenta tem página própria em /ferramentas/<slug>. A lista alimenta o hub /ferramentas.
+export const TOOLS = [
+  {
+    slug: 'calculadora-schengen',
+    name: 'Calculadora Schengen',
+    tagline: 'Quantos dias você ainda pode ficar na Europa pela regra 90/180',
+    description: 'Some as entradas e saídas do Espaço Schengen e veja quantos dos 90 dias ainda restam, até quando pode ficar e quando os dias voltam.',
+    emoji: '🇪🇺',
+    published: '2026-11-22',
+    updated: '2026-11-22',
+  },
+];
