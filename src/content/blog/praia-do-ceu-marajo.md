@@ -9,6 +9,8 @@ cover: "/images/blog/praia-do-ceu-marajo/01-casa-de-palafita-amarela-e-roxa-prai
 thumb: "/images/blog/praia-do-ceu-marajo/01-casa-de-palafita-amarela-e-roxa-praia-do-ceu-marajo-thumb.webp"
 author: "Marina Petrovich"
 coauthors: ["Francisco Oliveira"]
+places:
+  - { name: "Praia do Céu, Soure", lat: -0.66, lng: -48.45 }
 ---
 
 <p>A <strong>Praia do Céu</strong> fica em Soure, na <strong>Ilha do Marajó</strong>, e é aquele tipo de lugar que parece ter ficado fora do mapa: uma vila de pescadores com casinhas de madeira sobre palafitas, cada uma pintada de uma cor, rua de areia e quase nenhuma pressa. A gente foi até lá, andou pela vila inteira e almoçou no <strong>Brisa do Céu</strong>, o restaurante e pousada que dá as boas-vindas logo na entrada.</p>

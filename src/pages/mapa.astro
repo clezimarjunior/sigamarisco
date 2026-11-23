@@ -1,0 +1,486 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import SocialBand from '../components/SocialBand.astro';
+import Img from '../components/Img.astro';
+import { SITE, ORG_ID, fmtDate, COUNTRY_FLAGS } from '../site';
+import { imageInfo, variantPath } from '../lib/images.mjs';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort((a, b) => +b.data.date - +a.data.date);
+
+/** Variante de largura `w` da imagem, se existir (senão, a original). */
+const sized = (src: string, w: number) => (imageInfo(src)?.widths.includes(w) ? variantPath(src, w) : src);
+const attr = (tag: string, name: string) => tag.match(new RegExp(`\\s${name}="([^"]*)"`))?.[1];
+
+// Um pin por lugar (um post pode ter mais de um lugar). País = categoria do post.
+const pins = posts.flatMap((p) => {
+  const d = p.data;
+  const thumb = d.thumb ?? d.cover;
+  const bodyPhotos = [...(p.body ?? '').matchAll(/<img\b[^>]*>/g)]
+    .map((m) => ({ src: attr(m[0], 'src') ?? '', alt: attr(m[0], 'alt') ?? '' }))
+    .filter((ph, i, all) => ph.src.startsWith('/images/') && ph.src !== d.cover && all.findIndex((x) => x.src === ph.src) === i)
+    .slice(0, 7);
+  const photos = [{ src: d.cover, alt: d.title }, ...bodyPhotos].map((ph) => ({ src: sized(ph.src, 800), alt: ph.alt }));
+  return d.places.map((pl, i) => ({
+    id: d.places.length > 1 ? `${p.id}--${i}` : p.id,
+    slug: p.id,
+    place: pl.name,
+    lat: pl.lat,
+    lng: pl.lng,
+    title: d.title,
+    country: d.category,
+    flag: COUNTRY_FLAGS[d.category] ?? '',
+    state: d.state,
+    date: fmtDate(d.date),
+    ts: +d.date + i,
+    thumb,
+    pin: sized(thumb, 160),
+    photos,
+  }));
+});
+
+const countries = [...new Set(pins.map((p) => p.country))]
+  .sort((a, b) => a.localeCompare(b, 'pt-BR'))
+  .map((c) => ({ name: c, flag: COUNTRY_FLAGS[c] ?? '', count: pins.filter((p) => p.country === c).length }));
+const stats = [
+  { n: countries.filter((c) => c.flag).length, label: 'países' },
+  { n: pins.length, label: 'lugares' },
+  { n: new Set(pins.map((p) => p.slug)).size, label: 'posts' },
+];
+
+const title = 'Mapa das nossas viagens | Siga Marisco';
+const description = 'Mapa interativo com todos os lugares por onde o Siga Marisco passou: clique nos pins para ver as fotos e ler o post de cada destino.';
+const url = `${SITE.url}/mapa`;
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Mapa das nossas viagens',
+    description,
+    url,
+    inLanguage: 'pt-BR',
+    isPartOf: { '@id': `${SITE.url}/#website`, '@type': 'WebSite', name: SITE.name, url: SITE.url },
+    publisher: { '@id': ORG_ID },
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: pins.map((p, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        item: {
+          '@type': 'Place',
+          name: p.place,
+          geo: { '@type': 'GeoCoordinates', latitude: p.lat, longitude: p.lng },
+          url: `${SITE.url}/blog/${p.slug}`,
+        },
+      })),
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
+      { '@type': 'ListItem', position: 2, name: 'Mapa', item: url },
+    ],
+  },
+];
+---
+<Base title={title} description={description} jsonLd={jsonLd} headerOverlay>
+  <section class="mx-hero" aria-label="Mapa">
+    <div id="map" class="mx-map is-intro" aria-label="Mapa interativo com os lugares das nossas viagens"></div>
+    <div class="mx-skeleton" aria-hidden="true"></div>
+    <p class="mx-hint" role="status" aria-live="polite"></p>
+
+    <!-- Card flutuante (no celular, vira bottom sheet) -->
+    <div class="mx-panel" id="mx-panel" data-state="open">
+      <button type="button" class="mx-handle" aria-controls="mx-panel-more" aria-expanded="true" aria-label="Recolher painel">
+        <span class="mx-grip" aria-hidden="true"></span>
+        <svg class="mx-chevron" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 15l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <nav class="mx-crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span>Mapa</span></nav>
+      <h1>Mapa das nossas viagens</h1>
+
+      <div class="mx-more" id="mx-panel-more"><div>
+        <p class="mx-lead">Todos os lugares que já viraram post. Toque num pin para ver as fotos e ler a história.</p>
+        <ul class="mx-stats" aria-label="Números do mapa">
+          {stats.map((s) => <li><strong data-count={s.n}>{s.n}</strong><span>{s.label}</span></li>)}
+        </ul>
+      </div></div>
+
+      <div class="mx-filter" role="group" aria-label="Filtrar lugares por país">
+        <button type="button" class="mx-chip" data-country="" aria-pressed="true">
+          <span aria-hidden="true">🗺️</span> Todos <span class="mx-count">{pins.length}</span>
+        </button>
+        {countries.map((c) => (
+          <button type="button" class="mx-chip" data-country={c.name} aria-pressed="false" aria-label={`${c.name}: ${c.count} ${c.count === 1 ? 'lugar' : 'lugares'}`}>
+            {c.flag && <span aria-hidden="true">{c.flag}</span>} {c.name} <span class="mx-count" aria-hidden="true">{c.count}</span>
+          </button>
+        ))}
+      </div>
+
+      <div class="mx-panel-foot">
+        <button type="button" class="mx-switch" role="switch" aria-checked="true">
+          <span class="mx-switch-track" aria-hidden="true"><span class="mx-switch-thumb"></span></span>
+          Linha do tempo
+        </button>
+        <a href="#lugares" class="mx-to-list">Ver em lista ↓</a>
+      </div>
+    </div>
+
+    <!-- Card do lugar (substitui o popup do Leaflet) -->
+    <article class="mx-place" id="mx-place" hidden aria-labelledby="mx-place-name" tabindex="-1">
+      <button type="button" class="mx-close" aria-label="Fechar">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+      </button>
+      <div class="mx-carousel" aria-roledescription="carrossel" aria-label="Fotos do lugar">
+        <div class="mx-track" tabindex="0" aria-label="Fotos. Use as setas para navegar."></div>
+        <button type="button" class="mx-nav mx-prev" aria-label="Foto anterior"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button type="button" class="mx-nav mx-next" aria-label="Próxima foto"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="mx-dots" aria-hidden="true"></div>
+        <span class="mx-counter" aria-live="polite"></span>
+      </div>
+      <div class="mx-place-body">
+        <span class="mx-place-country"></span>
+        <h2 id="mx-place-name"></h2>
+        <p class="mx-place-title"></p>
+        <span class="mx-place-date"></span>
+        <a class="mx-cta" href="#">Ler o post <span aria-hidden="true">→</span></a>
+      </div>
+    </article>
+
+    <a href="#lugares" class="mx-scroll-cue">Lista de lugares <span aria-hidden="true">↓</span></a>
+    <noscript><p class="mx-noscript">O mapa precisa de JavaScript. A lista completa de lugares está logo abaixo.</p></noscript>
+  </section>
+
+  <div class="wrap">
+    <section class="mx-list" id="lugares" aria-labelledby="lugares-title">
+      <div class="mx-list-head">
+        <h2 id="lugares-title">Todos os lugares</h2>
+        <p class="mx-list-status" aria-live="polite">{pins.length} lugares em {countries.length} países</p>
+      </div>
+
+      {countries.map((c) => (
+        <section class="mx-group" data-country={c.name} aria-labelledby={`g-${c.name}`}>
+          <h3 id={`g-${c.name}`}>
+            {c.flag && <span aria-hidden="true">{c.flag}</span>} {c.name}
+            <span class="mx-group-count">{c.count} {c.count === 1 ? 'lugar' : 'lugares'}</span>
+          </h3>
+          <div class="mx-grid">
+            {pins.filter((p) => p.country === c.name).map((p) => (
+              <article class="mx-card">
+                <a class="mx-card-img" href={`/blog/${p.slug}`} tabindex="-1" aria-hidden="true">
+                  <Img src={p.thumb} alt="" decorative layout="card" />
+                </a>
+                <div class="mx-card-body">
+                  <span class="mx-card-country">{p.flag && <span aria-hidden="true">{p.flag}</span>} {p.state ? `${p.state}, ${p.country}` : p.country}</span>
+                  <h4>{p.place}</h4>
+                  <p>{p.title}</p>
+                  <div class="mx-card-actions">
+                    <button type="button" class="mx-btn mx-btn-soft" data-show={p.id}>
+                      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="9.5" r="2.5" fill="currentColor"/></svg>
+                      Ver no mapa<span class="sr-only">: {p.place}</span>
+                    </button>
+                    <a class="mx-btn mx-btn-ink" href={`/blog/${p.slug}`}>Ler post<span class="sr-only">: {p.title}</span></a>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      ))}
+    </section>
+  </div>
+
+  <div class="wrap mx-band"><SocialBand /></div>
+
+  <script type="application/json" id="map-data" set:html={JSON.stringify(pins)} />
+</Base>
+
+<script>
+  import '../scripts/mapa';
+</script>
+
+<style>
+  /* ---------- Tokens da página ---------- */
+  .mx-hero, .mx-list {
+    --water: #b9d4dd;
+    --glass: rgba(255, 255, 255, .84);
+    --glass-line: rgba(255, 255, 255, .7);
+    --line-soft: rgba(2, 48, 71, .08);
+    --r-xl: 24px;
+    --r-lg: 18px;
+    --r-md: 12px;
+    --shadow-soft: 0 1px 2px rgba(2, 48, 71, .06), 0 12px 40px rgba(2, 48, 71, .16);
+    --shadow-lift: 0 2px 6px rgba(2, 48, 71, .08), 0 18px 44px rgba(2, 48, 71, .16);
+    --ease: cubic-bezier(.2, .8, .2, 1);
+    --header-h: 72px;
+    --gutter: max(20px, calc((100vw - var(--max)) / 2 + 20px));
+  }
+
+  /* ---------- Hero do mapa (passa por baixo do header translúcido) ---------- */
+  .mx-hero { position: relative; height: 100svh; min-height: 600px; margin-top: calc(-1 * var(--header-h)); overflow: hidden; background: var(--water); }
+  .mx-map { position: absolute; inset: 0; z-index: 0; background: var(--water); }
+  .mx-skeleton {
+    position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background:
+      radial-gradient(60% 50% at 62% 58%, rgba(243, 238, 228, .9), transparent 70%),
+      linear-gradient(100deg, transparent 30%, rgba(255, 255, 255, .35) 50%, transparent 70%) var(--water);
+    background-size: 100% 100%, 220% 100%;
+    animation: mx-shimmer 1.6s linear infinite;
+    transition: opacity .6s var(--ease);
+  }
+  .mx-skeleton.is-done { opacity: 0; animation: none; }
+  @keyframes mx-shimmer { from { background-position: 0 0, 120% 0; } to { background-position: 0 0, -120% 0; } }
+
+  .mx-hint {
+    position: absolute; z-index: 600; left: 50%; top: 50%; margin: 0; transform: translate(-50%, -50%) scale(.96);
+    padding: 12px 20px; border-radius: 999px; background: rgba(2, 48, 71, .86); color: #fff; font-size: 15px; font-weight: 500;
+    pointer-events: none; opacity: 0; transition: opacity .25s ease, transform .25s ease; white-space: nowrap;
+  }
+  .mx-hint.is-on { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+
+  /* ---------- Card flutuante ---------- */
+  .mx-panel {
+    position: absolute; z-index: 700; top: calc(var(--header-h) + 20px); left: var(--gutter); width: 400px; max-height: calc(100% - var(--header-h) - 40px); overflow: auto;
+    padding: 22px 24px 18px; border-radius: var(--r-xl);
+    background: var(--glass); backdrop-filter: blur(18px) saturate(160%); -webkit-backdrop-filter: blur(18px) saturate(160%);
+    border: 1px solid var(--glass-line); box-shadow: var(--shadow-soft);
+    transition: transform .35s var(--ease), max-height .35s var(--ease);
+  }
+  .mx-handle {
+    position: absolute; top: 14px; right: 14px; display: grid; place-items: center; width: 44px; height: 44px; padding: 0;
+    border: 0; border-radius: 50%; background: transparent; color: var(--navy); cursor: pointer;
+  }
+  .mx-handle:hover { background: rgba(2, 48, 71, .06); }
+  .mx-grip { display: none; }
+  .mx-chevron { transition: transform .3s var(--ease); }
+  .mx-panel[data-state="closed"] .mx-chevron { transform: rotate(180deg); }
+  .mx-more { display: grid; grid-template-rows: 1fr; transition: grid-template-rows .35s var(--ease), opacity .25s ease; }
+  .mx-more > div { min-height: 0; overflow: hidden; }
+  .mx-panel[data-state="closed"] .mx-more { grid-template-rows: 0fr; opacity: 0; }
+  .mx-panel[data-state="closed"] .mx-panel-foot { display: none; }
+
+  .mx-crumbs { display: flex; gap: 6px; font-size: 13px; color: var(--muted); margin: 0 52px 6px 0; }
+  .mx-crumbs a { color: var(--muted); text-decoration: none; }
+  .mx-crumbs a:hover { color: var(--navy); text-decoration: underline; }
+  .mx-panel h1 { font-size: 32px; line-height: 1.08; letter-spacing: -.02em; margin: 0 48px 0 0; }
+  .mx-lead { font-size: 15.5px; line-height: 1.5; color: var(--muted); margin: 10px 0 16px; }
+
+  .mx-stats { list-style: none; padding: 0; margin: 0 0 16px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .mx-stats li { display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; border-radius: var(--r-md); background: rgba(255, 255, 255, .75); border: 1px solid var(--line-soft); }
+  .mx-stats strong { font-size: 28px; line-height: 1; color: var(--orange-ink); font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+  .mx-stats span { font-size: 13px; color: var(--muted); }
+
+  .mx-filter { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .mx-chip {
+    display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 14px; border-radius: 999px;
+    border: 1px solid var(--line-soft); background: rgba(255, 255, 255, .9); color: var(--navy);
+    font: inherit; font-size: 14px; font-weight: 500; cursor: pointer; white-space: nowrap;
+    transition: background-color .2s ease, color .2s ease, border-color .2s ease, transform .15s ease;
+  }
+  .mx-chip:hover { border-color: rgba(2, 48, 71, .25); }
+  .mx-chip:active { transform: scale(.97); }
+  .mx-chip[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: #fff; }
+  .mx-count { font-size: 12px; font-weight: 700; padding: 2px 7px; border-radius: 999px; background: rgba(2, 48, 71, .07); font-variant-numeric: tabular-nums; }
+  .mx-chip[aria-pressed="true"] .mx-count { background: rgba(255, 255, 255, .18); }
+
+  .mx-panel-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line-soft); }
+  .mx-switch { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 0; border: 0; background: none; font: inherit; font-size: 14px; font-weight: 500; color: var(--navy); cursor: pointer; }
+  .mx-switch-track { position: relative; width: 40px; height: 24px; border-radius: 999px; background: #c5ced6; transition: background-color .2s ease; }
+  .mx-switch-thumb { position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0, 0, 0, .25); transition: transform .2s var(--ease); }
+  .mx-switch[aria-checked="true"] .mx-switch-track { background: var(--navy); }
+  .mx-switch[aria-checked="true"] .mx-switch-thumb { transform: translateX(16px); }
+  .mx-to-list { font-size: 14px; font-weight: 700; color: var(--navy); text-decoration: none; padding: 12px 0; }
+  .mx-to-list:hover { text-decoration: underline; }
+
+  /* ---------- Card do lugar ---------- */
+  .mx-place {
+    position: absolute; z-index: 800; top: calc(var(--header-h) + 20px); right: var(--gutter); width: 380px; max-height: calc(100% - var(--header-h) - 40px); overflow: auto;
+    border-radius: var(--r-xl); background: #fff; box-shadow: var(--shadow-lift); outline: none;
+    animation: mx-card-in .32s var(--ease) both;
+  }
+  .mx-place[hidden] { display: none; }
+  @keyframes mx-card-in { from { opacity: 0; transform: translateY(12px) scale(.98); } }
+  .mx-close {
+    position: absolute; z-index: 3; top: 12px; right: 12px; display: grid; place-items: center; width: 44px; height: 44px; padding: 0;
+    border: 0; border-radius: 50%; background: rgba(255, 255, 255, .92); color: var(--navy); cursor: pointer; box-shadow: 0 2px 10px rgba(0, 0, 0, .18);
+  }
+  .mx-close:hover { background: #fff; }
+  .mx-carousel { position: relative; background: var(--bg-soft); }
+  .mx-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; aspect-ratio: 4 / 3; outline: none; }
+  .mx-track::-webkit-scrollbar { display: none; }
+  .mx-track:focus-visible { box-shadow: inset 0 0 0 3px var(--orange); }
+  .mx-track :global(figure) { flex: 0 0 100%; margin: 0; scroll-snap-align: start; }
+  .mx-track :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .mx-nav {
+    position: absolute; top: 50%; transform: translateY(-50%); display: grid; place-items: center; width: 44px; height: 44px; padding: 0;
+    border: 0; border-radius: 50%; background: rgba(255, 255, 255, .9); color: var(--navy); cursor: pointer; box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+    transition: opacity .2s ease;
+  }
+  .mx-prev { left: 10px; }
+  .mx-next { right: 10px; }
+  .mx-nav:disabled { opacity: 0; pointer-events: none; }
+  .mx-dots { position: absolute; left: 0; right: 0; bottom: 10px; display: flex; justify-content: center; gap: 6px; pointer-events: none; }
+  .mx-dots :global(i) { width: 7px; height: 7px; border-radius: 999px; background: rgba(255, 255, 255, .6); box-shadow: 0 0 0 1px rgba(0, 0, 0, .08); transition: width .25s var(--ease), background-color .25s ease; }
+  .mx-dots :global(i.on) { width: 20px; background: #fff; }
+  .mx-counter { position: absolute; top: 14px; left: 14px; padding: 4px 10px; border-radius: 999px; background: rgba(2, 48, 71, .72); color: #fff; font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .mx-place-body { display: flex; flex-direction: column; gap: 6px; padding: 18px 22px 22px; }
+  .mx-place-country { font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--orange-ink); }
+  .mx-place h2 { font-size: 24px; line-height: 1.15; }
+  .mx-place-title { margin: 0; font-size: 15px; line-height: 1.45; color: var(--ink); }
+  .mx-place-date { font-size: 13px; color: var(--muted); }
+  .mx-cta {
+    display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; margin-top: 10px; border-radius: 999px;
+    background: var(--orange); color: var(--navy); font-weight: 700; text-decoration: none; transition: background-color .2s ease, transform .15s ease;
+  }
+  .mx-cta:hover { background: var(--yellow); }
+  .mx-cta:active { transform: scale(.98); }
+
+  .mx-scroll-cue {
+    position: absolute; z-index: 600; left: 50%; bottom: 24px; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 20px;
+    border-radius: 999px; background: var(--glass); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid var(--glass-line);
+    color: var(--navy); font-size: 14px; font-weight: 700; text-decoration: none; box-shadow: var(--shadow-soft);
+  }
+  .mx-scroll-cue:hover { background: #fff; }
+  .mx-noscript { position: absolute; z-index: 900; left: 20px; right: 20px; bottom: 90px; padding: 14px; margin: 0; background: #fff; border-radius: 12px; }
+
+  /* ---------- Celular: card vira bottom sheet ---------- */
+  @media (max-width: 899px) {
+    .mx-hero { height: 100svh; min-height: 560px; }
+    .mx-panel {
+      top: auto; left: 0; right: 0; bottom: 0; width: auto; max-height: 78%;
+      padding: 8px 20px calc(14px + env(safe-area-inset-bottom)); border-radius: 22px 22px 0 0; border-bottom: 0;
+      background: rgba(255, 255, 255, .92);
+    }
+    .mx-handle { position: relative; top: auto; right: auto; width: 100%; height: 28px; border-radius: 0; cursor: grab; touch-action: none; }
+    .mx-handle:hover { background: none; }
+    .mx-grip { display: block; width: 44px; height: 5px; border-radius: 999px; background: rgba(2, 48, 71, .22); }
+    .mx-chevron { display: none; }
+    .mx-crumbs { display: none; }
+    .mx-panel h1 { font-size: 22px; margin: 2px 0 0; }
+    .mx-lead { font-size: 15px; margin: 8px 0 12px; }
+    .mx-stats strong { font-size: 24px; }
+    .mx-filter {
+      flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: none;
+      margin: 12px -20px 0; padding: 0 20px 4px; scroll-padding-inline: 20px;
+    }
+    .mx-filter::-webkit-scrollbar { display: none; }
+    .mx-chip { flex: none; scroll-snap-align: start; }
+    .mx-panel[data-state="closed"] .mx-panel-foot { display: none; }
+    .mx-hero.has-place .mx-panel { transform: translateY(110%); }
+    .mx-scroll-cue { display: none; }
+
+    .mx-place {
+      top: auto; left: 0; right: 0; bottom: 0; width: auto; max-height: 82%; border-radius: 22px 22px 0 0;
+      padding-bottom: env(safe-area-inset-bottom); animation-name: mx-sheet-in;
+    }
+    @keyframes mx-sheet-in { from { transform: translateY(100%); } }
+    .mx-track { aspect-ratio: 16 / 10; }
+    .mx-place h2 { font-size: 22px; }
+    .mx-place-body { padding: 14px 20px 18px; }
+  }
+
+  /* ---------- Lista ---------- */
+  .mx-list { margin-top: 64px; scroll-margin-top: 88px; }
+  .mx-list-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px 20px; margin-bottom: 8px; }
+  .mx-list-head h2 { font-size: clamp(28px, 3.4vw, 38px); }
+  .mx-list-status { margin: 0; color: var(--muted); font-size: 15px; }
+  .mx-group { margin-top: 32px; }
+  .mx-group[hidden] { display: none; }
+  .mx-group h3 { display: flex; align-items: center; gap: 10px; font-size: 22px; margin-bottom: 16px; }
+  .mx-group-count { font-size: 13px; font-weight: 700; color: var(--muted); padding: 3px 10px; border-radius: 999px; background: var(--bg-soft); }
+  .mx-grid { display: grid; gap: 20px; grid-template-columns: 1fr; }
+  @media (min-width: 640px) { .mx-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .mx-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .mx-card {
+    display: flex; flex-direction: column; overflow: hidden; border-radius: var(--r-lg); background: #fff;
+    box-shadow: 0 1px 2px rgba(2, 48, 71, .06), 0 6px 20px rgba(2, 48, 71, .07);
+    transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+  }
+  .mx-card:hover, .mx-card:focus-within { transform: translateY(-4px); box-shadow: var(--shadow-lift); }
+  .mx-card-img { display: block; aspect-ratio: 4 / 3; overflow: hidden; background: var(--bg-soft); }
+  .mx-card-img :global(img) { width: 100%; height: 100%; object-fit: cover; transition: transform .45s var(--ease); }
+  .mx-card:hover .mx-card-img :global(img) { transform: scale(1.03); }
+  .mx-card-body { display: flex; flex-direction: column; gap: 4px; padding: 16px 18px 18px; flex: 1; }
+  .mx-card-country { font-size: 13px; font-weight: 700; color: var(--orange-ink); }
+  .mx-card h4 { font-size: 19px; color: var(--navy); }
+  .mx-card p { margin: 0 0 12px; font-size: 14px; line-height: 1.45; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .mx-card-actions { display: flex; gap: 8px; margin-top: auto; }
+  .mx-btn {
+    flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 44px; padding: 0 12px; border-radius: 999px;
+    font: inherit; font-size: 14px; font-weight: 700; white-space: nowrap; text-decoration: none; cursor: pointer; border: 0; transition: background-color .2s ease, color .2s ease;
+  }
+  .mx-btn-soft { background: var(--bg-soft); color: var(--navy); box-shadow: inset 0 0 0 1px var(--line); }
+  .mx-btn-soft:hover { background: #e9eef2; }
+  .mx-btn-ink { background: var(--navy); color: #fff; }
+  .mx-btn-ink:hover { background: #0a3d58; }
+
+  .mx-band { margin-top: 72px; }
+
+  /* Foco visível em tudo que é clicável na página */
+  .mx-hero :is(a, button):focus-visible, .mx-list :is(a, button):focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mx-skeleton { animation: none; }
+    .mx-place { animation: none; }
+    .mx-card, .mx-card-img :global(img), .mx-panel, .mx-more, .mx-chevron { transition: none; }
+    .mx-track { scroll-behavior: auto; }
+  }
+</style>
+
+<style is:global>
+  /* ---------- Leaflet (elementos criados pelo JS) ---------- */
+  /* Tiles do OSM dessaturados: os pins e as cores da marca ganham destaque. */
+  .mx-map .leaflet-tile-pane { filter: saturate(.45) brightness(1.05) contrast(.9); }
+  .mx-map .leaflet-tile { transition: opacity .5s ease; }
+  .mx-map.leaflet-container { font-family: 'DM Sans', system-ui, sans-serif; background: #b9d4dd; }
+  .mx-map .leaflet-control-zoom { border: 0; border-radius: 14px; overflow: hidden; box-shadow: 0 6px 20px rgba(2, 48, 71, .18); }
+  .mx-map .leaflet-control-zoom a { width: 44px; height: 44px; line-height: 44px; font-size: 20px; color: #023047; }
+  .mx-map .leaflet-bottom { bottom: var(--map-bottom-inset, 0px); transition: bottom .3s ease; }
+  .mx-map .leaflet-right { right: var(--map-right-inset, 0px); }
+  .mx-map .leaflet-control-attribution { background: rgba(255, 255, 255, .8); border-radius: 8px 0 0 0; font-size: 11px; }
+  .mx-map .leaflet-marker-pane, .mx-map .leaflet-overlay-pane { transition: opacity .22s ease; }
+  .mx-map.is-filtering .leaflet-marker-pane, .mx-map.is-filtering .leaflet-overlay-pane { opacity: 0; }
+
+  /* Pin com foto */
+  .mx-pin { background: none; border: 0; }
+  .mx-pin-in {
+    position: relative; display: block; width: 56px; height: 56px; padding: 3px; border-radius: 50%;
+    background: #fff; box-shadow: 0 0 0 3px #fb8500, 0 8px 18px rgba(2, 48, 71, .32);
+    transition: transform .2s cubic-bezier(.2, .8, .2, 1); transform-origin: 50% 100%;
+  }
+  /* .mx-map na frente: o CSS do Leaflet força width:auto em imagens de marcador. */
+  .mx-map .mx-pin-in img { display: block; width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+  .mx-pin-in::after { content: ''; position: absolute; left: 50%; bottom: -12px; transform: translateX(-50%); border: 7px solid transparent; border-top: 9px solid #fb8500; }
+  .mx-pin:hover .mx-pin-in, .mx-pin:focus-visible .mx-pin-in, .mx-pin.is-active .mx-pin-in { transform: scale(1.12); }
+  .mx-pin.is-active .mx-pin-in { box-shadow: 0 0 0 3px #023047, 0 10px 24px rgba(2, 48, 71, .4); }
+  .mx-pin.is-active .mx-pin-in::after { border-top-color: #023047; }
+  .mx-pin:focus-visible, .mx-cluster:focus-visible { outline: none; }
+  .mx-pin:focus-visible .mx-pin-in { box-shadow: 0 0 0 3px #fb8500, 0 0 0 7px #023047; }
+
+  /* Grupo de pins */
+  .mx-cluster { background: none; border: 0; }
+  .mx-cluster-in {
+    position: relative; display: grid; place-items: center; width: 100%; height: 100%; border-radius: 50%;
+    background: linear-gradient(145deg, #ffb703 0%, #fb8500 55%, #e56f00 100%); color: #023047;
+    font-weight: 700; font-size: 17px; border: 3px solid #fff; box-shadow: 0 8px 20px rgba(2, 48, 71, .3); transition: transform .2s ease;
+  }
+  .mx-cluster-in::before { content: ''; position: absolute; inset: -9px; border-radius: 50%; border: 2px solid rgba(251, 133, 0, .55); animation: mx-pulse 2.4s ease-out infinite; }
+  .mx-cluster:hover .mx-cluster-in, .mx-cluster:focus-visible .mx-cluster-in { transform: scale(1.08); }
+  .mx-cluster:focus-visible .mx-cluster-in { box-shadow: 0 0 0 4px #023047; }
+  @keyframes mx-pulse { 0% { transform: scale(.85); opacity: .9; } 100% { transform: scale(1.35); opacity: 0; } }
+
+  /* Entrada escalonada (só no primeiro carregamento) */
+  .mx-map.is-intro .mx-pin-in, .mx-map.is-intro .mx-cluster-in { animation: mx-pop-in .55s cubic-bezier(.2, .9, .3, 1.25) both; animation-delay: var(--d, 0ms); }
+  @keyframes mx-pop-in { from { opacity: 0; transform: translateY(8px) scale(.4); } }
+
+  /* Linha do tempo */
+  .mx-route { stroke-linecap: round; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mx-map.is-intro .mx-pin-in, .mx-map.is-intro .mx-cluster-in { animation: none; }
+    .mx-cluster-in::before { animation: none; opacity: .5; }
+    .mx-map .leaflet-marker-pane, .mx-map .leaflet-overlay-pane, .mx-pin-in, .mx-cluster-in { transition: none; }
+  }
+</style>

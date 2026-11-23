@@ -11,8 +11,10 @@ interface Props {
   type?: 'website' | 'article';
   jsonLd?: object | object[];
   noindex?: boolean;
+  /** Header translúcido por cima do conteúdo (ex.: mapa em tela cheia). */
+  headerOverlay?: boolean;
 }
-const { title, description = SITE.description, image, type = 'website', jsonLd, noindex = false } = Astro.props;
+const { title, description = SITE.description, image, type = 'website', jsonLd, noindex = false, headerOverlay = false } = Astro.props;
 const cleanPath = Astro.url.pathname.replace(/(index)?\.html$/, '').replace(/\/$/, '') || '/';
 const canonical = new URL(cleanPath, SITE.url).href;
 const ogImage = new URL(image ?? '/images/brand/marisco2.webp', SITE.url).href;
@@ -46,7 +48,7 @@ const lds = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
     {lds.map((ld) => <script type="application/ld+json" set:html={JSON.stringify(ld)} />)}
   </head>
   <body>
-    <Header />
+    <Header overlay={headerOverlay} />
     <main>
       <slot />
     </main>

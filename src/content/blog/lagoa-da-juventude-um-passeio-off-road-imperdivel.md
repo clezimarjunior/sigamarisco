@@ -9,6 +9,8 @@ date: "2024-07-20"
 cover: "/images/blog/lagoa-da-juventude-um-passeio-off-road-imperdivel/669c4b8012ec992bbe6be840-img-0513.webp"
 thumb: "/images/blog/lagoa-da-juventude-um-passeio-off-road-imperdivel/669c4b8012ec992bbe6be840-img-0513-thumb.webp"
 author: "Marina Petrovich"
+places:
+  - { name: "Lagoa da Juventude, Nísia Floresta", lat: -6.09, lng: -35.2 }
 ---
 
 <p>Colocamos o Timão (Nosso carro) para rodar 4x4 pela primeira vez nesse passeio, e olha… acho que agora é um caminho sem volta.</p>

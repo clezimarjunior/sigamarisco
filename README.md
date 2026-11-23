@@ -25,5 +25,17 @@ cover: "https://…/foto.jpg"
 Texto em Markdown ou HTML.
 ```
 
+## Mapa (/mapa)
+
+Para o post virar pin no mapa, adicione `places` no frontmatter (pode ter mais de um lugar):
+
+```yaml
+places:
+  - { name: "Salar do Uyuni", lat: -20.1338, lng: -67.4891 }
+```
+
+Dica: no Google Maps, clique com o botão direito no lugar e copie as coordenadas.
+O card do pin usa a capa/thumb e as primeiras fotos do post automaticamente.
+
 O push para `main` publica sozinho na Vercel. Sitemap, RSS, schema (BlogPosting/Breadcrumb),
 índice do artigo e posts relacionados são gerados automaticamente.

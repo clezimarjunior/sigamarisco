@@ -9,6 +9,8 @@ date: "2024-07-07"
 cover: "/images/blog/ruinas-de-sao-joao-lostau-em-pium-rn/ruinas-de-sao-joao-lostau-em-pium-rn-1.webp"
 thumb: "/images/blog/ruinas-de-sao-joao-lostau-em-pium-rn/ruinas-de-sao-joao-lostau-em-pium-rn-1-thumb.webp"
 author: "Marina Petrovich"
+places:
+  - { name: "Ruínas de São João Lostau, Pium", lat: -5.972, lng: -35.1503 }
 ---
 
 <p>Pertinho da capital do Rio Grande do Norte, existe um local pouco conhecido que esconde uma mistura de história, religiosidade e mistério. Estou falando das Ruínas de São João Lostau, um espaço que deveria ser um ponto turístico, mas que foi esquecido pelo turismo local.</p>

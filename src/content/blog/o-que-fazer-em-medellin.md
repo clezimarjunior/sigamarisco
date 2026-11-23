@@ -8,6 +8,9 @@ date: "2024-01-26"
 cover: "/images/blog/o-que-fazer-em-medellin/img-5478.webp"
 thumb: "/images/blog/o-que-fazer-em-medellin/img-5478-thumb.webp"
 author: "Marina Petrovich"
+places:
+  - { name: "Medellín", lat: 6.2476, lng: -75.5658 }
+  - { name: "Guatapé", lat: 6.2326, lng: -75.158 }
 ---
 
 <p>Se você está procurando uma viagem para a noitada, passeios diversos, muita animação e festa, vá para Medellín. Esse lugar incrível está na lista dos lugares que queremos voltar para curtir ainda mais!</p>

@@ -8,6 +8,8 @@ date: "2023-09-04"
 cover: "/images/blog/como-chegar-em-machu-picchu/01.webp"
 thumb: "/images/blog/como-chegar-em-machu-picchu/01-thumb.webp"
 author: "Marina Petrovich"
+places:
+  - { name: "Machu Picchu", lat: -13.1631, lng: -72.545 }
 ---
 
 <p>Machu Picchu é uma das maravilhas do mundo moderno e um dos destinos turísticos mais populares do <a href="/categoria/peru">Peru</a>. A cidadela Inca, localizada no alto das montanhas dos Andes, é um lugar de beleza e mistério que atrai visitantes de todo o mundo.</p>

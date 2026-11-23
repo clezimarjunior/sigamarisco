@@ -11,6 +11,8 @@ thumb: "/images/blog/arquibancada-do-cirio-de-nazare/01-casal-na-arquibancada-do
 author: "Marina Petrovich"
 coauthors: ["Francisco Oliveira"]
 draft: false
+places:
+  - { name: "Arquibancada do Círio, Belém", lat: -1.4537, lng: -48.4867 }
 ---
 
 <p>Em 2025 a gente viveu o Círio de Nazaré a pé, no meio da multidão. Em 2026 resolvemos ver de outro ângulo e fomos de <strong>arquibancada do Círio de Nazaré</strong>, na Avenida Presidente Vargas, em Belém. Pagamos <strong>R$ 250 por pessoa</strong> e saímos de lá com uma certeza: do alto, dá para ver o tamanho real da procissão, do começo ao fim, sem ser empurrado e com sombra.</p>

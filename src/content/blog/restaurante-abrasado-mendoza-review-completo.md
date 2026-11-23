@@ -8,6 +8,8 @@ date: "2024-01-10"
 cover: "/images/blog/restaurante-abrasado-mendoza-review-completo/restaurante-abrasado-mendoza-review-completo-1.webp"
 thumb: "/images/blog/restaurante-abrasado-mendoza-review-completo/restaurante-abrasado-mendoza-review-completo-1-thumb.webp"
 author: "Marina Petrovich"
+places:
+  - { name: "Abrasado, Mendoza", lat: -32.8968, lng: -68.8235 }
 ---
 
 <p>A <a href="/categoria/argentina">Argentina</a> é um país conhecido por sua deliciosa gastronomia, e Mendoza, sua capital vinícola, não é exceção. Entre as muitas opções de restaurantes da cidade, o Abrasado é um dos mais populares, oferecendo uma experiência gastronômica de alta qualidade em um ambiente elegante.</p>

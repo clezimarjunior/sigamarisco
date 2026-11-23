@@ -3,6 +3,8 @@
   --blue: #136bc5;
   --blue-dark: #0d4f94;
   --orange: #fb8500;
+  /* Laranja para TEXTO sobre fundo claro (contraste 5:1). O --orange fica para fundos e detalhes. */
+  --orange-ink: #ad5700;
   --yellow: #ffb703;
   --ink: #0f1b24;
   --muted: #5d6c7b;
@@ -28,6 +30,10 @@ h1, h2, h3, h4 { color: var(--navy); line-height: 1.15; letter-spacing: -.01em; 
 
 /* Header */
 .header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.92); backdrop-filter: saturate(180%) blur(12px); border-bottom: 1px solid var(--line); }
+.header { transition: box-shadow .25s ease, background-color .25s ease; }
+.header.is-scrolled { box-shadow: 0 6px 24px rgba(2, 48, 71, .10); }
+.header--overlay { background: rgba(255,255,255,.72); border-bottom-color: rgba(255,255,255,.5); }
+.header--overlay.is-scrolled { background: rgba(255,255,255,.9); }
 .header .wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; }
 .logo img { height: 34px; width: auto; }
 .nav { display: flex; gap: 4px; align-items: center; }
@@ -37,7 +43,7 @@ h1, h2, h3, h4 { color: var(--navy); line-height: 1.15; letter-spacing: -.01em; 
 .nav .cta { background: var(--orange); color: #fff; }
 .nav .cta:hover { background: #e07600; }
 @media (max-width: 640px) {
-  .logo img { height: 28px; }
+  .logo img { height: 28px; flex: none; }
   .nav a { padding: 8px 9px; font-size: 14px; }
   .nav .hide-sm { display: none; }
 }
@@ -104,9 +110,14 @@ h1, h2, h3, h4 { color: var(--navy); line-height: 1.15; letter-spacing: -.01em; 
 .band { position: relative; overflow: hidden; background: var(--navy); color: #fff; border-radius: 24px; padding: 48px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; align-items: center; }
 .band h2 { color: #fff; font-size: clamp(24px, 3vw, 32px); }
 .band p { opacity: .85; margin: 8px 0 0; }
-.band .star { position: absolute; right: -40px; bottom: -40px; width: 200px; opacity: .95; pointer-events: none; }
+.band .star { position: absolute; z-index: 0; right: -56px; bottom: -64px; width: 200px; opacity: .9; pointer-events: none; user-select: none; }
+/* Botão do Instagram com fundo próprio: a estrela decorativa passa por trás sem "vazar" pelo botão. */
+.band .btn-ghost { background: var(--navy); }
+.band .btn-ghost:hover { background: #0a3d58; }
 .band-actions { position: relative; z-index: 1; display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
-@media (max-width: 760px) { .band { grid-template-columns: 1fr; padding: 32px 24px 120px; } .band-actions { justify-content: flex-start; } .band .star { width: 140px; } }
+/* Desktop: espaço à direita reservado para a estrela, que nunca fica sob os botões. */
+@media (min-width: 761px) { .band { padding-right: 168px; } }
+@media (max-width: 760px) { .band { grid-template-columns: 1fr; padding: 32px 24px 120px; } .band-actions { justify-content: flex-start; } .band .star { width: 140px; right: -36px; bottom: -44px; } }
 
 /* About */
 .about { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-radius: 24px; overflow: hidden; background: var(--blue); color: #fff; }

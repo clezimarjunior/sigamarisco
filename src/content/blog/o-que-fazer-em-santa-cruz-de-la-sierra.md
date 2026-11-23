@@ -8,6 +8,8 @@ date: "2023-09-12"
 cover: "/images/blog/o-que-fazer-em-santa-cruz-de-la-sierra/02.webp"
 thumb: "/images/blog/o-que-fazer-em-santa-cruz-de-la-sierra/02-thumb.webp"
 author: "Marina Petrovich"
+places:
+  - { name: "Santa Cruz de la Sierra", lat: -17.7833, lng: -63.1821 }
 ---
 
 <p>Na nossa última viagem para a <a href="/categoria/bolivia">Bolívia</a> desbravamos lugares encantadores e um deles foi Santa Cruz. Por isso, resolvemos construir esse artigo para te explicar o que fazer em Santa Cruz de la Sierra e tudo o que você precisa saber antes de chegar nesse destino.</p>

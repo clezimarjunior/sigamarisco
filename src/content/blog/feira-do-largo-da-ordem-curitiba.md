@@ -11,6 +11,8 @@ thumb: "/images/blog/feira-do-largo-da-ordem-curitiba/01-feira-do-largo-da-ordem
 author: "Marina Petrovich"
 coauthors: ["Francisco Oliveira"]
 draft: false
+places:
+  - { name: "Largo da Ordem, Curitiba", lat: -25.4282, lng: -49.2717 }
 ---
 
 <p>A <strong>Feira do Largo da Ordem</strong> é o passeio de domingo mais clássico de Curitiba, e a gente foi em novembro de 2026 para ver se faz jus à fama. Faz. A feira é grande, tem barraca de tudo quanto é preço, tem comida boa, e o melhor: ela fica no meio do Setor Histórico, então dá para emendar a feira com mesquita, museus, Memorial, Catedral e ruínas sem pegar nenhuma condução.</p>
