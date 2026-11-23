@@ -11,6 +11,8 @@ thumb: "/images/blog/fazenda-sao-jeronimo-marajo/01-casal-nadando-com-bufalos-fa
 author: "Marina Petrovich"
 coauthors: ["Francisco Oliveira"]
 draft: false
+places:
+  - { name: "Fazenda São Jerônimo, Soure", lat: -0.6913, lng: -48.4988 }
 ---
 
 <p>A <strong>Fazenda São Jerônimo</strong> fica em Soure, na <strong>Ilha do Marajó</strong>, e é uma das fazendas mais famosas da ilha para quem quer chegar perto dos búfalos. O passeio junta tudo em uma manhã só: <strong>montaria em búfalo</strong>, trilha no mangue, praia e, para fechar, um <strong>nado montado no búfalo</strong>, de colete salva-vidas.</p>
@@ -30,7 +32,7 @@ draft: false
 
 <h2>Onde fica a Fazenda São Jerônimo e como chegar</h2>
 
-<p>A fazenda fica em Soure, na estrada do Pesqueiro, a poucos quilômetros do centro da cidade. É uma propriedade de família, e ficou conhecida no Brasil inteiro porque serviu de cenário para o reality <em>No Limite</em> e para uma novela da Globo.</p>
+<p>A fazenda fica em Soure, na estrada do Pesqueiro, no km 3 da rodovia, na comunidade de Tucumanduba, a poucos quilômetros do centro da cidade. É uma propriedade de família, e ficou conhecida no Brasil inteiro porque serviu de cenário para o reality <em>No Limite</em> e para uma novela da Globo.</p>
 
 <p>A gente ficou em um Airbnb no centro de Soure e foi <strong>de táxi</strong>, por <strong>R$ 25</strong> a corrida. Para ir embora, seguimos de mototáxi para a <a href="/blog/praia-do-ceu-marajo">Praia do Céu</a>, o que encaixa bem no mesmo dia. Guias de viagem de 2026 falam também em mototáxi do centro até a fazenda, que costuma sair mais barato que o táxi.</p>
 
