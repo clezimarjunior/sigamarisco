@@ -204,3 +204,15 @@ h1, h2, h3, h4 { color: var(--navy); line-height: 1.15; letter-spacing: -.01em; 
 .avatars { display: inline-flex; flex-shrink: 0; }
 .avatars .avatar + .avatar { margin-left: -10px; box-shadow: 0 0 0 2px #fff; }
 .footer-bottom a { color: var(--navy); font-weight: 500; }
+
+/* Ícones de redes sociais (rodapé, faixa "Acompanhe" e contato). */
+.social-icon { display: block; flex-shrink: 0; }
+.social-icons { list-style: none; margin: 16px 0 0; padding: 0; display: flex; gap: 10px; flex-wrap: wrap; }
+.footer .social-icons li + li { margin-top: 0; }
+.social-icons a { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 999px; text-decoration: none; transition: background .2s ease, color .2s ease, transform .2s ease; }
+.social-icons a:hover { transform: translateY(-2px); }
+.social-icons--dark a { background: #fff; color: var(--navy); border: 1px solid var(--line); }
+.social-icons--dark a:hover { background: var(--blue); color: #fff; border-color: var(--blue); }
+.social-icons--light a { background: rgba(255,255,255,.12); color: #fff; }
+.social-icons--light a:hover { background: var(--orange); color: #fff; }
+.social-cat { display: inline-flex; align-items: center; gap: 6px; }

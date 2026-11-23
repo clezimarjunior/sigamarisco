@@ -3,6 +3,7 @@ import { SITE } from '../site';
 import { getCollection } from 'astro:content';
 const cats = [...new Set((await getCollection('blog')).map((p) => p.data.category))].sort();
 import { slugify } from '../site';
+import SocialIcons from './SocialIcons.astro';
 ---
 <footer class="footer">
   <div class="wrap">
@@ -10,6 +11,7 @@ import { slugify } from '../site';
       <div class="footer-brand">
         <img src="/brand/logo.svg" alt="Siga Marisco" width="180" height="33" style="height:30px;width:auto;margin-bottom:12px" />
         <p>Blog de viagens e aventuras de um casal nordestino. Roteiros reais, custos e dicas pelo Brasil e América do Sul.</p>
+        <SocialIcons />
       </div>
       <div>
         <h2 class="footer-title">Destinos</h2>
@@ -22,8 +24,6 @@ import { slugify } from '../site';
           <li><a href="/ferramentas/calculadora-schengen">Calculadora Schengen</a></li>
           <li><a href="/sobre">Sobre nós</a></li>
           <li><a href="/contato">Contato</a></li>
-          <li><a href={SITE.instagram} rel="noopener" target="_blank">Instagram</a></li>
-          <li><a href={SITE.youtube} rel="noopener" target="_blank">YouTube</a></li>
         </ul>
       </div>
       <div>

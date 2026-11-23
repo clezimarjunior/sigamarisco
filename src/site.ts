@@ -7,6 +7,8 @@ export const SITE = {
   email: 'sigamarisco@gmail.com',
   instagram: 'https://www.instagram.com/sigamarisco/',
   youtube: 'https://www.youtube.com/@sigamarisco',
+  tiktok: 'https://www.tiktok.com/@sigamarisco',
+  kwai: 'https://www.kwai.com/@sigamarisco',
 };
 
 export const slugify = (s: string) =>
@@ -59,7 +61,7 @@ export const STATE_META: Record<string, { title: string; description: string }> 
 
 export const PAGE_META = {
   "blog": { title: "Blog de viagem: todos os artigos | Siga Marisco", description: "Todos os roteiros, guias e reviews do Siga Marisco: Brasil, Bolívia, Peru, Colômbia, Argentina e dicas de viagem, com custos e experiências reais." },
-  "contato": { title: "Contato | Siga Marisco", description: "Fale com o Siga Marisco por e-mail, Instagram ou YouTube: dúvidas sobre roteiros, sugestões de destinos e propostas de parceria. Vamos adorar conversar!" },
+  "contato": { title: "Contato | Siga Marisco", description: "Fale com o Siga Marisco por e-mail, Instagram, YouTube, TikTok ou Kwai: dúvidas sobre roteiros, sugestões de destinos e propostas de parceria. Vamos adorar conversar!" },
   "sobre": { title: "Sobre nós: Marina e Francisco | Siga Marisco", description: "Conheça a Marina e o Francisco, o casal nordestino por trás do Siga Marisco: quem somos, como viajamos e por que contamos tudo aqui no blog de viagem." },
 };
 
@@ -110,7 +112,15 @@ export const STATE_INTRO: Record<string, string[]> = {
 
 // ---- Schema.org compartilhado ----
 export const ORG_ID = `${SITE.url}/#organization`;
-export const SOCIAL = [SITE.youtube, SITE.instagram];
+export const SOCIAL = [SITE.youtube, SITE.instagram, SITE.tiktok, SITE.kwai];
+
+/** Redes sociais, na ordem em que aparecem nos ícones do site. */
+export const SOCIAL_LINKS = [
+  { key: 'instagram', label: 'Instagram', href: SITE.instagram },
+  { key: 'youtube', label: 'YouTube', href: SITE.youtube },
+  { key: 'tiktok', label: 'TikTok', href: SITE.tiktok },
+  { key: 'kwai', label: 'Kwai', href: SITE.kwai },
+] as const;
 
 export const organizationSchema = {
   '@context': 'https://schema.org',
