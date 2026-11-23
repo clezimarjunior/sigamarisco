@@ -7,6 +7,8 @@ import path from 'node:path';
 import sharp from 'sharp';
 
 export const WIDTHS = [480, 800, 1200];
+/** Miniaturas (-thumb.webp) também ganham uma versão de 160px, usada nos pins do /mapa. */
+export const THUMB_WIDTHS = [160];
 const ROOT = process.cwd();
 const PUBLIC = path.join(ROOT, 'public');
 const MANIFEST = path.join(ROOT, 'node_modules', '.cache', 'sigamarisco-images.json');
@@ -28,7 +30,7 @@ export async function buildImageVariants({ log = console.log } = {}) {
   for (const file of walk(path.join(PUBLIC, 'images'))) {
     const src = '/' + path.relative(PUBLIC, file).split(path.sep).join('/');
     const meta = await sharp(file).metadata();
-    const widths = WIDTHS.filter((w) => w < meta.width);
+    const widths = [...(src.endsWith('-thumb.webp') ? THUMB_WIDTHS : []), ...WIDTHS].filter((w) => w < meta.width);
     for (const w of widths) {
       const out = path.join(PUBLIC, variantPath(src, w));
       if (fs.existsSync(out) && fs.statSync(out).mtimeMs >= fs.statSync(file).mtimeMs) continue;

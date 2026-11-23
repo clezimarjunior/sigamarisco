@@ -161,3 +161,19 @@ export const TOOLS = [
     updated: '2026-11-22',
   },
 ];
+
+// ---- Mapa ----
+/** Bandeira (emoji) de cada país usado como categoria. Países sem bandeira aparecem sem emoji. */
+export const COUNTRY_FLAGS: Record<string, string> = {
+  Argentina: '🇦🇷',
+  Bolívia: '🇧🇴',
+  Brasil: '🇧🇷',
+  Chile: '🇨🇱',
+  Colômbia: '🇨🇴',
+  Equador: '🇪🇨',
+  Paraguai: '🇵🇾',
+  Peru: '🇵🇪',
+  Uruguai: '🇺🇾',
+  Portugal: '🇵🇹',
+  Espanha: '🇪🇸',
+};

@@ -1,4 +1,5 @@
 ---
+const { overlay = false } = Astro.props as { overlay?: boolean };
 const path = Astro.url.pathname;
 const links = [
   { href: '/', label: 'Home', cls: 'hide-sm' },
@@ -10,7 +11,7 @@ const links = [
 ];
 const isActive = (h: string) => (h === '/' ? path === '/' : path.startsWith(h));
 ---
-<header class="header">
+<header class:list={["header", { "header--overlay": overlay }]}>
   <div class="wrap">
     <a href="/" class="logo" aria-label="Siga Marisco — página inicial">
       <img src="/brand/logo.svg" alt="Siga Marisco" width="296" height="54" />
@@ -20,3 +21,13 @@ const isActive = (h: string) => (h === '/' ? path === '/' : path.startsWith(h));
     </nav>
   </div>
 </header>
+<script is:inline>
+  // Sombra no header assim que a página rola.
+  (() => {
+    const h = document.querySelector('.header');
+    if (!h) return;
+    const on = () => h.classList.toggle('is-scrolled', window.scrollY > 4);
+    on();
+    addEventListener('scroll', on, { passive: true });
+  })();
+</script>
