@@ -218,7 +218,8 @@ const jsonLd = [
   }
 
   /* ---------- Hero do mapa (passa por baixo do header translúcido) ---------- */
-  .mx-hero { position: relative; height: 100svh; min-height: 600px; margin-top: calc(-1 * var(--header-h)); overflow: hidden; background: var(--water); }
+  /* isolation: tudo do mapa (painel, card, controles) fica abaixo do header sticky (z-index 50). */
+  .mx-hero { position: relative; isolation: isolate; z-index: 0; height: 100svh; min-height: 600px; margin-top: calc(-1 * var(--header-h)); overflow: hidden; background: var(--water); }
   .mx-map { position: absolute; inset: 0; z-index: 0; background: var(--water); }
   .mx-skeleton {
     position: absolute; inset: 0; z-index: 1; pointer-events: none;
