@@ -1,0 +1,14 @@
+---
+import { SOCIAL_LINKS } from '../site';
+import SocialIcon from './SocialIcon.astro';
+const { variant = 'dark' } = Astro.props as { variant?: 'dark' | 'light' };
+---
+<ul class:list={["social-icons", `social-icons--${variant}`]} aria-label="Redes sociais do Siga Marisco">
+  {SOCIAL_LINKS.map((s) => (
+    <li>
+      <a href={s.href} target="_blank" rel="noopener" aria-label={`${s.label} @sigamarisco`} title={s.label}>
+        <SocialIcon name={s.key} />
+      </a>
+    </li>
+  ))}
+</ul>

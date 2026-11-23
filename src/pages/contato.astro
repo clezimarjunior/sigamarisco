@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import { SITE, PAGE_META } from '../site';
+import SocialIcon from '../components/SocialIcon.astro';
 ---
 <Base title={PAGE_META.contato.title} description={PAGE_META.contato.description}>
   <div class="page">
@@ -8,8 +9,10 @@ import { SITE, PAGE_META } from '../site';
     <p style="font-size:19px;color:var(--muted)">Dúvidas sobre algum roteiro, sugestões de destino ou propostas de parceria? Adoramos conversar.</p>
     <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:28px">
       <a class="card" href={`mailto:${SITE.email}`}><div class="card-body"><span class="cat">E-mail</span><h2 class="card-title">{SITE.email}</h2><p>Dúvidas sobre roteiros e parcerias.</p></div></a>
-      <a class="card" href={SITE.instagram} target="_blank" rel="noopener"><div class="card-body"><span class="cat">Instagram</span><h2 class="card-title">@sigamarisco</h2><p>Bastidores das viagens e stories.</p></div></a>
-      <a class="card" href={SITE.youtube} target="_blank" rel="noopener"><div class="card-body"><span class="cat">YouTube</span><h2 class="card-title">@sigamarisco</h2><p>Os roteiros em vídeo.</p></div></a>
+      <a class="card" href={SITE.instagram} target="_blank" rel="noopener"><div class="card-body"><span class="cat social-cat"><SocialIcon name="instagram" size={18} /> Instagram</span><h2 class="card-title">@sigamarisco</h2><p>Bastidores das viagens e stories.</p></div></a>
+      <a class="card" href={SITE.youtube} target="_blank" rel="noopener"><div class="card-body"><span class="cat social-cat"><SocialIcon name="youtube" size={18} /> YouTube</span><h2 class="card-title">@sigamarisco</h2><p>Os roteiros em vídeo.</p></div></a>
+      <a class="card" href={SITE.tiktok} target="_blank" rel="noopener"><div class="card-body"><span class="cat social-cat"><SocialIcon name="tiktok" size={18} /> TikTok</span><h2 class="card-title">@sigamarisco</h2><p>Vídeos curtos das viagens.</p></div></a>
+      <a class="card" href={SITE.kwai} target="_blank" rel="noopener"><div class="card-body"><span class="cat social-cat"><SocialIcon name="kwai" size={18} /> Kwai</span><h2 class="card-title">@sigamarisco</h2><p>Vídeos curtos das viagens.</p></div></a>
     </div>
   </div>
 </Base>
